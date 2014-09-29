@@ -1,0 +1,414 @@
+{#
+	# Homepage template
+	# ---------------
+	#
+	# When this template gets loaded, it will be because someone has accessed
+	# http://yoursite.com/ (without any URI). Craft checks to see if you have
+	# a Single section set to be the Homepage (as you do, by default), and
+	# loads the section’s Template (this file). A special ‘entry’ variable
+	# will already be set for you, assigned to the Homepage entry.
+	#
+	# It's worth noting that even if you didn't have a Homepage Single section,
+	# as long as this template remains at craft/templates/index.html, it
+	# would still be the one to get loaded when accessing http://yoursite.com/,
+	# albeit without an ‘entry’ variable already set for you.
+	#
+	# See this page for more details on how Craft routes requests:
+	# http://buildwithcraft.com/docs/routing
+	#}
+
+	{% extends "_layout" %}
+
+	{% block content %}
+
+
+<!-- 	<h1>{{ entry.heading }}</h1>
+
+	{{ entry.body }}
+
+	<h2>Recent News</h2>
+	<ul>
+		{% for entry in craft.entries.section('news').limit(5).find() %}
+			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+		{% endfor %}
+	</ul> -->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 project">
+				<h3 id="counter">0</h3>
+				<h4>{{ entry.metric1Title }}</h4>
+				<p>{{ entry.metric1Body }}</p>
+			</div>
+			<div class="col-md-4 project">
+				<h3 id="counter1">0</h3>
+				<h4>{{ entry.metric2Title }}</h4>
+				<p>{{ entry.metric2Body }}</p>
+			</div>
+			<div class="col-md-4 project">
+				<h3 id="counter2" style="margin-left: 20px;">0</h3>
+				<h4 style="margin-left: 20px;">{{ entry.metric3Title }}</h4>
+				<p>{{ entry.metric3Body }}</p>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 cBusiness">
+				<h3>The Best Way to Create Business Site &ndash; Attractive One Page</h3>
+				<h4>Discover elegant solution for your online business fast, reliable, affordable.</h4>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 centPic">
+				<img class="img-responsive"  src="images/bizPic.png"/>
+			</div>
+		</div>
+	</div>   
+</div>
+
+<!--about start-->    
+
+<div id="about">
+	<div class="line2">
+		<div class="container">
+			<div class="row Fresh">
+				<div class="col-md-4 Des">
+					<i class="fa fa-heart"></i>
+					<h4>Fresh & Clean Design</h4>
+					<p>Nulla consectetur ornare nibh, a auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor. feugiat </p>
+				</div>
+				<div class="col-md-4 Ver">
+					<i class="fa fa-cog"></i>
+					<h4>Very Flexible</h4>
+					<p>Nulla consectetur ornare nibh, a auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor. feugiat </p>
+				</div>
+				<div class="col-md-4 Fully">
+					<i class="fa fa-tablet"></i>
+					<h4>Fully Responsive</h4>
+					<p>Nulla consectetur ornare nibh, a auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor. feugiat </p>
+				</div>		
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 wwa">
+				<span name="about" ></span>
+				<h3>Who We Are? Meet Our Team!</h3>
+				<h4>We listen, we discuss, we advise and develop. We love to learn and use the latest technologies.</h4>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row team">
+			<div class="col-md-4 b1">
+				<img class="img-responsive" src="images/picTeam/picT1.png">
+				<h4>Tom Simpson</h4>
+				<h5>CEO</h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit <br/>quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget.</p>
+				<ul>
+					<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+					<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter" ></i></a></li>
+					<li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+				</ul>
+			</div>
+			
+			
+			<div class="col-md-4">
+				<img class="img-responsive" src="images/picTeam/picT2.png">
+				<h4>John Doe</h4>
+				<h5>Project Manager</h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit<br/> quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget.</p>
+				<ul>
+					<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+					<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter" ></i></a></li>
+					<li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+				</ul>
+			</div>
+
+			
+			<div class="col-md-4 b3">
+				<img class="img-responsive" src="images/picTeam/picT3.png">
+				<h4>Anna White</h4>
+				<h5>Developer</h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit<br/> quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget.</p>
+				<ul>
+					<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+					<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter" ></i></a></li>
+					<li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 hr1">
+				<hr/>
+			</div>
+		</div>
+	</div>		
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 bar">
+				<div class="progB chart" data-percent="64"  data-animate="3500">
+					<div class="chart chart-content">
+						<div class="percentage" data-percent="64">
+							<span class="percent">64</span>
+						</div>
+					</div>
+				</div>
+				<div class="textP">
+					<h3>WordPress</h3>
+					<p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>
+				</div>
+			</div>
+			<div class="col-md-3 bar">
+				<div class="progB chart" data-percent="22"  data-animate="3500">
+					<div class="chart chart-content">
+						<div class="percentage" data-percent="22">
+							<span class="percent">22</span>
+						</div>
+					</div>
+				</div>
+				<div class="textP">
+					<h3>HTML5</h3>
+					<p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>
+				</div>
+			</div>
+			<div class="col-md-3 bar ">
+				<div class="progB chart" data-percent="84"  data-animate="3500">
+					<div class="chart chart-content">
+						<div class="percentage" data-percent="22">
+							<span class="percent">84</span>
+						</div>
+					</div>
+				</div>
+				<div class="textP">
+					<h3>CSS3</h3>
+					<p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>
+				</div>
+			</div>
+			<div class="col-md-3 bar ">
+				<div class="progB chart" data-percent="45"  data-animate="3500">
+					<div class="chart chart-content">
+						<div class="percentage" data-percent="45">
+							<span class="percent">45</span>
+						</div>
+					</div>
+				</div>
+				<div class="textP">
+					<h3>Woocommerce</h3>
+					<p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+
+	<div class="container">
+		<div class="row aboutUs">
+			<div class="col-md-12 ">
+				<h3>What Our Customers Say About Us?</h3>
+			</div>
+		</div>
+	</div>
+
+	<div style="position: relative;">
+		
+		<div class="container">
+			<div class="row about">
+				<div class="col-md-6">
+					<div class="about1">
+						<img class="pic1Ab" src="images/picAbout/aboutP1.png">
+						<h3>Roamin' Pizza Chariot, Liberty Lake, WA</h3>
+						<p>We are so pleased with the work SavorWeb did in developing our website. Their ability to listen to our vision resulted in the website that we wanted. SavorWeb was on schedule and on budget!</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="about2">
+						<img class="pic2Ab" src="images/picAbout/aboutP2.png">
+						<h3>All Pro Painting, Seattle, WA</h3>
+						<p>SavorWeb is knowledgeable, responsive and informative throughout the entire process. Their work is creative, clean and professional. I would definitely recommend SavorWeb for all your website needs.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="horL"></div>
+		
+		<div class="container">
+			<div class="row about">
+				<div class="col-md-6">
+					<div class="about1">
+						<img class="pic1Ab" src="images/picAbout/aboutP3.png">
+						<h3>Tom Sawyer, Company Inc.</h3>
+						<p>A auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor feugiat fermentum quisque eget pharetra, felis et venenatis aliquam, nulla nisi lobortis elit, acnterdum ante feugiat vitae.</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="about2">
+						<img class="pic2Ab" src="images/picAbout/aboutP4.png">
+						<h3>Sarah White, Company Inc.</h3>
+						<p>Ornare nibh a auctor, mauris scelerisque eu proin nec urna nec a quis justo adipiscing auctor ut auctor feugiat fermentum quisque eget pharetra felis et venenatis aliquam, nulla nisi lobortis elit, ac eleifend nisl ante nec lorem. </p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<!--project start-->    
+<div id="project">    	
+	<div class="line3">
+		<div class="container">
+			<div id="project1" ></div>
+			<div class="row Ama">
+				<div class="col-md-12">
+					<span name="projects" id="projectss"></span>
+					<h3>Our Amazing Works</h3>
+					<p>Right here we've got something you gonna love</p>
+				</div>
+			</div>
+		</div>
+	</div>          
+
+
+	<div class="container">
+		
+		<div class="row">
+			<!-- filter_block -->
+			<div id="options" class="col-md-12" style="text-align: center;">	
+				<ul id="filter" class="option-set" data-option-key="filter">
+					<li><a class="selected" href="#filter" data-option-value="*" class="current">All Works</a></li>
+					<li><a href="#filter" data-option-value=".branding">Branding</a></li>
+					<li><a href="#filter" data-option-value=".web">Websites</a></li>
+					<li><a href="#filter" data-option-value=".print">Text Styles</a></li>
+					<li><a href="#filter" data-option-value=".design">Design</a></li>
+				</ul>
+			</div><!-- //filter_block -->
+
+
+
+			<div class="portfolio_block columns3 pretty" data-animated="fadeIn">	
+				{% for image in craft.assets.sourceId('1').limit(9) %}
+				<div class="element col-sm-4 gall {% for tag in image.tags %} {{ tag.name }} {% endfor %}">
+					<a class="plS" href="{{ image.getUrl() }}" rel="prettyPhoto[gallery2]">
+						<img class="img-responsive picsGall" src="{{ image.getUrl() }}" alt="{{ image.title }}"/>
+					</a>
+					<div class="view project_descr ">
+						<h3><a href="#">{{ image.title }}</a></h3>
+						<ul>
+							{% if image.tags %}
+								{% for tag in image.tags %}<li><a href="#"><i class="fa fa-tag"></i> {{ tag.name }}</a></li>{% endfor %}
+							{% endif %}
+							<!-- <li><a class="heart" href="#"><i class="fa-heart-o"></i>14</a></li> -->
+						</ul>
+					</div>
+				</div>	
+				{% endfor %}
+			</div>
+			
+			
+
+			<div class="col-md-12 cBtn  lb" style="text-align: center;">
+				<ul class="load_more_cont ">
+					<li class="dowbload btn_load_more">
+						<a href="javascript:void(0);" >
+							<i class="fa fa-arrow-down"></i>Load More Projects
+						</a>
+					</li>
+					<li class="buy">
+						<a href="#">
+							<i class="fa fa-shopping-cart"></i>Get a Quote
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+
+		<script type="text/javascript">
+		jQuery(window).load(function(){
+			items_set = [
+
+			{category : 'branding', lika_count : '77', view_count : '234', src : 'images/prettyPhotoImages/pic9.jpg', title : 'Foil Mini Badges', content : '' },
+
+			{category : 'web', lika_count : '45', view_count : '100', src : 'images/prettyPhotoImages/pic7.jpg', title : 'Darko – Business Card Mock Up', content : '' },
+
+			{category : 'design', lika_count : '22', view_count : '140', src : 'images/prettyPhotoImages/pic8.jpg', title : 'Woody Poster Text Effect', content : '' }
+
+
+			];
+			jQuery('.portfolio_block').portfolio_addon({
+						type : 1, // 2-4 columns simple portfolio
+						load_count : 3,
+						
+						items : items_set
+					});
+			$('#container').isotope({
+				animationOptions: {
+					duration: 900,
+					queue: false
+				}
+			});
+		});
+		</script>
+	</div>
+</div>    
+
+<!--news start-->
+
+<div id="news">
+	<div class="line4">		
+		<div class="container">
+			<div class="row Ama">
+				<div class="col-md-12">
+					<h3>What&rsquo;s New?</h3>
+					<p>Get the latest news from our blog</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row news">
+
+{% for entry in craft.entries.section('news').limit(4) %}
+{% set image = entry.featuredImage.first() %}
+			<div class="col-md-6  text-left">
+				{% if image %}
+					<a href="{{ entry.url }}"><img class="img-responsive picsGall" src="{{ image.url }}"/></a>
+				{% endif %}
+				<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+				<ul>
+					<li><i class="fa fa-calendar"></i>{{ entry.postDate.format('F d, Y') }}</li>
+					{% if entry.tags %}
+						{% for tag in entry.tags %}<li><a href="#"><i class="fa fa-tag"></i> {{ tag.name }}</a></li>{% endfor %}
+					{% endif %}
+					<!-- <li><a href="#"><i class="fa fa-comments"></i>17 comments</a></li> -->
+				</ul>
+				<p>{{ entry.summary }} <a class="readMore" href="{{ entry.url }}">Read More <i class="fa fa-angle-right"></i></a></p>
+				<hr class="hrNews">
+			</div>
+{% endfor %}
+
+
+		</div>
+	</div>
+			<div class="container">
+				<div class="row cBtn">
+					<div class="col-md-12" style="text-align: center; margin-bottom: -90px; z-index: 10;">
+						<ul class="mNews">
+							<li class="dowbload bhide2"><a href="#"><i class="fa fa-arrow-down"></i>Load More news</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{% endblock %}
