@@ -63,15 +63,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 centPic">
-				{% for image in craft.assets.sourceId('3').limit(1) %}
-				<img class="img-responsive"  src="{{ image.getUrl() }}"/>
-				{% endfor %}
+				{% set fimage = entry.featureImage.first() %}
+				{% if fimage %}
+				   <img class="img-responsive"  src="{{ fimage.url }}"/>
+				{% endif %}
 			</div>
 		</div>
-	</div>   
+	</div>
 </div>
 
-<!--about start-->    
+<!--about start-->
 
 <div id="about">
 	<div class="line2">
