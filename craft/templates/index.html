@@ -55,15 +55,17 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 cBusiness">
-				<h3>The Best Way to Create Business Site &ndash; Attractive One Page</h3>
-				<h4>Discover elegant solution for your online business fast, reliable, affordable.</h4>
+				<h3>{{ entry.mainTitle }}</h3>
+				<h4>{{ entry.mainSubhead }}</h4>
 			</div>
 		</div>
 	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 centPic">
-				<img class="img-responsive"  src="images/bizPic.png"/>
+				{% for image in craft.assets.sourceId('3').limit(1) %}
+				<img class="img-responsive"  src="{{ image.getUrl() }}"/>
+				{% endfor %}
 			</div>
 		</div>
 	</div>   
