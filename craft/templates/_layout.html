@@ -30,7 +30,6 @@
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/font-awesome.css">
 		<link rel='stylesheet' id='camera-css'  href='{{ siteUrl }}css/camera.css' type='text/css' media='all'>
-
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/slicknav.css">
 		<link rel="stylesheet" href="{{ siteUrl }}css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/stylesheet.min.css">
@@ -63,6 +62,24 @@
 				});
 			});
 		</script>
+		<style type="text/css">
+			.fixed-nav {
+				position: fixed;
+				top: 0px;
+				background: rgba(0,0,0,0.8);
+				width: 100%;
+				overflow: visible;
+				max-height: 85px;
+				z-index: 999;
+			}
+			div#menuF {
+				overflow: visible !important;
+			}
+			.logo div a img {
+				position: relative;
+				z-index: 9999;
+			}
+		</style>
 		
 	</head>
 	<body>
@@ -284,20 +301,23 @@
 					$('#counter').text('0');
 					$('#counter1').text('0');
 					$('#counter2').text('0');
+					
 					setInterval(function(){
 						
 						var curval=parseInt($('#counter').text());
 						var curval1=parseInt($('#counter1').text().replace(' ',''));
 						var curval2=parseInt($('#counter2').text());
-						if(curval<={{ entry.metric1 }}){
+						
+						if(curval<{{ entry.metric1 }}){
 							$('#counter').text(curval+2);
 						}
-						if(curval1<={{ entry.metric2 }}){
+						if(curval1<{{ entry.metric2 }}){
 							$('#counter1').text(sdf_FTS((curval1+2),0,' '));
 						}
-						if(curval2<={{ entry.metric3 }}){
+						if(curval2<{{ entry.metric3 }}){
 							$('#counter2').text(curval2+2);
 						}
+						
 					}, 2);
 					
 				}, 500);
@@ -311,28 +331,76 @@
 	</script>
 	
 	<script type="text/javascript">
-    $(document).ready(function(){
+	// Custom Navigation Script to hide and show navbar on scroll
+
+	var header_height = '';
+	var menu_height = '';
+    var scroll_nav = 0;
+    var scroll_trigger = 0;
+
+function scrolling_navbar(){
+	if(scroll_nav == 0 && scroll_trigger == 0){
+		scroll_trigger = 1;
+		$('#menuF').delay(20).addClass('fixed-nav');
+		$('#menuF .logo').css('margin-top',20);
+		$('#menu').css('margin-top',30);
+		$('#menuF').slideDown(200);
+		$('#menuF').animate({top: '0px'}, 500);
+		
+	}
+
+	if(scroll_nav == 2 && scroll_trigger == 1){
+
+		scroll_trigger = 0;
+		scroll_nav = 0;
+		
+		$('#menuF').animate({top: '-150px'}, 500);
+		$('#menuF').fadeOut(200);    		
+		
+		setTimeout(function(){
+			
+			$('#menuF .logo').css('margin-top',60);
+    		$('#menu').css('margin-top',72);
+			$('#menuF').removeClass('fixed-nav');
+			$('#menuF').fadeIn(1000);	
+
+
+		}, 800);
+
+	}
+
+
+}// end function
+    $(window).load(function(){
+    	if($(this).scrollTop() > menu_height){
+    		//$('#menuF').css('top','-150px');
+    		scroll_nav = 0;
+    		scrolling_navbar();
+    	}
        
-        var $menu = $("#menuF");
+        var menu = $("#menuF");
+        menu_height = $("#menuF").height();
+        header_height = $('.headerLine').height();
+        $('.headerLine').css('height',header_height);
+        $('.gallery').css('position', 'absolute');
+        $('.gallery').css('top', '150px');
+        $('#menuF').css('top','-150px');
             
         $(window).scroll(function(){
-            if ( $(this).scrollTop() > 100 && $menu.hasClass("default") ){
-                $menu.fadeOut('fast',function(){
-                    $(this).removeClass("default")
-                           .addClass("fixed transbg")
-                           .fadeIn('fast');
-                });
-            } else if($(this).scrollTop() <= 100 && $menu.hasClass("fixed")) {
-                $menu.fadeOut('fast',function(){
-                    $(this).removeClass("fixed transbg")
-                           .addClass("default")
-                           .fadeIn('fast');
-                });
+            if ( $(this).scrollTop() > menu_height) {
+            	scroll_nav = 0;
+            	scrolling_navbar();
+                
+            } else if($(this).scrollTop() <= menu_height) {
+
+                scroll_nav = 2;
+                scrolling_navbar();
+                
             }
-        });
-	});
-    //jQuery
+        });// end scroll function
+	}); // end load function
 	</script>
+
 	<script>
 		/*menu*/
 		function calculateScroll() {
