@@ -16,7 +16,7 @@ return array(
 	'user' => 'ryan',
 
 	// The database password to connect with.
-	'password' => '2creative',
+	'password' => 'Creative2!',
 
 	// The name of the database to select.
 	'database' => 'savorcraft',
