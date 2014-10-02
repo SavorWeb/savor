@@ -372,6 +372,7 @@ function scrolling_navbar(){
 
 }// end function
     $(window).load(function(){
+    	$('#menuF').css('top','-150px');
     	if($(this).scrollTop() > menu_height){
     		//$('#menuF').css('top','-150px');
     		scroll_nav = 0;
@@ -382,9 +383,10 @@ function scrolling_navbar(){
         menu_height = $("#menuF").height();
         header_height = $('.headerLine').height();
         $('.headerLine').css('height',header_height);
+        
         $('.gallery').css('position', 'absolute');
         $('.gallery').css('top', '150px');
-        $('#menuF').css('top','-150px');
+        
             
         $(window).scroll(function(){
             if ( $(this).scrollTop() > menu_height) {
