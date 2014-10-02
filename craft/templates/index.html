@@ -100,51 +100,78 @@
 		<div class="row">
 			<div class="col-md-12 wwa">
 				<span name="about" ></span>
-				<h3>Who We Are? Meet Our Team!</h3>
-				<h4>We listen, we discuss, we advise and develop. We love to learn and use the latest technologies.</h4>
+				<h3>{{ entry.aboutTitle }}</h3>
+				<h4>{{ entry.aboutBodyText }}</h4>
 			</div>
 		</div>
 	</div>
 	<div class="container">
+		{% set teamPhoto1 = entry.teamPhoto1.first() %}
+		{% set teamPhoto2 = entry.teamPhoto2.first() %}
+		{% set teamPhoto3 = entry.teamPhoto3.first() %}
 		<div class="row team">
 			<div class="col-md-4 b1">
-				<img class="img-responsive" src="images/picTeam/picT1.png">
-				<h4>Tom Simpson</h4>
-				<h5>CEO</h5>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit <br/>quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget.</p>
+				<img class="rounded img-responsive" src="{{ teamPhoto1.url }}">
+				<h4>{{ entry.teamName1 }}</h4>
+				<h5>{{ entry.teamTitle1 }}</h5>
+				<p>{{ entry.teamBody1 }}</p>
 				<ul>
-					<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-					<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter" ></i></a></li>
-					<li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+					{% if entry.team1link1 %}
+						<li><a target="_blank" href="{{ entry.team1link1 }}"><i class="fa {{ entry.team1linkIcon1 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team1link2 %}
+						<li><a target="_blank" href="{{ entry.team1link2 }}"><i class="fa {{ entry.team1linkIcon2 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team1link3 %}
+						<li><a target="_blank" href="{{ entry.team1link3 }}"><i class="fa {{ entry.team1linkIcon3 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team1link4 %}
+						<li><a target="_blank" href="{{ entry.team1link4 }}"><i class="fa {{ entry.team1linkIcon4 }}"></i></a></li>
+					{% endif %}
 				</ul>
 			</div>
 			
 			
 			<div class="col-md-4">
-				<img class="img-responsive" src="images/picTeam/picT2.png">
-				<h4>John Doe</h4>
-				<h5>Project Manager</h5>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit<br/> quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget.</p>
+				<img class="rounded img-responsive" src="{{ teamPhoto2.url }}">
+				<h4>{{ entry.teamName2 }}</h4>
+				<h5>{{ entry.teamTitle2 }}</h5>
+				<p>{{ entry.teamBody2 }}</p>
 				<ul>
-					<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-					<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter" ></i></a></li>
-					<li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+					{% if entry.team2link1 %}
+						<li><a target="_blank" href="{{ entry.team2link1 }}"><i class="fa {{ entry.team2linkIcon1 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team2link2 %}
+						<li><a target="_blank" href="{{ entry.team2link2 }}"><i class="fa {{ entry.team2linkIcon2 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team2link3 %}
+						<li><a target="_blank" href="{{ entry.team2link3 }}"><i class="fa {{ entry.team2linkIcon3 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team2link4 %}
+						<li><a target="_blank" href="{{ entry.team2link4 }}"><i class="fa {{ entry.team2linkIcon4 }}"></i></a></li>
+					{% endif %}
 				</ul>
 			</div>
 
 			
 			<div class="col-md-4 b3">
-				<img class="img-responsive" src="images/picTeam/picT3.png">
-				<h4>Anna White</h4>
-				<h5>Developer</h5>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit<br/> quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget.</p>
+				<img class="rounded img-responsive" src="{{ teamPhoto3.url }}">
+				<h4>{{ entry.teamName3 }}</h4>
+				<h5>{{ entry.teamTitle3 }}</h5>
+				<p>{{ entry.teamBody3 }}</p>
 				<ul>
-					<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-					<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter" ></i></a></li>
-					<li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+					{% if entry.team3link1 %}
+						<li><a target="_blank" href="{{ entry.team3link1 }}"><i class="fa {{ entry.team3linkIcon1 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team3link2 %}
+						<li><a target="_blank" href="{{ entry.team3link2 }}"><i class="fa {{ entry.team3linkIcon2 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team3link3 %}
+						<li><a target="_blank" href="{{ entry.team3link3 }}"><i class="fa {{ entry.team3linkIcon3 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team3link4 %}
+						<li><a target="_blank" href="{{ entry.team3link4 }}"><i class="fa {{ entry.team3linkIcon4 }}"></i></a></li>
+					{% endif %}
 				</ul>
 			</div>
 		</div>
@@ -159,55 +186,55 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 bar">
-				<div class="progB chart" data-percent="64"  data-animate="3500">
+				<div class="progB chart" data-percent="{{ entry.skill1Percent }}"  data-animate="3500">
 					<div class="chart chart-content">
-						<div class="percentage" data-percent="64">
-							<span class="percent">64</span>
+						<div class="percentage" data-percent="{{ entry.skill1Percent }}">
+							<span class="percent">{{ entry.skill1Percent }}</span>
 						</div>
 					</div>
 				</div>
 				<div class="textP">
-					<h3>WordPress</h3>
-					<p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>
+					<h3>{{ entry.skill1 }}</h3>
+					<p>{{ entry.skill1Body }}</p>
 				</div>
 			</div>
 			<div class="col-md-3 bar">
-				<div class="progB chart" data-percent="22"  data-animate="3500">
+				<div class="progB chart" data-percent="{{ entry.skill2Percent }}"  data-animate="3500">
 					<div class="chart chart-content">
-						<div class="percentage" data-percent="22">
-							<span class="percent">22</span>
+						<div class="percentage" data-percent="{{ entry.skill2Percent }}">
+							<span class="percent">{{ entry.skill2Percent }}</span>
 						</div>
 					</div>
 				</div>
 				<div class="textP">
-					<h3>HTML5</h3>
-					<p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>
+					<h3>{{ entry.skill2 }}</h3>
+					<p>{{ entry.skill2Body }}</p>
 				</div>
 			</div>
 			<div class="col-md-3 bar ">
-				<div class="progB chart" data-percent="84"  data-animate="3500">
+				<div class="progB chart" data-percent="{{ entry.skill3Percent }}"  data-animate="3500">
 					<div class="chart chart-content">
-						<div class="percentage" data-percent="22">
-							<span class="percent">84</span>
+						<div class="percentage" data-percent="{{ entry.skill3Percent }}">
+							<span class="percent">{{ entry.skill3Percent }}</span>
 						</div>
 					</div>
 				</div>
 				<div class="textP">
-					<h3>CSS3</h3>
-					<p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>
+					<h3>{{ entry.skill3 }}</h3>
+					<p>{{ entry.skill3Body }}</p>
 				</div>
 			</div>
 			<div class="col-md-3 bar ">
-				<div class="progB chart" data-percent="45"  data-animate="3500">
+				<div class="progB chart" data-percent="{{ entry.skill4Percent }}"  data-animate="3500">
 					<div class="chart chart-content">
-						<div class="percentage" data-percent="45">
-							<span class="percent">45</span>
+						<div class="percentage" data-percent="{{ entry.skill4Percent }}">
+							<span class="percent">{{ entry.skill4Percent }}</span>
 						</div>
 					</div>
 				</div>
 				<div class="textP">
-					<h3>Woocommerce</h3>
-					<p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>
+					<h3>{{ entry.skill4 }}</h3>
+					<p>{{ entry.skill4Body }}</p>
 				</div>
 			</div>
 		</div>
@@ -217,27 +244,30 @@
 	<div class="container">
 		<div class="row aboutUs">
 			<div class="col-md-12 ">
-				<h3>What Our Customers Say About Us?</h3>
+				<h3>{{ entry.theader }}</h3>
 			</div>
 		</div>
 	</div>
 
 	<div style="position: relative;">
-		
+		{% set tphoto1 = entry.tphoto1.first() %}
+		{% set tphoto2 = entry.tphoto2.first() %}
+		{% set tphoto3 = entry.tphoto3.first() %}
+		{% set tphoto4 = entry.tphoto4.first() %}
 		<div class="container">
 			<div class="row about">
 				<div class="col-md-6">
 					<div class="about1">
-						<img class="pic1Ab" src="images/picAbout/aboutP1.png">
-						<h3>Roamin' Pizza Chariot, Liberty Lake, WA</h3>
-						<p>We are so pleased with the work SavorWeb did in developing our website. Their ability to listen to our vision resulted in the website that we wanted. SavorWeb was on schedule and on budget!</p>
+						<img class="pic1Ab" src="{{ tphoto1.url }}">
+						<h3>{{ entry.ttitle1 }}</h3>
+						<p>{{ entry.tbody1 }}</p>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="about2">
-						<img class="pic2Ab" src="images/picAbout/aboutP2.png">
-						<h3>All Pro Painting, Seattle, WA</h3>
-						<p>SavorWeb is knowledgeable, responsive and informative throughout the entire process. Their work is creative, clean and professional. I would definitely recommend SavorWeb for all your website needs.</p>
+						<img class="pic2Ab" src="{{ tphoto2.url }}">
+						<h3>{{ entry.ttitle2 }}</h3>
+						<p>{{ entry.tbody2 }}</p>
 					</div>
 				</div>
 			</div>
@@ -249,16 +279,16 @@
 			<div class="row about">
 				<div class="col-md-6">
 					<div class="about1">
-						<img class="pic1Ab" src="images/picAbout/aboutP3.png">
-						<h3>Tom Sawyer, Company Inc.</h3>
-						<p>A auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor feugiat fermentum quisque eget pharetra, felis et venenatis aliquam, nulla nisi lobortis elit, acnterdum ante feugiat vitae.</p>
+						<img class="pic1Ab" src="{{ tphoto3.url }}">
+						<h3>{{ entry.ttitle3 }}</h3>
+						<p>{{ entry.tbody3 }}</p>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="about2">
-						<img class="pic2Ab" src="images/picAbout/aboutP4.png">
-						<h3>Sarah White, Company Inc.</h3>
-						<p>Ornare nibh a auctor, mauris scelerisque eu proin nec urna nec a quis justo adipiscing auctor ut auctor feugiat fermentum quisque eget pharetra felis et venenatis aliquam, nulla nisi lobortis elit, ac eleifend nisl ante nec lorem. </p>
+						<img class="pic2Ab" src="{{ tphoto4.url }}">
+						<h3>{{ entry.ttitle4 }}</h3>
+						<p>{{ entry.tbody4 }}</p>
 					</div>
 				</div>
 			</div>
@@ -274,8 +304,8 @@
 			<div class="row Ama">
 				<div class="col-md-12">
 					<span name="projects" id="projectss"></span>
-					<h3>Our Amazing Works</h3>
-					<p>Right here we've got something you gonna love</p>
+					<h3>{{ entry.projectHeader }}</h3>
+					<p>{{ entry.projectHeaderBody }}</p>
 				</div>
 			</div>
 		</div>
@@ -372,8 +402,8 @@
 		<div class="container">
 			<div class="row Ama">
 				<div class="col-md-12">
-					<h3>What&rsquo;s New?</h3>
-					<p>Get the latest news from our blog</p>
+					<h3>{{ entry.newsHeader }}</h3>
+					<p>{{ entry.newsHeaderBody }}</p>
 				</div>
 			</div>
 		</div>

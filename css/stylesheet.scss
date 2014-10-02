@@ -450,6 +450,7 @@ body {
   }
   img {
     margin: 0 auto;
+    width: 70%;
   }
   h4 {
     margin-top: 24px;
@@ -877,6 +878,11 @@ body {
   .plS {
     display: block;
   }
+}
+
+.rounded {
+  border-radius: 500em;
+  overflow: hidden;
 }
 
 .view {
