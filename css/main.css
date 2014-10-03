@@ -1,0 +1,61 @@
+/*Nav*/
+div#menuF.fixed-nav {
+	position: fixed;
+	top: 0px;
+	background: rgba(0,0,0,0.8);
+	width: 100%;
+	overflow: visible;
+	max-height: 85px;
+	z-index: 999;
+}
+div#menuF {
+	overflow: visible !important;
+	position: relative;
+	z-index: 9999;
+}
+.logo div a img {
+	position: relative;
+	z-index: 9999;
+}
+
+
+/* Header */
+.headerLine{
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.headerLine img {
+	max-width: 100%;
+	position: absolute;
+	z-index: 9999;
+}
+.headerLine img.mobile{
+	bottom: 33px;
+	right: 37%;
+	z-index: 900;
+	position: absolute;
+}
+.headerLine img.tablet{
+	bottom: 40px;
+	right: 40%;
+	z-index: 800;
+	position: absolute;
+}
+.headerLine img.desktop{
+	bottom: 40px;
+	left: 50%;
+	z-index: 700;
+	position: absolute;
+}
+
+.headerLine:hover {
+	cursor: url('../images/cursor.png'), auto;
+}
+
+
+canvas#heading-canvas {
+	position: absolute;
+	top: 0;
+}
+
