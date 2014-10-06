@@ -1,8 +1,66 @@
 (function() {
-//variables for header animation
-var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+//Global variables for header animation
+var width, height, largeHeader, canvas, ctx, points, target, swpreload, animateHeader = true;
+
+    
+$( document ).ready(function() {
+    //TweenLite.to('body', 0.1, {opacity: 0});
+    //$('#preload-container').css('opacity','0');
+    $('#swpreloader').css('visibility','visible');
+    //TweenMax.to('#swpreloader', 10, {rotationY:360, transformOrigin:"left 50% -200"});
+    swpreload = new TimelineMax({repeat:-1, delay:-1});
+    swpreload.to('#swpreloader', 1, {rotationY:180, transformOrigin:"50% 50%"});
+    swpreload.to('#swpreloader', 1, {rotationX:180, transformOrigin:"50% 50%"});
+});
 
     $(window).load(function() {
+        $('#swpreloader').css('visibility','hidden');
+        $('#swpreloader').css('display','none');
+        swpreload.stop();
+
+        $('#preload-container').css('visibility','visible');
+        //TweenLite.to('#preload-container', 1, {autoAlpha:1});
+
+        var container_width = $('div.container').width();
+        var menu_height = $('#menuF').height();
+        var gallery_height = $('.gallery').height();
+
+        //$('.gallery').css('position','absolute');
+        //$('.gallery').css('top', menu_height);
+        $('.gallery').css('width', container_width);
+        $('.gallery').css('height', gallery_height);
+
+
+
+/*********************************************************
+                Heading Slideshow
+ **********************************************************/
+var master = new TimelineMax({repeat:-1, delay:3}),
+    bg = $("#featureBackground"),
+    centerY = $("#featureAnimation").height() / 2,
+    centerX = $("#featureAnimation").width() / 2,
+    radius = Math.max(centerX, centerY) + 50,
+    _isOldIE = (document.all && !document.addEventListener);
+
+master.add( slide1() );
+//.add( performance(), "-=1")
+
+
+function slide1() {
+  var tl = new TimelineLite(),
+      text = $('#slide1 h2'),
+      img = $('#slide1 img.iMac'),
+      img1 = $('#slide1 img.iPad'),
+      img2 = $('#slide1 img.iPhone');
+
+//tl.fromTo(img, 0.6, {scaleX:0, opacity:0.4, z:0.1}, {autoAlpha:1, scaleX:1, ease:Power2.easeOut});
+tl.fromTo(text, 3, {autoAlpha:0, visibility:"visible", ease:Back.easeOut},{autoAlpha:1, visibility:"visible", ease:Back.easeOut});
+tl.fromTo(img, 0.5, {bottom:'-500px', visibility:"visible", ease:Back.easeOut},{bottom:'20px', visibility:"visible", ease:Back.easeOut}, "-=2");
+tl.fromTo(img1, 0.5, {bottom:'800px', visibility:"visible", ease:Back.easeOut},{bottom:'20px', visibility:"visible"}, "-=1.5");
+tl.fromTo(img2, 0.5, {right:'-400px', visibility:"visible", ease:Back.easeOut},{right:'310px', visibility:"visible"}, "-=1");
+//tl.to(img, 2, {autoAlpha:1, visibility:"visible", ease:Back.easeOut});
+  return tl;
+}
 
 /*********************************************************
                 Navigation Animation
@@ -13,57 +71,51 @@ var width, height, largeHeader, canvas, ctx, points, target, animateHeader = tru
     var scroll_nav = 0;
     var scroll_trigger = 0;
 
+
 function scrolling_navbar(){
 	if(scroll_nav == 0 && scroll_trigger == 0){
 		scroll_trigger = 1;
-		$('#menuF').animate({top: '-170px'}, 10);
 		
-		
+        $('#menuF').addClass('fixed-nav');
+        $('#menuF').css('top',-menu_height);
+        $('.gallery').css('margin-top',menu_height);
 		$('#menuF .logo').css('margin-top',20);
 		$('#menu').css('margin-top',30);
-		//$('#menuF').slideDown(200);
-		
-		setTimeout(function(){
-			$('#menuF').delay(20).addClass('fixed-nav');
-			$('#menuF').animate({top: '0px'}, 500);
 				
+		setTimeout(function(){
+            TweenLite.to('#menuF', 0.5, {top:'0px'});
 		}, 500);
-		
-		
-		//alert('scroll_nav1');
-		
-	}
+	} 
 
 	if(scroll_nav == 2 && scroll_trigger == 1){
 
 		scroll_trigger = 0;
 		scroll_nav = 0;
-		//alert('scroll-nav2');
-		$('#menuF').removeClass('fixed-nav');
-		$('#menuF').animate({top: '-170px'}, 500);
-		//$('#menuF').fadeOut(200);
-		  		
-		
-				
+        TweenLite.to('#menuF', 0.2, {top:'-300px'});
+        $('#menuF').css('background', 'none');
+
+        setTimeout(function(){
+                TweenLite.to('#menuF', 0.3, {top:'0px'});
+        }, 500);
 		setTimeout(function(){
-			
 			$('#menuF .logo').css('margin-top',60);
     		$('#menu').css('margin-top',72);
+            
+            $('#menuF').removeClass('fixed-nav');
+            $('.gallery').css('margin-top','0px');
+          setTimeout(function(){
+                $('#menuF').removeAttr('style');
+            }, 700);
+            
 			
-			//$('#menuF').fadeIn(1000);
-			$('#menuF').animate({top: '0px'}, 500);
-			
-
-		}, 800);
+		}, 1000);
 
 	}
 
 
-}// end function 
+}// end scrolling_navbar
  
-    	//$('#menuF').css('top','-150px');
     	if($(this).scrollTop() > menu_height){
-    		//$('#menuF').css('top','-150px');
     		scroll_nav = 0;
     		scrolling_navbar();
     	}
@@ -72,10 +124,8 @@ function scrolling_navbar(){
         menu_height = $("#menuF").height();
         header_height = $('.headerLine').height();
         $('.headerLine').css('height',header_height);
-        
-        $('.gallery').css('position', 'absolute');
-        $('.gallery').css('top', '150px');
-        
+        //$('.gallery').css('position', 'absolute');
+        //$('.gallery').css('top', '150px');
             
         $(window).scroll(function(){
             if ( $(this).scrollTop() > menu_height) {
@@ -109,17 +159,17 @@ tl.from(".headerLine img.mobile", 0.5, {right:-400}, "feature+=0.5");
                 Header Animation
  **********************************************************/
  
-
         width = $('.headerLine').width();
         height = $('.headerLine').height();
-
-
 
 initHeader();
 initAnimation();
 addListeners();
 
-    });
+
+
+
+    }); // End load function
 
     
 
@@ -133,7 +183,6 @@ addListeners();
         // height = window.innerHeight;
         
         target = {x: width/2, y: height/2};
-
         largeHeader = document.getElementById('main-heading');
         largeHeader.style.height = height+'px';
 
@@ -303,5 +352,7 @@ addListeners();
     function getDistance(p1, p2) {
         return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
     }
-    
+ 
+
+
 })();

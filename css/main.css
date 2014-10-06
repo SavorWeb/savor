@@ -6,7 +6,7 @@ div#menuF.fixed-nav {
 	width: 100%;
 	overflow: visible;
 	max-height: 85px;
-	z-index: 999;
+	z-index: 9999;
 }
 div#menuF {
 	overflow: visible !important;
@@ -25,29 +25,6 @@ div#menuF {
 	overflow: hidden;
 	position: relative;
 }
-.headerLine img {
-	max-width: 100%;
-	position: absolute;
-	z-index: 9999;
-}
-.headerLine img.mobile{
-	bottom: 33px;
-	right: 37%;
-	z-index: 900;
-	position: absolute;
-}
-.headerLine img.tablet{
-	bottom: 40px;
-	right: 40%;
-	z-index: 800;
-	position: absolute;
-}
-.headerLine img.desktop{
-	bottom: 40px;
-	left: 50%;
-	z-index: 700;
-	position: absolute;
-}
 
 .headerLine:hover {
 	cursor: url('../images/cursor.png'), auto;
@@ -57,5 +34,67 @@ div#menuF {
 canvas#heading-canvas {
 	position: absolute;
 	top: 0;
+	left: 0;
 }
+div.entry-text h2 {
+	border-bottom: 4px solid #D12215;
+	font-family: 'Open Sans',sans-serif;
+	font-size: 100px;
+	font-weight: 700;
+	letter-spacing: -2px;
+	color: #fff;
+	visibility: hidden;
+	position: absolute;
+	top: 50px;
+	left: 40px;
+}
+#slide1, #slide2, #slide3 {
+	position: absolute;
+	width: 100%;
+	top:0;
+	left:0;
+	height: 350px;
+	z-index: 90;
+}
+#slide1 img {
+	position: absolute;
+	visibility: hidden;
+}
+#slide1 img.iMac {
+	right: 40px;
+	bottom: 0px;
+}
+#slide1 img.iPad {
+	right: 350px;
+	bottom: 0px;
+}
+#slide1 img.iPhone {
+	right: 100px;
+	bottom: 0px;
+}
+/*Preload*/
+#preload-container {
+	
+	visibility: hidden;
+}
+
+
+
+#swpreloader {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	right:50%;
+	bottom: 50%;
+	background: #333;
+	visibility: hidden;
+}
+
+
+
+
+
+
 
