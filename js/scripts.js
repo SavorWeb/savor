@@ -2,31 +2,76 @@
 //Global variables for header animation
 var width, height, largeHeader, canvas, ctx, points, target, swpreload, animateHeader = true;
 
+var centPic = new TimelineMax({paused:true, delay: 0.2});
+    centPic.set(".centPic img", {visibility:"visible"});
+    centPic.from('.centPic img', 0.5, {top: 400});
+
+
+// Animation Trigger
+var centPic_doc_position = '';
+var centPic_position = '';
+var centPic_trigger = 0;
+
+function centPicViewportTrigger() {
+
+    centPic_doc_position = $(document).scrollTop();
+    centPic_height = $(window).height();
+
+    centPic_doc_bottom_position = centPic_height + centPic_doc_position;
+    centPic_position = $('div.centPic').offset();
+    centPic_height = $('div.centPic').height();
+    centPic_bottom_position = centPic_position.top + centPic_height;
+
+    // console.log(centPic_height + ' centPic_height');
+    // console.log(centPic_position.top + ' centPic_position');
+    // console.log(centPic_doc_position + ' centPic_doc_position');
+    // console.log(centPic_doc_bottom_position + ' centPic_doc_bottom_position');
+    // console.log(centPic_bottom_position + ' centPic_bottom_position');
+
+    if(centPic_bottom_position < centPic_doc_bottom_position && centPic_position.top > centPic_doc_position && centPic_trigger == 0){
+        centPic.play();
+        centPic_trigger = 1;
+    }
+}
+
+
     
 $( document ).ready(function() {
-    //TweenLite.to('body', 0.1, {opacity: 0});
-    //$('#preload-container').css('opacity','0');
+    var window_height = $(window).height();
+    var window_width = $(window).width();
+    $('body').css('height',window_height);
+    $('body').css('width',window_width);
+    $('body').css('overflow','hidden');
+    $('#preload-container').css('height',window_height);
+    $('#preload-container').css('overflow','hidden');
     $('#swpreloader').css('visibility','visible');
-    //TweenMax.to('#swpreloader', 10, {rotationY:360, transformOrigin:"left 50% -200"});
+    
     swpreload = new TimelineMax({repeat:-1, delay:-1});
     swpreload.to('#swpreloader', 1, {rotationY:180, transformOrigin:"50% 50%"});
     swpreload.to('#swpreloader', 1, {rotationX:180, transformOrigin:"50% 50%"});
 });
 
+    
     $(window).load(function() {
+$('#menuF').addClass('nav-hover');
+        $('#preload-container').removeAttr('style');
+        $('body').removeAttr('style');
         $('#swpreloader').css('visibility','hidden');
         $('#swpreloader').css('display','none');
         swpreload.stop();
 
         $('#preload-container').css('visibility','visible');
-        //TweenLite.to('#preload-container', 1, {autoAlpha:1});
-
+        
         var container_width = $('div.container').width();
+        var menu_has_class = $('#menuF').hasClass('fixed-nav');
+
+        if(menu_has_class){
+            alert('Working');
+        }
+
         var menu_height = $('#menuF').height();
         var gallery_height = $('.gallery').height();
 
-        //$('.gallery').css('position','absolute');
-        //$('.gallery').css('top', menu_height);
         $('.gallery').css('width', container_width);
         $('.gallery').css('height', gallery_height);
 
@@ -35,11 +80,9 @@ $( document ).ready(function() {
 /*********************************************************
                 Heading Slideshow
  **********************************************************/
-<<<<<<< HEAD
-var master = new TimelineMax({repeat:-1,delay: 3}),
-=======
+
 var master = new TimelineMax({repeat:-1,delay: 2}),
->>>>>>> origin/master
+
     bg = $("#featureBackground"),
     centerY = $("#featureAnimation").height() / 2,
     centerX = $("#featureAnimation").width() / 2,
@@ -48,47 +91,30 @@ var master = new TimelineMax({repeat:-1,delay: 2}),
 
 master.add( slide1() );
 master.add( slide2() );
-//.add( performance(), "-=1")
+master.add( slide3() );
 
 
 function slide1() {
-  var tl = new TimelineLite(),
-      text = $('#slide1 h2'),
-      img = $('#slide1 img.iMac'),
-      img1 = $('#slide1 img.iPad'),
-      img2 = $('#slide1 img.iPhone');
-
-//tl.fromTo(img, 0.6, {scaleX:0, opacity:0.4, z:0.1}, {autoAlpha:1, scaleX:1, ease:Power2.easeOut});
-tl.fromTo(text, 1, {autoAlpha:0, visibility:"visible"},{autoAlpha:1, visibility:"visible"});
-tl.fromTo(img, 0.5, {bottom:'-500px', visibility:"visible", ease:Back.easeOut},{bottom:'20px', visibility:"visible", ease:Back.easeOut}, "-=2");
-tl.fromTo(img1, 0.5, {bottom:'800px', visibility:"visible", ease:Back.easeOut},{bottom:'20px', visibility:"visible"}, "-=1.5");
-tl.fromTo(img2, 0.5, {right:'-400px', visibility:"visible", ease:Back.easeOut},{right:'310px', visibility:"visible"}, "-=1");
-tl.to([text,img,img1,img2], 4, {left: '-1000px'});
-//tl.to('#slide1', 0.5, {right:'-400px', visibility:"visible", ease:Back.easeOut});
-
-  return tl;
+    var tl = new TimelineLite(),
+    text = $('#slide1 h2');
+    tl.fromTo(text, 1, {autoAlpha:0, visibility:"visible"},{autoAlpha:1, visibility:"visible"});
+    tl.to(text, 3, {left: '-1000px'},'+=3');
+    return tl;
 }
 
 function slide2() {
-  var tl = new TimelineLite(),
-      text = $('#slide2 h2'),
-      img = $('#slide2 img.iMac'),
-      img1 = $('#slide2 img.iPad'),
-      img2 = $('#slide2 img.iPhone');
-
-//tl.fromTo(img, 0.6, {scaleX:0, opacity:0.4, z:0.1}, {autoAlpha:1, scaleX:1, ease:Power2.easeOut});
-tl.fromTo(text, 1, {autoAlpha:0, visibility:"visible"},{autoAlpha:1, visibility:"visible"});
-tl.fromTo(img, 1, {bottom:'-500px', visibility:"visible", ease:Back.easeOut},{bottom:'20px', visibility:"visible", ease:Back.easeOut}, "-=2");
-tl.fromTo(img1, 1, {bottom:'800px', visibility:"visible", ease:Back.easeOut},{bottom:'20px', visibility:"visible"}, "-=1.5");
-tl.fromTo(img2, 1, {right:'-400px', visibility:"visible", ease:Back.easeOut},{right:'310px', visibility:"visible"}, "-=1");
-<<<<<<< HEAD
-tl.to([text,img,img1,img2], 4, {left: '2000px'});
-=======
-tl.to([text,img,img1,img2], 4, {bottom: '1000px'});
->>>>>>> origin/master
-//tl.to('#slide1', 0.5, {right:'-400px', visibility:"visible", ease:Back.easeOut});
-
-  return tl;
+    var tl = new TimelineLite(),
+    text = $('#slide2 h2');
+    tl.fromTo(text, 1, {autoAlpha:0, visibility:"visible"},{autoAlpha:1, visibility:"visible"});
+    tl.to(text, 3, {bottom: '1000px'},'+=3');
+    return tl;
+}
+function slide3() {
+    var tl = new TimelineLite(),
+    text = $('#slide3 h2');
+    tl.fromTo(text, 1, {autoAlpha:0, visibility:"visible"},{autoAlpha:1, visibility:"visible"});
+    tl.to(text, 3, {bottom: '1000px'},'+=3');
+    return tl;
 }
 /*********************************************************
                 Navigation Animation
@@ -105,6 +131,7 @@ function scrolling_navbar(){
 		scroll_trigger = 1;
 		
         $('#menuF').addClass('fixed-nav');
+        $('#menuF').removeClass('nav-hover');
         $('#menuF').css('top',-menu_height);
         $('.gallery').css('margin-top',menu_height);
 		$('#menuF .logo').css('margin-top',20);
@@ -121,6 +148,7 @@ function scrolling_navbar(){
 		scroll_nav = 0;
         TweenLite.to('#menuF', 0.2, {top:'-300px'});
         $('#menuF').css('background', 'none');
+        $('#menuF').addClass('nav-hover');
 
         setTimeout(function(){
                 TweenLite.to('#menuF', 0.3, {top:'0px'});
@@ -152,9 +180,7 @@ function scrolling_navbar(){
         menu_height = $("#menuF").height();
         header_height = $('.headerLine').height();
         $('.headerLine').css('height',header_height);
-        //$('.gallery').css('position', 'absolute');
-        //$('.gallery').css('top', '150px');
-            
+                    
         $(window).scroll(function(){
             if ( $(this).scrollTop() > menu_height) {
             	scroll_nav = 0;
@@ -169,19 +195,6 @@ function scrolling_navbar(){
         });// end scroll function
 
  
- 
-
-/*********************************************************
-                Header Animation
- **********************************************************/
-
-
-var tl = new TimelineLite();
-tl.set(".headerLine", {visibility:"visible"});
-tl.from(".headerLine img.desktop", 0.5, {bottom:-1000}, "feature");
-tl.from(".headerLine img.tablet", 0.5, {bottom:1000}, "feature+=0.25");
-tl.from(".headerLine img.mobile", 0.5, {right:-400}, "feature+=0.5"); 
-
 
  /*********************************************************
                 Header Animation
@@ -200,37 +213,58 @@ addListeners();
                Portfolio Hover
  **********************************************************/
 var gallery_objects = $('.plS');
-//console.log(gallery_objects);
- $(gallery_objects).each(function(){
-	 //console.log(this);
+
+$(gallery_objects).each(function(){
+	
     var overlay = $(this).children('img');
     var image = overlay.attr('src');
-    console.log(image);
     
- });
- 
+    
+});
+
 
  
  $( "a.plS" ).hover(
   function() {
   	var index = $(this);
   	var width = index.width();
-  	var height = index.height();
-  	//console.log(width);
-  	//console.log(height);
+  	var height = index.height();  	
 
     var overlay = $(this).children('.portfolio-magic');
     $(overlay).css('height', height);
     $(overlay).css('width', width);
     
-	 //console.log(index);
+	 
  	$(overlay).fadeIn(200); 
   }, function() {
     var overlay = $(this).children('.portfolio-magic');
-	 //console.log(index);
+	 
  	$(overlay).fadeOut(200); 
   }
 );
+
+
+
+/************************************************************************
+                    centPic Animation
+***************************************************************************/
+    
+
+
+
+    $(window).bind("scroll", function(event) {
+
+        var centPic_message = "Not in Viewport";
+
+        $(".centPic:in-viewport").each(function() {
+          centPic_message = 'In Viewport';
+        });
+        
+        if (centPic_message == 'In Viewport') { centPicViewportTrigger(); }
+
+    });
+    
+
 
 
 
@@ -239,8 +273,6 @@ var gallery_objects = $('.plS');
     
 
     // Main
-    
-
 
     function initHeader() {
 
@@ -310,7 +342,7 @@ var gallery_objects = $('.plS');
             window.addEventListener('mousemove', mouseMove);
         }
         window.addEventListener('scroll', scrollCheck);
-        window.addEventListener('resize', resize);
+        //window.addEventListener('resize', resize);
     }
 
     function mouseMove(e) {
@@ -421,3 +453,29 @@ var gallery_objects = $('.plS');
 
 
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

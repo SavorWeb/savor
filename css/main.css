@@ -28,7 +28,7 @@ div#menuF {
 	position: relative;
 }
 
-.headerLine:hover {
+.headerline:hover, .gallery:hover, .nav-hover:hover {
 	cursor: url('../images/cursor.png'), auto;
 }
 
@@ -36,6 +36,7 @@ canvas#heading-canvas {
 	position: absolute;
 	top: 0;
 	left: 0;
+	cursor: url('../images/cursor.png'), auto;
 }
 div.entry-text h2 {
 	font-family: 'Open Sans',sans-serif;
@@ -45,15 +46,10 @@ div.entry-text h2 {
 	color: #fff;
 	visibility: hidden;
 	position: absolute;
-<<<<<<< HEAD
 	bottom: 150px;
 	left: 40px;
-=======
-	bottom: 200px;
-	right: 575px;
->>>>>>> origin/master
+	border-bottom: 5px solid #f00;
 }
-
 
 #slide1, #slide2, #slide3 {
 	position: absolute;
@@ -63,68 +59,7 @@ div.entry-text h2 {
 	height: 350px;
 	z-index: 90;
 }
-#slide1 img {
-	position: absolute;
-	visibility: hidden;
-}
-#slide1 img.iMac {
-	right: 40px;
-	bottom: 0px;
-}
-#slide1 img.iPad {
-	right: 350px;
-	bottom: 0px;
-}
-#slide1 img.iPhone {
-	right: 100px;
-	bottom: 0px;
-}
-<<<<<<< HEAD
-#slide1 h2 {
-	width: 500px;
-}
 
-#slide2 img {
-	position: absolute;
-	visibility: hidden;
-}
-#slide2 img.iMac {
-	right: 40px;
-	bottom: 0px;
-}
-#slide2 img.iPad {
-	right: 350px;
-	bottom: 0px;
-}
-#slide2 img.iPhone {
-	right: 100px;
-	bottom: 0px;
-}
-#slide2 h2 {
-	width: 600px;
-}
-/*Preload*/
-#preload-container {
-	
-=======
-
-#slide2 img {
-	position: absolute;
->>>>>>> origin/master
-	visibility: hidden;
-}
-#slide2 img.iMac {
-	right: 40px;
-	bottom: 0px;
-}
-#slide2 img.iPad {
-	right: 350px;
-	bottom: 0px;
-}
-#slide2 img.iPhone {
-	right: 100px;
-	bottom: 0px;
-}
 
 /*************************************************************** 
 				Portfolio
@@ -163,8 +98,16 @@ div.entry-text h2 {
 }
 
 
+/*************************************************************** 
+				centPic Animation
+***************************************************************/
+div.centPic {
+	overflow: hidden;
+}
+.centPic img {
+	position: relative;
+	z-index: 300;
 
+}
 
-
-
-
+.Fre
