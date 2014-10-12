@@ -35,7 +35,7 @@ $( document ).ready(function() {
 /*********************************************************
                 Heading Slideshow
  **********************************************************/
-var master = new TimelineMax({repeat:-1}),
+var master = new TimelineMax({repeat:-1,delay: 3}),
     bg = $("#featureBackground"),
     centerY = $("#featureAnimation").height() / 2,
     centerX = $("#featureAnimation").width() / 2,
@@ -43,6 +43,7 @@ var master = new TimelineMax({repeat:-1}),
     _isOldIE = (document.all && !document.addEventListener);
 
 master.add( slide1() );
+master.add( slide2() );
 //.add( performance(), "-=1")
 
 
@@ -64,6 +65,23 @@ tl.to([text,img,img1,img2], 4, {left: '-1000px'});
   return tl;
 }
 
+function slide2() {
+  var tl = new TimelineLite(),
+      text = $('#slide2 h2'),
+      img = $('#slide2 img.iMac'),
+      img1 = $('#slide2 img.iPad'),
+      img2 = $('#slide2 img.iPhone');
+
+//tl.fromTo(img, 0.6, {scaleX:0, opacity:0.4, z:0.1}, {autoAlpha:1, scaleX:1, ease:Power2.easeOut});
+tl.fromTo(text, 1, {autoAlpha:0, visibility:"visible"},{autoAlpha:1, visibility:"visible"});
+tl.fromTo(img, 1, {bottom:'-500px', visibility:"visible", ease:Back.easeOut},{bottom:'20px', visibility:"visible", ease:Back.easeOut}, "-=2");
+tl.fromTo(img1, 1, {bottom:'800px', visibility:"visible", ease:Back.easeOut},{bottom:'20px', visibility:"visible"}, "-=1.5");
+tl.fromTo(img2, 1, {right:'-400px', visibility:"visible", ease:Back.easeOut},{right:'310px', visibility:"visible"}, "-=1");
+tl.to([text,img,img1,img2], 4, {left: '2000px'});
+//tl.to('#slide1', 0.5, {right:'-400px', visibility:"visible", ease:Back.easeOut});
+
+  return tl;
+}
 /*********************************************************
                 Navigation Animation
  **********************************************************/

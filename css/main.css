@@ -45,9 +45,11 @@ div.entry-text h2 {
 	color: #fff;
 	visibility: hidden;
 	position: absolute;
-	top: 50px;
+	bottom: 150px;
 	left: 40px;
 }
+
+
 #slide1, #slide2, #slide3 {
 	position: absolute;
 	width: 100%;
@@ -71,6 +73,29 @@ div.entry-text h2 {
 #slide1 img.iPhone {
 	right: 100px;
 	bottom: 0px;
+}
+#slide1 h2 {
+	width: 500px;
+}
+
+#slide2 img {
+	position: absolute;
+	visibility: hidden;
+}
+#slide2 img.iMac {
+	right: 40px;
+	bottom: 0px;
+}
+#slide2 img.iPad {
+	right: 350px;
+	bottom: 0px;
+}
+#slide2 img.iPhone {
+	right: 100px;
+	bottom: 0px;
+}
+#slide2 h2 {
+	width: 600px;
 }
 /*Preload*/
 #preload-container {
