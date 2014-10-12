@@ -35,7 +35,11 @@ $( document ).ready(function() {
 /*********************************************************
                 Heading Slideshow
  **********************************************************/
+<<<<<<< HEAD
 var master = new TimelineMax({repeat:-1,delay: 3}),
+=======
+var master = new TimelineMax({repeat:-1,delay: 2}),
+>>>>>>> origin/master
     bg = $("#featureBackground"),
     centerY = $("#featureAnimation").height() / 2,
     centerX = $("#featureAnimation").width() / 2,
@@ -77,7 +81,11 @@ tl.fromTo(text, 1, {autoAlpha:0, visibility:"visible"},{autoAlpha:1, visibility:
 tl.fromTo(img, 1, {bottom:'-500px', visibility:"visible", ease:Back.easeOut},{bottom:'20px', visibility:"visible", ease:Back.easeOut}, "-=2");
 tl.fromTo(img1, 1, {bottom:'800px', visibility:"visible", ease:Back.easeOut},{bottom:'20px', visibility:"visible"}, "-=1.5");
 tl.fromTo(img2, 1, {right:'-400px', visibility:"visible", ease:Back.easeOut},{right:'310px', visibility:"visible"}, "-=1");
+<<<<<<< HEAD
 tl.to([text,img,img1,img2], 4, {left: '2000px'});
+=======
+tl.to([text,img,img1,img2], 4, {bottom: '1000px'});
+>>>>>>> origin/master
 //tl.to('#slide1', 0.5, {right:'-400px', visibility:"visible", ease:Back.easeOut});
 
   return tl;
@@ -186,6 +194,43 @@ initHeader();
 initAnimation();
 addListeners();
 
+
+
+ /*********************************************************
+               Portfolio Hover
+ **********************************************************/
+var gallery_objects = $('.plS');
+//console.log(gallery_objects);
+ $(gallery_objects).each(function(){
+	 //console.log(this);
+    var overlay = $(this).children('img');
+    var image = overlay.attr('src');
+    console.log(image);
+    
+ });
+ 
+
+ 
+ $( "a.plS" ).hover(
+  function() {
+  	var index = $(this);
+  	var width = index.width();
+  	var height = index.height();
+  	//console.log(width);
+  	//console.log(height);
+
+    var overlay = $(this).children('.portfolio-magic');
+    $(overlay).css('height', height);
+    $(overlay).css('width', width);
+    
+	 //console.log(index);
+ 	$(overlay).fadeIn(200); 
+  }, function() {
+    var overlay = $(this).children('.portfolio-magic');
+	 //console.log(index);
+ 	$(overlay).fadeOut(200); 
+  }
+);
 
 
 

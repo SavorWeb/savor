@@ -8,18 +8,6 @@
  # See Twig’s Template Inheritance documentation for more details:
  # http://twig.sensiolabs.org/doc/templates.html#template-inheritance
  #}
-<!-- 
-
-			<h1><a href="{{ siteUrl }}">{{ siteName }}</a></h1>
-
-			<nav>
-				<ul>
-					<li><a href="{{ url('news') }}" {% if craft.request.firstSegment == 'news' %}class="active"{% endif %}>News</a></li>
-				</ul>
-			</nav>
- -->
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,7 +19,7 @@
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/font-awesome.css">
 		<!--<link rel='stylesheet' id='camera-css'  href='{{ siteUrl }}css/camera.css' type='text/css' media='all'>-->
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/slicknav.css">
-		<link rel="stylesheet" href="{{ siteUrl }}css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+		<link rel="stylesheet" href="{{ siteUrl }}css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" />
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/stylesheet.min.css">
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/main.css">
 		
@@ -86,7 +74,7 @@
 					</div>
 				</div>
 				<div class="col-md-8">
-					<div class="navmenu"style="text-align: center;">
+					<div class="navmenu" style="text-align:center;">
 						<ul id="menu">
 							<li class="active" ><a href="#home">Home</a></li>
 							<li><a href="#about">About</a></li>
@@ -106,7 +94,6 @@
 			<div class="row wrap">
 				<div class="col-md-12 gallery"> 
 						<div id="gallery_wrapper">
-							
 								<div id="slide1" class="entry-text">
 									<h2>{{ entry.rotatorLine1 }}</h2>
 									<img class="iMac" src="{{ siteUrl }}images/imac.png" alt="iMac Slideshow Image">

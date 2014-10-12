@@ -19,7 +19,9 @@ div#menuF {
 }
 
 
-/* Header */
+/*************************************************************** 
+				Header / Slideshow
+***************************************************************/
 .headerLine{
 	width: 100%;
 	overflow: hidden;
@@ -30,14 +32,12 @@ div#menuF {
 	cursor: url('../images/cursor.png'), auto;
 }
 
-
 canvas#heading-canvas {
 	position: absolute;
 	top: 0;
 	left: 0;
 }
 div.entry-text h2 {
-	border-bottom: 4px solid #D12215;
 	font-family: 'Open Sans',sans-serif;
 	font-size: 100px;
 	font-weight: 700;
@@ -45,8 +45,13 @@ div.entry-text h2 {
 	color: #fff;
 	visibility: hidden;
 	position: absolute;
+<<<<<<< HEAD
 	bottom: 150px;
 	left: 40px;
+=======
+	bottom: 200px;
+	right: 575px;
+>>>>>>> origin/master
 }
 
 
@@ -74,6 +79,7 @@ div.entry-text h2 {
 	right: 100px;
 	bottom: 0px;
 }
+<<<<<<< HEAD
 #slide1 h2 {
 	width: 500px;
 }
@@ -100,10 +106,46 @@ div.entry-text h2 {
 /*Preload*/
 #preload-container {
 	
+=======
+
+#slide2 img {
+	position: absolute;
+>>>>>>> origin/master
 	visibility: hidden;
 }
+#slide2 img.iMac {
+	right: 40px;
+	bottom: 0px;
+}
+#slide2 img.iPad {
+	right: 350px;
+	bottom: 0px;
+}
+#slide2 img.iPhone {
+	right: 100px;
+	bottom: 0px;
+}
 
+/*************************************************************** 
+				Portfolio
+***************************************************************/
 
+.pretty .gall a:hover .img-responsive{
+	background: #000;
+	opacity: 0.4;
+}
+.portfolio-magic {
+	background: rgba(0,0,0,0.6);
+	position: absolute;
+	top: 0;
+	left: 15px;
+	right: 15px;
+	display: none;
+	
+}
+/*************************************************************** 
+				Prealoader
+***************************************************************/
 
 #swpreloader {
 	height: 50px;
@@ -114,6 +156,9 @@ div.entry-text h2 {
 	right:50%;
 	bottom: 50%;
 	background: #333;
+	visibility: hidden;
+}
+#preload-container {	
 	visibility: hidden;
 }
 
