@@ -27,6 +27,9 @@ div#menuF {
 	overflow: hidden;
 	position: relative;
 }
+.gallery {
+	height: 200px;
+}
 
 .headerline:hover, .gallery:hover, .nav-hover:hover {
 	cursor: url('../images/cursor.png'), auto;
@@ -40,13 +43,13 @@ canvas#heading-canvas {
 }
 div.entry-text h2 {
 	font-family: 'Open Sans',sans-serif;
-	font-size: 100px;
+	font-size: 58px;
 	font-weight: 700;
 	letter-spacing: -2px;
 	color: #fff;
 	visibility: hidden;
 	position: absolute;
-	bottom: 150px;
+	bottom: 300px;
 	left: 40px;
 	border-bottom: 5px solid #f00;
 }
@@ -110,4 +113,25 @@ div.centPic {
 
 }
 
-.Fre
+
+
+/*************************************************************** 
+				centPic Animation
+***************************************************************/
+@media (min-width: 520px) {
+	
+	div.entry-text h2 {
+		font-size: 72px;
+	}
+}
+@media (min-width: 960px) {
+	.gallery {
+		height: 400px;
+	}
+	div.entry-text h2 {
+		font-size: 108px;
+		bottom: 80px;
+		left: 40px;
+		border-bottom: 5px solid #f00;
+	}
+}
