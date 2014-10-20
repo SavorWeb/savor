@@ -12,6 +12,7 @@ var centPic_doc_position = '';
 var centPic_position = '';
 var centPic_trigger = 0;
 var centPic_width = '';
+var window_width = '';
 
 function centPicViewportTrigger() {
 
@@ -40,7 +41,7 @@ if(centPic_width > 960){
     
 $( document ).ready(function() {
     var window_height = $(window).height();
-    var window_width = $(window).width();
+    window_width = $(window).width();
     
     if (window_width <= 960){
         centPic.play();
@@ -133,6 +134,7 @@ function slide3() {
 
 
 function scrolling_navbar(){
+
     if(window_width > 960){
         if(scroll_nav == 0 && scroll_trigger == 0){
     		scroll_trigger = 1;
@@ -208,10 +210,11 @@ function scrolling_navbar(){
  
         width = $('.headerLine').width();
         height = $('.headerLine').height();
-
+ if(window_width > 960){ 
 initHeader();
 initAnimation();
 addListeners();
+ }
 
 
 
