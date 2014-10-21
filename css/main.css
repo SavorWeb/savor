@@ -114,8 +114,6 @@ p.portfolio-title {
 ***************************************************************/
 div.centPic {
 	overflow: hidden;
-	position: relative;
-	z-index: 400;
 }
 .centPic img {
 	position: relative;
@@ -143,42 +141,5 @@ div.centPic {
 		bottom: 80px;
 		left: 40px;
 		border-bottom: 5px solid #f00;
-	}
-}
-
-/*************************************************************** 
-				Various other overrides
-***************************************************************/
-
-div#about {
-	margin-top: -40px;
-	position: relative;
-	z-index: 100;
-}
-
-div#project {
-	margin-top: -90px;
-	position: relative;
-	z-index: 80;
-}
-div#news {
-	position: relative;
-	z-index: 70;
-	margin-top: -80px;
-	}
-div#project {
-	margin-top: -90px;
-	position: relative;
-	z-index: 90;
-}
-div#contact {
-	position: relative;
-	z-index: 60;
-	margin-top: -80px;
-}
-
-@media (min-width: 960px;) {
-	.Ama {
-		margin-bottom: 73px;
 	}
 }
