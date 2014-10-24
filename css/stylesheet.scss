@@ -17,7 +17,7 @@ body {
   width: 100%;
   overflow: hidden;
   height: 100%;
-  background: url(../images/bgTop.jpg) center center no-repeat;
+  background: url(../images/bgTop.jpg) center center no-repeat fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -137,6 +137,10 @@ body {
 }
 
 .slicknav_menu {
+  display: none;
+}
+
+#news {
   display: none;
 }
 
@@ -312,7 +316,7 @@ body {
   width: 100%;
   overflow: hidden;
   height: 100%;
-  background: url(../images/bgTop.jpg) center center no-repeat;
+  background: url(../images/bgTop.jpg) center center no-repeat fixed;
   /*background:url(../images/line2.png) center center no-repeat;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -363,7 +367,7 @@ body {
   padding: 26px;
   font-size: 24px;
   color: #fff;
-  font-family: FontAwesome;
+  font-family: 'FontAwesome';
   text-align: center;
 }
 
@@ -394,7 +398,7 @@ body {
   padding: 26px;
   font-size: 24px;
   color: #fff;
-  font-family: FontAwesome;
+  font-family: 'FontAwesome';
   text-align: center;
 }
 
@@ -417,7 +421,7 @@ body {
   padding: 26px;
   font-size: 24px;
   color: #fff;
-  font-family: FontAwesome;
+  font-family: 'FontAwesome';
   text-align: center;
 }
 
@@ -483,7 +487,7 @@ body {
       padding: 0 10px;
       float: left;
       list-style: none;
-      font-family: FontAwesome;
+      font-family: 'FontAwesome';
       font-size: 15px;
       a {
         color: #2f2f2f;
@@ -676,7 +680,7 @@ body {
   width: 100%;
   overflow: hidden;
   height: 100%;
-  background: url(../images/bgTop.jpg) center center no-repeat;
+  background: url(../images/bgTop.jpg) center center no-repeat fixed;
   /*background: url(../images/line3Bg.jpg) center center no-repeat;*/
   /*background:#3f2d28;*/
   -webkit-background-size: cover;
@@ -924,7 +928,7 @@ body {
       margin-right: 5px;
       font-style: normal;
       display: inline-block;
-      font-family: FontAwesome;
+      font-family: 'FontAwesome';
       font-size: 13px;
       color: #a9a9a9;
     }
@@ -1005,7 +1009,7 @@ body {
   width: 100%;
   overflow: hidden;
   height: 100%;
-  background: url(../images/bgTop.jpg) center center no-repeat;
+  background: url(../images/bgTop.jpg) center center no-repeat fixed;
   /*background: url(../images/line4.png) center center no-repeat;*/
   /*background:#3f2d28;*/
   -webkit-background-size: cover;
@@ -1168,7 +1172,7 @@ body {
   width: 100%;
   overflow: hidden;
   height: 100%;
-  background: url(../images/bgTop.jpg) center center no-repeat;
+  background: url(../images/bgTop.jpg) center center no-repeat fixed;
   /*background: url(../images/line5Bg.jpg) center center no-repeat;	*/
   /*background:#3f2d28;*/
   -webkit-background-size: cover;
@@ -1380,7 +1384,7 @@ textarea {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    border-bottom: 150px solid white;
+    border-bottom: 150px solid black;
     border-left: 3000px solid transparent;
   }
   &:before {
@@ -1785,13 +1789,13 @@ textarea {
   width: 100%;
   overflow: hidden;
   height: 100%;
-  background: url(../images/bgFooter.png) no-repeat;
-  background: #101010;
+  //background: url(../images/bgFooter.png) no-repeat;
+  background: #000;
 }
 
 .downLine {
   margin-bottom: 35px;
-  margin-top: 127px;
+  //margin-top: 37px;
   p {
     font-size: 13px;
     font-family: 'Roboto', 'sans-serif';
@@ -1811,7 +1815,7 @@ textarea {
     left: 0;
     width: 100%;
     height: 178px;
-    background: url(../images/bgBeforFooter.png) center center no-repeat;
+    //background: url(../images/bgBeforFooter.png) center center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

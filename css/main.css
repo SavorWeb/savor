@@ -129,7 +129,7 @@ div.centPic {
 @media (min-width: 520px) {
 	
 	div.entry-text h2 {
-		font-size: 72px;
+		font-size: 50px;
 	}
 }
 @media (min-width: 960px) {
@@ -137,7 +137,7 @@ div.centPic {
 		height: 400px;
 	}
 	div.entry-text h2 {
-		font-size: 108px;
+		font-size: 80px;
 		bottom: 80px;
 		left: 40px;
 		border-bottom: 5px solid #f00;
