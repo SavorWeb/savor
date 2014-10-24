@@ -4,7 +4,7 @@ div#menuF.fixed-nav {
 	top: 0px;
 	background-image: url('../images/polynav.png');
 	background-repeat: no-repeat;
-	background-position-x: 80px;
+	background-position-x: center;
 	width: 100%;
 	overflow: visible;
 	max-height: 160px;
