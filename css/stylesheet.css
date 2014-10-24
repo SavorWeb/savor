@@ -263,6 +263,14 @@ body {
   .featurePic .imac {
     max-width: 550px; }
 
+.services {
+  margin-top: 55px;
+  margin-bottom: 15px;
+  font-weight: lighter;
+  line-height: 24px; }
+  .services .serv-item {
+    margin-bottom: 25px; }
+
 /*.line2{
 	height:496px;
 	background:url(../images/line2.png)no-repeat;
