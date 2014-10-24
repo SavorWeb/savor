@@ -23,7 +23,7 @@ div#menuF .row {
 	z-index: 9999;
 }
 
-
+ 
 /*************************************************************** 
 				Header / Slideshow
 ***************************************************************/
@@ -46,29 +46,27 @@ canvas#heading-canvas {
 	left: 0;
 	cursor: url('../images/cursor.png'), auto;
 }
-div.entry-text h2 {
+div.entry-text p {
 	font-family: 'Open Sans',sans-serif;
-	font-size: 58px;
+	font-size: 40px;
 	font-weight: 700;
 	letter-spacing: -2px;
 	color: #fff;
-	visibility: hidden;
-	position: absolute;
-	bottom: 300px;
-	left: 40px;
-	border-bottom: 5px solid #f00;
+	width: auto;
+	position: relative;
+
 }
 
 #slide1, #slide2, #slide3 {
 	position: absolute;
-	width: 100%;
-	top:0;
+	top:100px;
 	left:0;
-	height: 350px;
 	z-index: 90;
 }
 
-
+#slide2, #slide3 {
+	display: none;
+}
 /*************************************************************** 
 				Portfolio
 ***************************************************************/

@@ -96,28 +96,33 @@ var master = new TimelineMax({repeat:-1,delay: 2}),
     _isOldIE = (document.all && !document.addEventListener);
 
 master.add( slide1() );
-master.add( slide2() );
-master.add( slide3() );
+//master.add( slide2() );
+//master.add( slide3() );
 
 
 function slide1() {
     var tl = new TimelineLite(),
-    text = $('#slide1 h2');
-    tl.fromTo(text, 1, {autoAlpha:0, visibility:"visible"},{autoAlpha:1, visibility:"visible"});
-    tl.to(text, 3, {left: '-1000px'},'+=3');
+    text = $('#slide1 p');
+    //tl.staggerFrom(text, 2, {scale:0.5, opacity:0, delay:0.5, ease:Elastic.easeOut, force3D:true}, 0.2);
+    //tl.to(text, 0.5, {autoAlpha: 0});
+    tl.staggerFrom(text, 1.5,
+       {left: -1000, opacity:0, delay:1}
+,0.5);
+    //tl.fromTo(text, 1, {autoAlpha:0, visibility:"visible", left: -1000},{autoAlpha:1, visibility:"visible", left: 200});
+    tl.staggerTo(text, 1.5, {left: '-1000px'},'+=3');
     return tl;
 }
 
 function slide2() {
     var tl = new TimelineLite(),
-    text = $('#slide2 h2');
+    text = $('#slide2 p');
     tl.fromTo(text, 1, {autoAlpha:0, visibility:"visible"},{autoAlpha:1, visibility:"visible"});
     tl.to(text, 3, {bottom: '1000px'},'+=3');
     return tl;
 }
 function slide3() {
     var tl = new TimelineLite(),
-    text = $('#slide3 h2');
+    text = $('#slide3 p');
     tl.fromTo(text, 1, {autoAlpha:0, visibility:"visible"},{autoAlpha:1, visibility:"visible"});
     tl.to(text, 3, {bottom: '1000px'},'+=3');
     return tl;
