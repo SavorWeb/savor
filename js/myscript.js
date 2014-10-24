@@ -28,7 +28,7 @@ jQuery(document).ready(function(){
                     $(this).find('.chart').easyPieChart({
                        animate: 1000,
 					  lineWidth: 3,
-					  barColor:'#2f2f2f',
+					  barColor:'#D12215',
 					  trackColor:'#dcdcdc',
 					  lineCap:false,
 					  lineWidth:'2',

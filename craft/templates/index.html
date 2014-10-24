@@ -33,6 +33,35 @@
 		{% endfor %}
 	</ul> -->
 
+
+	<div class="container">
+		<div class="row intro-row">
+			<div class="col-md-5 cBusiness">
+				<h3>{{ entry.mainTitle }}</h3>
+				<p>{{ entry.mainSubhead }}</p>
+			</div>
+			<div class="col-md-7 featurePic">
+				{% set iphone = entry.topFeatureImage.first() %}
+				{% if iphone %}
+				<div class="iphone">
+				   <img class="img-responsive"  src="{{ iphone.url }}"/>
+				  </div>
+				{% endif %}
+				{% set ipad = entry.middleFeatureImage.first() %}
+				{% if ipad %}
+				<div class="ipad">
+				   <img class="img-responsive"  src="{{ ipad.url }}"/>
+				  </div>
+				{% endif %}
+				{% set imac = entry.featureImage.first() %}
+				{% if imac %}
+				<div class="imac">
+				   <img class="img-responsive"  src="{{ imac.url }}"/>
+				  </div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 project">
@@ -49,24 +78,6 @@
 				<h3 id="counter2" style="margin-left: 20px;">0</h3>
 				<h4 style="margin-left: 20px;">{{ entry.metric3Title }}</h4>
 				<p>{{ entry.metric3Body }}</p>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 cBusiness">
-				<h3>{{ entry.mainTitle }}</h3>
-				<h4>{{ entry.mainSubhead }}</h4>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 centPic">
-				{% set fimage = entry.featureImage.first() %}
-				{% if fimage %}
-				   <img class="img-responsive"  src="{{ fimage.url }}"/>
-				{% endif %}
 			</div>
 		</div>
 	</div>
@@ -106,7 +117,7 @@
 
 
 			<div class="portfolio_block columns3 pretty" data-animated="fadeIn">	
-				{% for image in craft.assets.sourceId('1').limit(9) %}
+				{% for image in craft.assets.sourceId('1').limit(12) %}
 				<div class="element col-sm-4 gall {% for tag in image.tags %} {{ tag.name }} {% endfor %}">
 					<a class="plS" href="{{ image.getUrl() }}" rel="prettyPhoto[gallery2]">
 						<img class="img-responsive picsGall" src="{{ image.getUrl() }}" alt="{{ image.title }}"/>
@@ -196,15 +207,13 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="container">
+	
+	<div class="container our-process">
 		<div class="row">
 			<div class="col-md-12 hr1">
-				<hr/>
+					<h3>Our creative process</h3>
 			</div>
 		</div>
-	</div>		
-	<div class="container">
 		<div class="row">
 			<div class="col-md-3 bar">
 				<div class="progB chart" data-percent="{{ entry.skill1Percent }}"  data-animate="3500">
@@ -265,6 +274,7 @@
 	<div class="container">
 		<div class="row aboutUs">
 			<div class="col-md-12 ">
+				<hr>
 				<h3>{{ entry.theader }}</h3>
 			</div>
 		</div>
