@@ -2,16 +2,21 @@
 div#menuF.fixed-nav {
 	position: fixed;
 	top: 0px;
-	background: rgba(0,0,0,0.8);
+	background-image: url('../images/polynav.png');
+	background-repeat: no-repeat;
+	background-position-x: 80px;
 	width: 100%;
 	overflow: visible;
-	max-height: 85px;
+	max-height: 160px;
 	z-index: 9999;
 }
 div#menuF {
 	overflow: visible !important;
 	position: relative;
 	z-index: 9999;
+}
+div#menuF .row {
+	height: 158px;
 }
 .logo div a img {
 	position: relative;
