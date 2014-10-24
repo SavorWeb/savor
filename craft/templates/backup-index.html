@@ -1,0 +1,437 @@
+{#
+	# Homepage template
+	# ---------------
+	#
+	# When this template gets loaded, it will be because someone has accessed
+	# http://yoursite.com/ (without any URI). Craft checks to see if you have
+	# a Single section set to be the Homepage (as you do, by default), and
+	# loads the section’s Template (this file). A special ‘entry’ variable
+	# will already be set for you, assigned to the Homepage entry.
+	#
+	# It's worth noting that even if you didn't have a Homepage Single section,
+	# as long as this template remains at craft/templates/index.html, it
+	# would still be the one to get loaded when accessing http://yoursite.com/,
+	# albeit without an ‘entry’ variable already set for you.
+	#
+	# See this page for more details on how Craft routes requests:
+	# http://buildwithcraft.com/docs/routing
+	#}
+
+	{% extends "_layout" %}
+
+	{% block content %}
+
+
+<!-- 	<h1>{{ entry.heading }}</h1>
+
+	{{ entry.body }}
+
+	<h2>Recent News</h2>
+	<ul>
+		{% for entry in craft.entries.section('news').limit(5).find() %}
+			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+		{% endfor %}
+	</ul> -->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 project">
+				<h3 id="counter">0</h3>
+				<h4>{{ entry.metric1Title }}</h4>
+				<p>{{ entry.metric1Body }}</p>
+			</div>
+			<div class="col-md-4 project">
+				<h3 id="counter1">0</h3>
+				<h4>{{ entry.metric2Title }}</h4>
+				<p>{{ entry.metric2Body }}</p>
+			</div>
+			<div class="col-md-4 project">
+				<h3 id="counter2" style="margin-left: 20px;">0</h3>
+				<h4 style="margin-left: 20px;">{{ entry.metric3Title }}</h4>
+				<p>{{ entry.metric3Body }}</p>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 cBusiness">
+				<h3>{{ entry.mainTitle }}</h3>
+				<h4>{{ entry.mainSubhead }}</h4>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 centPic">
+				{% set fimage = entry.featureImage.first() %}
+				{% if fimage %}
+				   <img class="img-responsive"  src="{{ fimage.url }}"/>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--about start-->
+
+<div id="about">
+	<div class="line2">
+		<div class="container">
+			<div class="row Fresh">
+				<div class="col-md-4 Des">
+					<i class="fa {{ entry.faPerk1 }}"></i>
+					<h4>{{ entry.perkTitle1 }}</h4>
+					<p>{{ entry.perk1 }}</p>
+				</div>
+				<div class="col-md-4 Ver">
+					<i class="fa {{ entry.faPerk2 }}"></i>
+					<h4>{{ entry.perkTitle2 }}</h4>
+					<p>{{ entry.perk2 }}</p>
+				</div>
+				<div class="col-md-4 Fully">
+					<i class="fa {{ entry.faPerk3 }}"></i>
+					<h4>{{ entry.perkTitle3 }}</h4>
+					<p>{{ entry.perk3 }}</p>
+				</div>		
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 wwa">
+				<span class="about" ></span>
+				<h3>{{ entry.aboutTitle }}</h3>
+				<h4>{{ entry.aboutBodyText }}</h4>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		{% set teamPhoto1 = entry.teamPhoto1.first() %}
+		{% set teamPhoto2 = entry.teamPhoto2.first() %}
+		{% set teamPhoto3 = entry.teamPhoto3.first() %}
+		<div class="row team">
+			<div class="col-md-4 b1">
+				<img class="rounded img-responsive" src="{{ teamPhoto1.url }}" alt="Porfolio Image">
+				<h4>{{ entry.teamName1 }}</h4>
+				<h5>{{ entry.teamTitle1 }}</h5>
+				<p>{{ entry.teamBody1 }}</p>
+				<ul>
+					{% if entry.team1link1 %}
+						<li><a target="_blank" href="{{ entry.team1link1 }}"><i class="fa {{ entry.team1linkIcon1 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team1link2 %}
+						<li><a target="_blank" href="{{ entry.team1link2 }}"><i class="fa {{ entry.team1linkIcon2 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team1link3 %}
+						<li><a target="_blank" href="{{ entry.team1link3 }}"><i class="fa {{ entry.team1linkIcon3 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team1link4 %}
+						<li><a target="_blank" href="{{ entry.team1link4 }}"><i class="fa {{ entry.team1linkIcon4 }}"></i></a></li>
+					{% endif %}
+				</ul>
+			</div>
+			
+			
+			<div class="col-md-4">
+				<img class="rounded img-responsive" src="{{ teamPhoto2.url }}">
+				<h4>{{ entry.teamName2 }}</h4>
+				<h5>{{ entry.teamTitle2 }}</h5>
+				<p>{{ entry.teamBody2 }}</p>
+				<ul>
+					{% if entry.team2link1 %}
+						<li><a target="_blank" href="{{ entry.team2link1 }}"><i class="fa {{ entry.team2linkIcon1 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team2link2 %}
+						<li><a target="_blank" href="{{ entry.team2link2 }}"><i class="fa {{ entry.team2linkIcon2 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team2link3 %}
+						<li><a target="_blank" href="{{ entry.team2link3 }}"><i class="fa {{ entry.team2linkIcon3 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team2link4 %}
+						<li><a target="_blank" href="{{ entry.team2link4 }}"><i class="fa {{ entry.team2linkIcon4 }}"></i></a></li>
+					{% endif %}
+				</ul>
+			</div>
+
+			
+			<div class="col-md-4 b3">
+				<img class="rounded img-responsive" src="{{ teamPhoto3.url }}">
+				<h4>{{ entry.teamName3 }}</h4>
+				<h5>{{ entry.teamTitle3 }}</h5>
+				<p>{{ entry.teamBody3 }}</p>
+				<ul>
+					{% if entry.team3link1 %}
+						<li><a target="_blank" href="{{ entry.team3link1 }}"><i class="fa {{ entry.team3linkIcon1 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team3link2 %}
+						<li><a target="_blank" href="{{ entry.team3link2 }}"><i class="fa {{ entry.team3linkIcon2 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team3link3 %}
+						<li><a target="_blank" href="{{ entry.team3link3 }}"><i class="fa {{ entry.team3linkIcon3 }}"></i></a></li>
+					{% endif %}
+					{% if entry.team3link4 %}
+						<li><a target="_blank" href="{{ entry.team3link4 }}"><i class="fa {{ entry.team3linkIcon4 }}"></i></a></li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 hr1">
+				<hr/>
+			</div>
+		</div>
+	</div>		
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 bar">
+				<div class="progB chart" data-percent="{{ entry.skill1Percent }}"  data-animate="3500">
+					<div class="chart chart-content">
+						<div class="percentage" data-percent="{{ entry.skill1Percent }}">
+							<span class="percent">{{ entry.skill1Percent }}</span>
+						</div>
+					</div>
+				</div>
+				<div class="textP">
+					<h3>{{ entry.skill1 }}</h3>
+					<p>{{ entry.skill1Body }}</p>
+				</div>
+			</div>
+			<div class="col-md-3 bar">
+				<div class="progB chart" data-percent="{{ entry.skill2Percent }}"  data-animate="3500">
+					<div class="chart chart-content">
+						<div class="percentage" data-percent="{{ entry.skill2Percent }}">
+							<span class="percent">{{ entry.skill2Percent }}</span>
+						</div>
+					</div>
+				</div>
+				<div class="textP">
+					<h3>{{ entry.skill2 }}</h3>
+					<p>{{ entry.skill2Body }}</p>
+				</div>
+			</div>
+			<div class="col-md-3 bar ">
+				<div class="progB chart" data-percent="{{ entry.skill3Percent }}"  data-animate="3500">
+					<div class="chart chart-content">
+						<div class="percentage" data-percent="{{ entry.skill3Percent }}">
+							<span class="percent">{{ entry.skill3Percent }}</span>
+						</div>
+					</div>
+				</div>
+				<div class="textP">
+					<h3>{{ entry.skill3 }}</h3>
+					<p>{{ entry.skill3Body }}</p>
+				</div>
+			</div>
+			<div class="col-md-3 bar ">
+				<div class="progB chart" data-percent="{{ entry.skill4Percent }}"  data-animate="3500">
+					<div class="chart chart-content">
+						<div class="percentage" data-percent="{{ entry.skill4Percent }}">
+							<span class="percent">{{ entry.skill4Percent }}</span>
+						</div>
+					</div>
+				</div>
+				<div class="textP">
+					<h3>{{ entry.skill4 }}</h3>
+					<p>{{ entry.skill4Body }}</p>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+
+	<div class="container">
+		<div class="row aboutUs">
+			<div class="col-md-12 ">
+				<h3>{{ entry.theader }}</h3>
+			</div>
+		</div>
+	</div>
+
+	<div style="position: relative;">
+		{% set tphoto1 = entry.tphoto1.first() %}
+		{% set tphoto2 = entry.tphoto2.first() %}
+		{% set tphoto3 = entry.tphoto3.first() %}
+		{% set tphoto4 = entry.tphoto4.first() %}
+		<div class="container">
+			<div class="row about">
+				<div class="col-md-6">
+					<div class="about1">
+						<img class="pic1Ab" src="{{ tphoto1.url }}">
+						<h3>{{ entry.ttitle1 }}</h3>
+						<p>{{ entry.tbody1 }}</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="about2">
+						<img class="pic2Ab" src="{{ tphoto2.url }}">
+						<h3>{{ entry.ttitle2 }}</h3>
+						<p>{{ entry.tbody2 }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="horL"></div>
+		
+		<div class="container">
+			<div class="row about">
+				<div class="col-md-6">
+					<div class="about1">
+						<img class="pic1Ab" src="{{ tphoto3.url }}">
+						<h3>{{ entry.ttitle3 }}</h3>
+						<p>{{ entry.tbody3 }}</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="about2">
+						<img class="pic2Ab" src="{{ tphoto4.url }}">
+						<h3>{{ entry.ttitle4 }}</h3>
+						<p>{{ entry.tbody4 }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<!--project start-->    
+<div id="project">    	
+	<div class="line3">
+		<div class="container">
+			<div id="project1" ></div>
+			<div class="row Ama">
+				<div class="col-md-12">
+					<span class="projects" id="projectss"></span>
+					<h3>{{ entry.projectHeader }}</h3>
+					<p>{{ entry.projectHeaderBody }}</p>
+				</div>
+			</div>
+		</div>
+	</div>          
+
+
+	<div class="container">
+		
+		<div class="row">
+			<!-- filter_block -->
+			<div id="options" class="col-md-12" style="text-align: center;">	
+				<ul id="filter" class="option-set" data-option-key="filter">
+					<li><a class="selected" href="#filter" data-option-value="*" class="current">All Works</a></li>
+					<li><a href="#filter" data-option-value=".branding">Branding</a></li>
+					<li><a href="#filter" data-option-value=".web">Websites</a></li>
+					<li><a href="#filter" data-option-value=".design">Design</a></li>
+				</ul>
+			</div><!-- //filter_block -->
+
+
+
+			<div class="portfolio_block columns3 pretty" data-animated="fadeIn">	
+				{% for image in craft.assets.sourceId('1').limit(9) %}
+				<div class="element col-sm-4 gall {% for tag in image.tags %} {{ tag.name }} {% endfor %}">
+					<a class="plS" href="{{ image.getUrl() }}" rel="prettyPhoto[gallery2]">
+						<img class="img-responsive picsGall" src="{{ image.getUrl() }}" alt="{{ image.title }}"/>
+						<div class="portfolio-magic"></div>
+					</a>
+<!-- 					<div class="view project_descr ">
+						<h3><a href="#">{{ image.title }}</a></h3>
+						<ul>
+							{% if image.tags %}
+								{% for tag in image.tags %}<li><a href="#"><i class="fa fa-tag"></i> {{ tag.name }}</a></li>{% endfor %}
+							{% endif %}
+						</ul>
+					</div> -->
+				</div>	
+				{% endfor %}
+			</div>
+			
+			
+
+<!-- 			<div class="col-md-12 cBtn  lb" style="text-align: center;">
+				<ul class="load_more_cont ">
+					<li class="dowbload btn_load_more">
+						<a href="javascript:void(0);" >
+							<i class="fa fa-arrow-down"></i>Load More Projects
+						</a>
+					</li>
+					<li class="buy">
+						<a href="#">
+							<i class="fa fa-shopping-cart"></i>Get a Quote
+						</a>
+					</li>
+				</ul>
+			</div> -->
+			
+		</div>
+
+		<script type="text/javascript">
+		jQuery(window).load(function(){
+			items_set = [
+
+			{category : 'branding', lika_count : '77', view_count : '234', src : 'images/prettyPhotoImages/pic9.jpg', title : 'Foil Mini Badges', content : '' },
+
+			{category : 'web', lika_count : '45', view_count : '100', src : 'images/prettyPhotoImages/pic7.jpg', title : 'Darko – Business Card Mock Up', content : '' },
+
+			{category : 'design', lika_count : '22', view_count : '140', src : 'images/prettyPhotoImages/pic8.jpg', title : 'Woody Poster Text Effect', content : '' }
+
+
+			];
+			jQuery('.portfolio_block').portfolio_addon({
+						type : 1, // 2-4 columns simple portfolio
+						load_count : 3,
+						
+						items : items_set
+					});
+			$('#container').isotope({
+				animationOptions: {
+					duration: 900,
+					queue: false
+				}
+			});
+		});
+		</script>
+	</div>
+</div>    
+
+<!--news start-->
+
+<div id="news">
+	<div class="line4">		
+		<div class="container">
+			<div class="row Ama">
+				<div class="col-md-12">
+					<h3>{{ entry.newsHeader }}</h3>
+					<p>{{ entry.newsHeaderBody }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row news">
+
+{% for entry in craft.entries.section('news').limit(4) %}
+{% set image = entry.featuredImage.first() %}
+			<div class="col-md-6  text-left">
+				{% if image %}
+					<a href="{{ entry.url }}"><img class="img-responsive picsGall" src="{{ image.url }}"/></a>
+				{% endif %}
+				<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+				<ul>
+					<li><i class="fa fa-calendar"></i>{{ entry.postDate.format('F d, Y') }}</li>
+					{% if entry.tags %}
+						{% for tag in entry.tags %}<li><a href="#"><i class="fa fa-tag"></i> {{ tag.name }}</a></li>{% endfor %}
+					{% endif %}
+				</ul>
+				<p>{{ entry.summary }} <a class="readMore" href="{{ entry.url }}">Read More <i class="fa fa-angle-right"></i></a></p>
+				<hr class="hrNews">
+			</div>
+{% endfor %}
+
+
+		</div>
+	</div>
+
+</div>
+
+		{% endblock %}

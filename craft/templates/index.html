@@ -33,6 +33,35 @@
 		{% endfor %}
 	</ul> -->
 
+
+	<div class="container">
+		<div class="row intro-row">
+			<div class="col-md-5 cBusiness">
+				<h3>{{ entry.mainTitle }}</h3>
+				<p>{{ entry.mainSubhead }}</p>
+			</div>
+			<div class="col-md-7 featurePic">
+				{% set iphone = entry.topFeatureImage.first() %}
+				{% if iphone %}
+				<div class="iphone">
+				   <img class="img-responsive"  src="{{ iphone.url }}"/>
+				  </div>
+				{% endif %}
+				{% set ipad = entry.middleFeatureImage.first() %}
+				{% if ipad %}
+				<div class="ipad">
+				   <img class="img-responsive"  src="{{ ipad.url }}"/>
+				  </div>
+				{% endif %}
+				{% set imac = entry.featureImage.first() %}
+				{% if imac %}
+				<div class="imac">
+				   <img class="img-responsive"  src="{{ imac.url }}"/>
+				  </div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 project">
@@ -52,250 +81,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 cBusiness">
-				<h3>{{ entry.mainTitle }}</h3>
-				<h4>{{ entry.mainSubhead }}</h4>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 centPic">
-				{% set fimage = entry.featureImage.first() %}
-				{% if fimage %}
-				   <img class="img-responsive"  src="{{ fimage.url }}"/>
-				{% endif %}
-			</div>
-		</div>
-	</div>
 </div>
 
-<!--about start-->
 
-<div id="about">
-	<div class="line2">
-		<div class="container">
-			<div class="row Fresh">
-				<div class="col-md-4 Des">
-					<i class="fa {{ entry.faPerk1 }}"></i>
-					<h4>{{ entry.perkTitle1 }}</h4>
-					<p>{{ entry.perk1 }}</p>
-				</div>
-				<div class="col-md-4 Ver">
-					<i class="fa {{ entry.faPerk2 }}"></i>
-					<h4>{{ entry.perkTitle2 }}</h4>
-					<p>{{ entry.perk2 }}</p>
-				</div>
-				<div class="col-md-4 Fully">
-					<i class="fa {{ entry.faPerk3 }}"></i>
-					<h4>{{ entry.perkTitle3 }}</h4>
-					<p>{{ entry.perk3 }}</p>
-				</div>		
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 wwa">
-				<span class="about" ></span>
-				<h3>{{ entry.aboutTitle }}</h3>
-				<h4>{{ entry.aboutBodyText }}</h4>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		{% set teamPhoto1 = entry.teamPhoto1.first() %}
-		{% set teamPhoto2 = entry.teamPhoto2.first() %}
-		{% set teamPhoto3 = entry.teamPhoto3.first() %}
-		<div class="row team">
-			<div class="col-md-4 b1">
-				<img class="rounded img-responsive" src="{{ teamPhoto1.url }}" alt="Porfolio Image">
-				<h4>{{ entry.teamName1 }}</h4>
-				<h5>{{ entry.teamTitle1 }}</h5>
-				<p>{{ entry.teamBody1 }}</p>
-				<ul>
-					{% if entry.team1link1 %}
-						<li><a target="_blank" href="{{ entry.team1link1 }}"><i class="fa {{ entry.team1linkIcon1 }}"></i></a></li>
-					{% endif %}
-					{% if entry.team1link2 %}
-						<li><a target="_blank" href="{{ entry.team1link2 }}"><i class="fa {{ entry.team1linkIcon2 }}"></i></a></li>
-					{% endif %}
-					{% if entry.team1link3 %}
-						<li><a target="_blank" href="{{ entry.team1link3 }}"><i class="fa {{ entry.team1linkIcon3 }}"></i></a></li>
-					{% endif %}
-					{% if entry.team1link4 %}
-						<li><a target="_blank" href="{{ entry.team1link4 }}"><i class="fa {{ entry.team1linkIcon4 }}"></i></a></li>
-					{% endif %}
-				</ul>
-			</div>
-			
-			
-			<div class="col-md-4">
-				<img class="rounded img-responsive" src="{{ teamPhoto2.url }}">
-				<h4>{{ entry.teamName2 }}</h4>
-				<h5>{{ entry.teamTitle2 }}</h5>
-				<p>{{ entry.teamBody2 }}</p>
-				<ul>
-					{% if entry.team2link1 %}
-						<li><a target="_blank" href="{{ entry.team2link1 }}"><i class="fa {{ entry.team2linkIcon1 }}"></i></a></li>
-					{% endif %}
-					{% if entry.team2link2 %}
-						<li><a target="_blank" href="{{ entry.team2link2 }}"><i class="fa {{ entry.team2linkIcon2 }}"></i></a></li>
-					{% endif %}
-					{% if entry.team2link3 %}
-						<li><a target="_blank" href="{{ entry.team2link3 }}"><i class="fa {{ entry.team2linkIcon3 }}"></i></a></li>
-					{% endif %}
-					{% if entry.team2link4 %}
-						<li><a target="_blank" href="{{ entry.team2link4 }}"><i class="fa {{ entry.team2linkIcon4 }}"></i></a></li>
-					{% endif %}
-				</ul>
-			</div>
-
-			
-			<div class="col-md-4 b3">
-				<img class="rounded img-responsive" src="{{ teamPhoto3.url }}">
-				<h4>{{ entry.teamName3 }}</h4>
-				<h5>{{ entry.teamTitle3 }}</h5>
-				<p>{{ entry.teamBody3 }}</p>
-				<ul>
-					{% if entry.team3link1 %}
-						<li><a target="_blank" href="{{ entry.team3link1 }}"><i class="fa {{ entry.team3linkIcon1 }}"></i></a></li>
-					{% endif %}
-					{% if entry.team3link2 %}
-						<li><a target="_blank" href="{{ entry.team3link2 }}"><i class="fa {{ entry.team3linkIcon2 }}"></i></a></li>
-					{% endif %}
-					{% if entry.team3link3 %}
-						<li><a target="_blank" href="{{ entry.team3link3 }}"><i class="fa {{ entry.team3linkIcon3 }}"></i></a></li>
-					{% endif %}
-					{% if entry.team3link4 %}
-						<li><a target="_blank" href="{{ entry.team3link4 }}"><i class="fa {{ entry.team3linkIcon4 }}"></i></a></li>
-					{% endif %}
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 hr1">
-				<hr/>
-			</div>
-		</div>
-	</div>		
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3 bar">
-				<div class="progB chart" data-percent="{{ entry.skill1Percent }}"  data-animate="3500">
-					<div class="chart chart-content">
-						<div class="percentage" data-percent="{{ entry.skill1Percent }}">
-							<span class="percent">{{ entry.skill1Percent }}</span>
-						</div>
-					</div>
-				</div>
-				<div class="textP">
-					<h3>{{ entry.skill1 }}</h3>
-					<p>{{ entry.skill1Body }}</p>
-				</div>
-			</div>
-			<div class="col-md-3 bar">
-				<div class="progB chart" data-percent="{{ entry.skill2Percent }}"  data-animate="3500">
-					<div class="chart chart-content">
-						<div class="percentage" data-percent="{{ entry.skill2Percent }}">
-							<span class="percent">{{ entry.skill2Percent }}</span>
-						</div>
-					</div>
-				</div>
-				<div class="textP">
-					<h3>{{ entry.skill2 }}</h3>
-					<p>{{ entry.skill2Body }}</p>
-				</div>
-			</div>
-			<div class="col-md-3 bar ">
-				<div class="progB chart" data-percent="{{ entry.skill3Percent }}"  data-animate="3500">
-					<div class="chart chart-content">
-						<div class="percentage" data-percent="{{ entry.skill3Percent }}">
-							<span class="percent">{{ entry.skill3Percent }}</span>
-						</div>
-					</div>
-				</div>
-				<div class="textP">
-					<h3>{{ entry.skill3 }}</h3>
-					<p>{{ entry.skill3Body }}</p>
-				</div>
-			</div>
-			<div class="col-md-3 bar ">
-				<div class="progB chart" data-percent="{{ entry.skill4Percent }}"  data-animate="3500">
-					<div class="chart chart-content">
-						<div class="percentage" data-percent="{{ entry.skill4Percent }}">
-							<span class="percent">{{ entry.skill4Percent }}</span>
-						</div>
-					</div>
-				</div>
-				<div class="textP">
-					<h3>{{ entry.skill4 }}</h3>
-					<p>{{ entry.skill4Body }}</p>
-				</div>
-			</div>
-		</div>
-	</div>	
-
-
-	<div class="container">
-		<div class="row aboutUs">
-			<div class="col-md-12 ">
-				<h3>{{ entry.theader }}</h3>
-			</div>
-		</div>
-	</div>
-
-	<div style="position: relative;">
-		{% set tphoto1 = entry.tphoto1.first() %}
-		{% set tphoto2 = entry.tphoto2.first() %}
-		{% set tphoto3 = entry.tphoto3.first() %}
-		{% set tphoto4 = entry.tphoto4.first() %}
-		<div class="container">
-			<div class="row about">
-				<div class="col-md-6">
-					<div class="about1">
-						<img class="pic1Ab" src="{{ tphoto1.url }}">
-						<h3>{{ entry.ttitle1 }}</h3>
-						<p>{{ entry.tbody1 }}</p>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="about2">
-						<img class="pic2Ab" src="{{ tphoto2.url }}">
-						<h3>{{ entry.ttitle2 }}</h3>
-						<p>{{ entry.tbody2 }}</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="horL"></div>
-		
-		<div class="container">
-			<div class="row about">
-				<div class="col-md-6">
-					<div class="about1">
-						<img class="pic1Ab" src="{{ tphoto3.url }}">
-						<h3>{{ entry.ttitle3 }}</h3>
-						<p>{{ entry.tbody3 }}</p>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="about2">
-						<img class="pic2Ab" src="{{ tphoto4.url }}">
-						<h3>{{ entry.ttitle4 }}</h3>
-						<p>{{ entry.tbody4 }}</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-	</div>
-</div>
 <!--project start-->    
 <div id="project">    	
 	<div class="line3">
@@ -321,7 +109,7 @@
 					<li><a class="selected" href="#filter" data-option-value="*" class="current">All Works</a></li>
 					<li><a href="#filter" data-option-value=".branding">Branding</a></li>
 					<li><a href="#filter" data-option-value=".web">Websites</a></li>
-					<li><a href="#filter" data-option-value=".print">Text Styles</a></li>
+					<li><a href="#filter" data-option-value=".print">Print</a></li>
 					<li><a href="#filter" data-option-value=".design">Design</a></li>
 				</ul>
 			</div><!-- //filter_block -->
@@ -329,7 +117,7 @@
 
 
 			<div class="portfolio_block columns3 pretty" data-animated="fadeIn">	
-				{% for image in craft.assets.sourceId('1').limit(9) %}
+				{% for image in craft.assets.sourceId('1').limit(12) %}
 				<div class="element col-sm-4 gall {% for tag in image.tags %} {{ tag.name }} {% endfor %}">
 					<a class="plS" href="{{ image.getUrl() }}" rel="prettyPhoto[gallery2]">
 						<img class="img-responsive picsGall" src="{{ image.getUrl() }}" alt="{{ image.title }}"/>
@@ -394,6 +182,159 @@
 		</script>
 	</div>
 </div>    
+
+<!--about start-->
+
+<div id="about">
+	<div class="line2">
+		<div class="container">
+			<div class="row Fresh">
+				<div class="col-md-4 Des">
+					<i class="fa {{ entry.faPerk1 }}"></i>
+					<h4>{{ entry.perkTitle1 }}</h4>
+					<p>{{ entry.perk1 }}</p>
+				</div>
+				<div class="col-md-4 Ver">
+					<i class="fa {{ entry.faPerk2 }}"></i>
+					<h4>{{ entry.perkTitle2 }}</h4>
+					<p>{{ entry.perk2 }}</p>
+				</div>
+				<div class="col-md-4 Fully">
+					<i class="fa {{ entry.faPerk3 }}"></i>
+					<h4>{{ entry.perkTitle3 }}</h4>
+					<p>{{ entry.perk3 }}</p>
+				</div>		
+			</div>
+		</div>
+	</div>
+	
+	<div class="container our-process">
+		<div class="row">
+			<div class="col-md-12 hr1">
+					<h3>Our creative process</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 bar">
+				<div class="progB chart" data-percent="{{ entry.skill1Percent }}"  data-animate="3500">
+					<div class="chart chart-content">
+						<div class="percentage" data-percent="{{ entry.skill1Percent }}">
+							<span class="percent">{{ entry.skill1Percent }}</span>
+						</div>
+					</div>
+				</div>
+				<div class="textP">
+					<h3>{{ entry.skill1 }}</h3>
+					<p>{{ entry.skill1Body }}</p>
+				</div>
+			</div>
+			<div class="col-md-3 bar">
+				<div class="progB chart" data-percent="{{ entry.skill2Percent }}"  data-animate="3500">
+					<div class="chart chart-content">
+						<div class="percentage" data-percent="{{ entry.skill2Percent }}">
+							<span class="percent">{{ entry.skill2Percent }}</span>
+						</div>
+					</div>
+				</div>
+				<div class="textP">
+					<h3>{{ entry.skill2 }}</h3>
+					<p>{{ entry.skill2Body }}</p>
+				</div>
+			</div>
+			<div class="col-md-3 bar ">
+				<div class="progB chart" data-percent="{{ entry.skill3Percent }}"  data-animate="3500">
+					<div class="chart chart-content">
+						<div class="percentage" data-percent="{{ entry.skill3Percent }}">
+							<span class="percent">{{ entry.skill3Percent }}</span>
+						</div>
+					</div>
+				</div>
+				<div class="textP">
+					<h3>{{ entry.skill3 }}</h3>
+					<p>{{ entry.skill3Body }}</p>
+				</div>
+			</div>
+			<div class="col-md-3 bar ">
+				<div class="progB chart" data-percent="{{ entry.skill4Percent }}"  data-animate="3500">
+					<div class="chart chart-content">
+						<div class="percentage" data-percent="{{ entry.skill4Percent }}">
+							<span class="percent">{{ entry.skill4Percent }}</span>
+						</div>
+					</div>
+				</div>
+				<div class="textP">
+					<h3>{{ entry.skill4 }}</h3>
+					<p>{{ entry.skill4Body }}</p>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+
+	<div class="container">
+		<div class="row aboutUs">
+			<div class="col-md-12 ">
+				<hr>
+				<h3>{{ entry.theader }}</h3>
+			</div>
+		</div>
+	</div>
+
+	<div style="position: relative;">
+		{% set tphoto1 = entry.tphoto1.first() %}
+		{% set tphoto2 = entry.tphoto2.first() %}
+		{% set tphoto3 = entry.tphoto3.first() %}
+		{% set tphoto4 = entry.tphoto4.first() %}
+		<div class="container">
+			<div class="row about">
+				<div class="col-md-6">
+					<div class="about1">
+						{% if tphoto1 %}
+							<img class="pic1Ab" src="{{ tphoto1.url }}">
+						{% endif %}
+						<h3>{{ entry.ttitle1 }}</h3>
+						<p>{{ entry.tbody1 }}</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="about2">
+						{% if tphoto2 %}
+						<img class="pic2Ab" src="{{ tphoto2.url }}">
+						{% endif %}
+						<h3>{{ entry.ttitle2 }}</h3>
+						<p>{{ entry.tbody2 }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="horL"></div>
+		
+		<div class="container">
+			<div class="row about">
+				<div class="col-md-6">
+					<div class="about1">
+						{% if tphoto3 %}
+							<img class="pic1Ab" src="{{ tphoto3.url }}">
+						{% endif %}
+						<h3>{{ entry.ttitle3 }}</h3>
+						<p>{{ entry.tbody3 }}</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="about2">
+						{% if tphoto4 %}
+							<img class="pic2Ab" src="{{ tphoto4.url }}">
+						{% endif %}
+						<h3>{{ entry.ttitle4 }}</h3>
+						<p>{{ entry.tbody4 }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
 
 <!--news start-->
 
