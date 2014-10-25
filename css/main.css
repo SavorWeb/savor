@@ -1,3 +1,9 @@
+body {
+	overflow-x:hidden;
+}
+.line2 {
+	z-index: 80;
+}
 /*Nav*/
 div#menuF.fixed-nav {
 	position: fixed;
@@ -48,7 +54,7 @@ canvas#heading-canvas {
 }
 div.entry-text p {
 	font-family: 'Open Sans',sans-serif;
-	font-size: 40px;
+	font-size: 45px;
 	font-weight: 700;
 	letter-spacing: -2px;
 	color: #fff;
@@ -57,16 +63,29 @@ div.entry-text p {
 
 }
 
-#slide1, #slide2, #slide3 {
+#slide1, #slide2{
 	position: absolute;
 	top:100px;
-	left:0;
+	left:-400px;
 	z-index: 90;
+
+}
+#slide1 p, #slide2 p {
+	padding-left: 500px;
 }
 
-#slide2, #slide3 {
-	display: none;
+p.slide-underline {
+	display: inline-block;
+	border-bottom: 5px solid red;
+	
 }
+p.savor-title-slide {
+	font-size: 90px !important;
+	display: inline-block;
+	border-bottom: 5px solid red;
+	padding-left: 500px;
+}
+
 /*************************************************************** 
 				Portfolio
 ***************************************************************/

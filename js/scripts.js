@@ -1,10 +1,13 @@
 (function() {
 //Global variables for header animation
 var width, height, largeHeader, canvas, ctx, points, target, swpreload, animateHeader = true;
+var window_width = '';
+var window_height = '';
 
 var centPic = new TimelineMax({paused:true, delay: 0.2});
     centPic.set(".centPic img", {visibility:"visible"});
-    centPic.from('.centPic img', 0.5, {top: 400});
+    centPic.from('.ipad', 1, {right: -1000});
+    centPic.from('.iphone', 1, {right: -1000});
 
 
 // Animation Trigger
@@ -14,15 +17,15 @@ var centPic_trigger = 0;
 var centPic_width = '';
 
 function centPicViewportTrigger() {
-
+console.log('working');
     centPic_doc_position = $(document).scrollTop();
     
     centPic_height = $(window).height();
     centPic_width = $(window).width();
     centPic_ratio =  centPic_width / centPic_height;
     centPic_doc_bottom_position = centPic_height + centPic_doc_position;
-    centPic_position = $('div.centPic').offset();
-    centPic_height = $('div.centPic').height();
+    centPic_position = $('div.ipad').offset();
+    centPic_height = $('div.ipad').height();
     centPic_bottom_position = centPic_position.top + centPic_height;
 if(centPic_width > 960){
     if(centPic_bottom_position < centPic_doc_bottom_position && centPic_position.top > centPic_doc_position && centPic_trigger == 0){
@@ -30,6 +33,7 @@ if(centPic_width > 960){
         centPic_trigger = 1;
     }
     if(centPic_ratio > 3.1){
+    console.log('play');
         centPic.play();
         centPic_trigger = 1;
     }
@@ -39,8 +43,8 @@ if(centPic_width > 960){
 
     
 $( document ).ready(function() {
-    var window_height = $(window).height();
-    var window_width = $(window).width();
+    window_height = $(window).height();
+    window_width = $(window).width();
     
     if (window_width <= 960){
         centPic.play();
@@ -96,37 +100,34 @@ var master = new TimelineMax({repeat:-1,delay: 2}),
     _isOldIE = (document.all && !document.addEventListener);
 
 master.add( slide1() );
-//master.add( slide2() );
+master.add( slide2() );
 //master.add( slide3() );
 
 
 function slide1() {
     var tl = new TimelineLite(),
     text = $('#slide1 p');
-    //tl.staggerFrom(text, 2, {scale:0.5, opacity:0, delay:0.5, ease:Elastic.easeOut, force3D:true}, 0.2);
-    //tl.to(text, 0.5, {autoAlpha: 0});
+    
     tl.staggerFrom(text, 1.5,
        {left: -1000, opacity:0, delay:1}
-,0.5);
-    //tl.fromTo(text, 1, {autoAlpha:0, visibility:"visible", left: -1000},{autoAlpha:1, visibility:"visible", left: 200});
-    tl.staggerTo(text, 1.5, {left: '-1000px'},'+=3');
+,1);
+    tl.to(text, 2, {top: 0});
+    tl.staggerTo(text, 1, {left: '-1000px', opacity: 0},0.25);
     return tl;
 }
 
 function slide2() {
-    var tl = new TimelineLite(),
+var tl = new TimelineLite(),
     text = $('#slide2 p');
-    tl.fromTo(text, 1, {autoAlpha:0, visibility:"visible"},{autoAlpha:1, visibility:"visible"});
-    tl.to(text, 3, {bottom: '1000px'},'+=3');
+    tl.staggerFrom(text, 0.5,
+       {left: -1000, opacity:0}
+,'-=1');
+    tl.to(text, 2, {top: 0});
+    tl.staggerTo(text, 1, {left: '-1000px', opacity: 0},0.25);
     return tl;
+
 }
-function slide3() {
-    var tl = new TimelineLite(),
-    text = $('#slide3 p');
-    tl.fromTo(text, 1, {autoAlpha:0, visibility:"visible"},{autoAlpha:1, visibility:"visible"});
-    tl.to(text, 3, {bottom: '1000px'},'+=3');
-    return tl;
-}
+
 /*********************************************************
                 Navigation Animation
  **********************************************************/
@@ -267,7 +268,7 @@ $(gallery_objects).each(function(){
 ***************************************************************************/
     $(window).bind("scroll", function(event) {
         var centPic_message = "Not in Viewport";
-        $(".centPic:in-viewport").each(function() {
+        $("div.imac:in-viewport").each(function() {
           centPic_message = 'In Viewport';
         });      
         if (centPic_message == 'In Viewport') { centPicViewportTrigger(); }
