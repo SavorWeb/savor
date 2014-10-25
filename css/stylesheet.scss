@@ -6,10 +6,15 @@ $primary: #D12215;
 
 html {
   background: #fff;
+  overflow-x: hidden;
 }
 
 body {
   font-family: 'Roboto', 'sans-serif';
+}
+
+.entypo {
+  font-family: 'entypo';
 }
 
 .headerLine {
@@ -337,8 +342,27 @@ body {
   margin-bottom: 15px;
   font-weight: lighter;
   line-height: 24px;
+  h3 {
+    font-size: 28px;
+    color: #2f2f2f;
+    font-family: 'Roboto', 'sans-serif';
+    font-weight: 400;
+
+  }
   .serv-item {
     margin-bottom: 25px;
+    img {
+      width: 20%;
+      float: right;
+      margin-left: 20px;
+    }
+    .entypo {
+      font-size: 200px;
+      color: #fff;
+      margin-bottom: 75px;
+      display: block;
+      font-style: normal;
+    }
   }
 }
 
@@ -554,8 +578,8 @@ body {
 .our-process {
     margin-top: 32px;
     text-align: center;
-  h3 {
-    font-size: 28px;
+  h2 {
+    font-size: 32px;
     color: #2f2f2f;
     font-family: 'Roboto', 'sans-serif';
     font-weight: 400;
@@ -654,7 +678,7 @@ body {
 }*/
 
 .aboutUs {
-  margin-top: 32px;
+  margin-top: 100px;
   text-align: center;
   h3 {
     font-size: 28px;

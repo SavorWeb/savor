@@ -2,10 +2,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   outline: none !important; }
 
 html {
-  background: #fff; }
+  background: #fff;
+  overflow-x: hidden; }
 
 body {
   font-family: 'Roboto', 'sans-serif'; }
+
+.entypo {
+  font-family: 'entypo'; }
 
 .headerLine {
   position: relative;
@@ -268,8 +272,23 @@ body {
   margin-bottom: 15px;
   font-weight: lighter;
   line-height: 24px; }
+  .services h3 {
+    font-size: 28px;
+    color: #2f2f2f;
+    font-family: 'Roboto', 'sans-serif';
+    font-weight: 400; }
   .services .serv-item {
     margin-bottom: 25px; }
+    .services .serv-item img {
+      width: 20%;
+      float: right;
+      margin-left: 20px; }
+    .services .serv-item .entypo {
+      font-size: 200px;
+      color: #fff;
+      margin-bottom: 75px;
+      display: block;
+      font-style: normal; }
 
 /*.line2{
 	height:496px;
@@ -453,8 +472,8 @@ body {
 .our-process {
   margin-top: 32px;
   text-align: center; }
-  .our-process h3 {
-    font-size: 28px;
+  .our-process h2 {
+    font-size: 32px;
     color: #2f2f2f;
     font-family: 'Roboto', 'sans-serif';
     font-weight: 400; }
@@ -535,7 +554,7 @@ body {
 	padding-right:0;
 }*/
 .aboutUs {
-  margin-top: 32px;
+  margin-top: 100px;
   text-align: center; }
   .aboutUs h3 {
     font-size: 28px;
