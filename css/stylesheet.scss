@@ -13,10 +13,6 @@ body {
   font-family: 'Roboto', 'sans-serif';
 }
 
-.entypo {
-  font-family: 'entypo';
-}
-
 .headerLine {
   position: relative;
   width: 100%;
@@ -453,6 +449,13 @@ body {
   }
   i.fa {
     font-size: 80px;
+  }
+  i.entypo {
+    font-size: 200px;
+    font-style: normal;
+    height: 200px;
+    margin-top: -80px;
+    display: block;
   }
 }
 
