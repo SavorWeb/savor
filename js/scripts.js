@@ -3,6 +3,9 @@
 var width, height, largeHeader, canvas, ctx, points, target, swpreload, animateHeader = true;
 var window_width = '';
 var window_height = '';
+var menu_height = '';
+var gallery_height = '';
+var menu_has_class = '';
 
 var centPic = new TimelineMax({paused:true, delay: 0.2});
     centPic.set(".centPic img", {visibility:"visible"});
@@ -17,9 +20,7 @@ var centPic_trigger = 0;
 var centPic_width = '';
 
 function centPicViewportTrigger() {
-console.log('working');
     centPic_doc_position = $(document).scrollTop();
-    
     centPic_height = $(window).height();
     centPic_width = $(window).width();
     centPic_ratio =  centPic_width / centPic_height;
@@ -33,7 +34,7 @@ if(centPic_width > 960){
         centPic_trigger = 1;
     }
     if(centPic_ratio > 3.1){
-    console.log('play');
+    //console.log('play');
         centPic.play();
         centPic_trigger = 1;
     }
@@ -62,8 +63,8 @@ $( document ).ready(function() {
 });
 
     
-    $(window).load(function() {
-$('#menuF').addClass('nav-hover');
+$(window).load(function() {
+    $('#menuF').addClass('nav-hover');
         $('#preload-container').removeAttr('style');
         $('body').removeAttr('style');
         $('#swpreloader').css('visibility','hidden');
@@ -73,17 +74,35 @@ $('#menuF').addClass('nav-hover');
         $('#preload-container').css('visibility','visible');
         
         var container_width = $('div.container').width();
-        var menu_has_class = $('#menuF').hasClass('fixed-nav');
+        setTimeout(function(){
+            var gallery_height = $('#main-heading').height();
+            menu_height = $('#menuF').height();
+            menu_has_class = $('#menuF').hasClass('fixed-nav');
+            if(menu_has_class){
+                //alert('hi');
+              gallery_height=gallery_height+menu_height;
+                
+                if(window_width < 960){
+                    $('#main-heading').css('height', gallery_height -200);
+                } else {
+                    
+                    $('#main-heading').css('height', gallery_height);
+                }
+            } else {
 
-        if(menu_has_class){
-            alert('Working');
-        }
+                if(window_width < 960){
+                    $('#main-heading').css('height', gallery_height -200);
+                } else {
+                    $('#main-heading').css('height', gallery_height);
+                }
+            }
+            
+        }, 300);
+        
 
-        var menu_height = $('#menuF').height();
-        var gallery_height = $('.gallery').height();
-
-        $('.gallery').css('width', container_width);
-        $('.gallery').css('height', gallery_height);
+        $('.headerline').css('width', container_width);
+        
+        
 
 
 
@@ -101,8 +120,6 @@ var master = new TimelineMax({repeat:-1,delay: 2}),
 
 master.add( slide1() );
 master.add( slide2() );
-//master.add( slide3() );
-
 
 function slide1() {
     var tl = new TimelineLite(),
@@ -191,7 +208,7 @@ function scrolling_navbar(){
         var menu = $("#menuF");
         menu_height = $("#menuF").height();
         header_height = $('.headerLine').height();
-        $('.headerLine').css('height',header_height);
+        //$('.headerLine').css('height',header_height);
                     
         $(window).scroll(function(){
             if ( $(this).scrollTop() > menu_height) {
@@ -207,18 +224,6 @@ function scrolling_navbar(){
         });// end scroll function
 
  
-
- /*********************************************************
-                Header Animation
- **********************************************************/
- 
-        width = $('.headerLine').width();
-        height = $('.headerLine').height();
-
-initHeader();
-initAnimation();
-addListeners();
-
 
 
  /*********************************************************
@@ -273,24 +278,60 @@ $(gallery_objects).each(function(){
         });      
         if (centPic_message == 'In Viewport') { centPicViewportTrigger(); }
     });
+
+
+
+
+
+
+
+ /*********************************************************
+                Header Animation
+ **********************************************************/
+ 
+        
+
+if(window_width > 960){
+
+setTimeout(function(){
+width = $('.headerLine').width();
+height = $('.headerLine').height();
+initHeader();
+initAnimation();
+addListeners();
+}, 1000);
+
+
+}
+
 }); // End load function
 
-    
 
-    // Main
+/************************************************************************
+                    Heading Animation
+***************************************************************************/
 
-    function initHeader() {
+function initHeader() {
 
         window_width = window.innerWidth;
         // height = window.innerHeight;
  if (window_width > 1025){
         target = {x: width/2, y: height/2};
         largeHeader = document.getElementById('main-heading');
-        largeHeader.style.height = height+'px';
-
+        //largeHeader.style.height = height+'px';
+        //console.log(height);
         canvas = document.getElementById('heading-canvas');
+        if(menu_has_class){
+            var menu_height = $('#menuF').height();
+            canvas.height = height;
+        } else {
+            //console.log(height);
+            canvas.height = height;
+        }
+
+        
         canvas.width = width;
-        canvas.height = height;
+        
         ctx = canvas.getContext('2d');
 
         // create points
@@ -339,19 +380,19 @@ $(gallery_objects).each(function(){
             var c = new Circle(points[i], 2+Math.random()*2, 'rgba(255,255,255,0.3)');
             points[i].circle = c;
         }
-}
     }
+}
 
     // Event handling
     function addListeners() {
         if(!('ontouchstart' in window)) {
-            window.addEventListener('mousemove', mouseMove);
+            window.addEventListener('mousemove', mouseMove1);
         }
         window.addEventListener('scroll', scrollCheck);
         //window.addEventListener('resize', resize);
     }
 
-    function mouseMove(e) {
+    function mouseMove1(e) {
         var posx = posy = 0;
         if (e.pageX || e.pageY) {
             posx = e.pageX;
@@ -368,6 +409,9 @@ $(gallery_objects).each(function(){
     function scrollCheck() {
         if(document.body.scrollTop > height) animateHeader = false;
         else animateHeader = true;
+    }
+     function scrollCheck1() {
+        animateHeader = true;
     }
 
     function resize() {

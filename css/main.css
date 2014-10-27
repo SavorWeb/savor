@@ -3,6 +3,8 @@ body {
 }
 .line2 {
 	z-index: 80;
+	position: relative;
+	background: url(../images/bgTop.jpg) center center no-repeat;
 }
 /*Nav*/
 div#menuF.fixed-nav {
@@ -37,10 +39,9 @@ div#menuF .row {
 	width: 100%;
 	overflow: hidden;
 	position: relative;
+	display: inline-block;
 }
-.gallery {
-	height: 200px;
-}
+
 
 .headerline:hover, .gallery:hover, .nav-hover:hover {
 	cursor: url('../images/cursor.png'), auto;
@@ -51,39 +52,43 @@ canvas#heading-canvas {
 	top: 0;
 	left: 0;
 	cursor: url('../images/cursor.png'), auto;
+	z-index: 99;
+}
+canvas#line2-canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: url('../images/cursor.png'), auto;
 }
 div.entry-text p {
 	font-family: 'Open Sans',sans-serif;
-	font-size: 45px;
+	font-size: 22px;
 	font-weight: 700;
 	letter-spacing: -2px;
 	color: #fff;
 	width: auto;
 	position: relative;
-
 }
 
 #slide1, #slide2{
 	position: absolute;
-	top:100px;
-	left:-400px;
+	top: -100px;
+	left:-1000px;
 	z-index: 90;
-
 }
 #slide1 p, #slide2 p {
-	padding-left: 500px;
+	padding-left: 1025px;
 }
 
 p.slide-underline {
 	display: inline-block;
 	border-bottom: 5px solid red;
-	
 }
 p.savor-title-slide {
-	font-size: 90px !important;
+	font-size: 40px !important;
 	display: inline-block;
 	border-bottom: 5px solid red;
-	padding-left: 500px;
+	padding-left: 1050px;
 }
 
 /*************************************************************** 
@@ -146,22 +151,72 @@ div.centPic {
 
 
 /*************************************************************** 
-				centPic Animation
+				Media Queries
 ***************************************************************/
 @media (min-width: 520px) {
-	
-	div.entry-text h2 {
-		font-size: 50px;
-	}
+
+div.entry-text p {
+	font-family: 'Open Sans',sans-serif;
+	font-size: 32px;
+	font-weight: 700;
+	letter-spacing: -2px;
+	color: #fff;
+	width: auto;
+	position: relative;
+}
+
+#slide1, #slide2{
+	position: absolute;
+	top: -100px;
+	left:-1000px;
+	z-index: 90;
+}
+#slide1 p, #slide2 p {
+	padding-left: 1040px;
+}
+
+p.slide-underline {
+	display: inline-block;
+	border-bottom: 5px solid red;
+}
+p.savor-title-slide {
+	font-size: 60px !important;
+	display: inline-block;
+	border-bottom: 5px solid red;
+	padding-left: 1040px;
+}
 }
 @media (min-width: 960px) {
-	.gallery {
-		height: 400px;
-	}
-	div.entry-text h2 {
-		font-size: 80px;
-		bottom: 80px;
-		left: 40px;
-		border-bottom: 5px solid #f00;
-	}
+
+div.entry-text p {
+	font-family: 'Open Sans',sans-serif;
+	font-size: 45px;
+	font-weight: 700;
+	letter-spacing: -2px;
+	color: #fff;
+	width: auto;
+	position: relative;
+
+}
+
+#slide1, #slide2{
+	position: absolute;
+	top: 100px;
+	left:-1000px;
+	z-index: 90;
+}
+#slide1 p, #slide2 p {
+	padding-left: 1100px;
+}
+
+p.slide-underline {
+	display: inline-block;
+	border-bottom: 5px solid red;
+}
+p.savor-title-slide {
+	font-size: 90px !important;
+	display: inline-block;
+	border-bottom: 5px solid red;
+	padding-left: 1100px;
+}
 }
