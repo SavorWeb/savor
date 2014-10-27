@@ -13,7 +13,7 @@ body {
   width: 100%;
   overflow: hidden;
   height: 100%;
-  background: url(../images/bgTop.jpg) center center no-repeat fixed;
+  background: url(../images/bgTop.jpg) center center no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -297,7 +297,7 @@ body {
   width: 100%;
   overflow: hidden;
   height: 100%;
-  background: url(../images/bgTop.jpg) center center no-repeat fixed;
+  background: url(../images/bgTop.jpg) center center no-repeat;
   /*background:url(../images/line2.png) center center no-repeat;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -628,7 +628,7 @@ body {
   width: 100%;
   overflow: hidden;
   height: 100%;
-  background: url(../images/bgTop.jpg) center center no-repeat fixed;
+  background: url(../images/bgTop.jpg) center center no-repeat;
   /*background: url(../images/line3Bg.jpg) center center no-repeat;*/
   /*background:#3f2d28;*/
   -webkit-background-size: cover;
@@ -903,7 +903,7 @@ body {
   width: 100%;
   overflow: hidden;
   height: 100%;
-  background: url(../images/bgTop.jpg) center center no-repeat fixed;
+  background: url(../images/bgTop.jpg) center center no-repeat;
   /*background: url(../images/line4.png) center center no-repeat;*/
   /*background:#3f2d28;*/
   -webkit-background-size: cover;
@@ -1035,7 +1035,7 @@ body {
   width: 100%;
   overflow: hidden;
   height: 100%;
-  background: url(../images/bgTop.jpg) center center no-repeat fixed;
+  background: url(../images/bgTop.jpg) center center no-repeat;
   /*background: url(../images/line5Bg.jpg) center center no-repeat;	*/
   /*background:#3f2d28;*/
   -webkit-background-size: cover;
