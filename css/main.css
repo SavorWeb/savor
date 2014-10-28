@@ -60,6 +60,24 @@ canvas#line2-canvas {
 	left: 0;
 	cursor: url('../images/cursor.png'), auto;
 }
+canvas#line3-canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: url('../images/cursor.png'), auto;
+}
+canvas#line4-canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: url('../images/cursor.png'), auto;
+}
+canvas#line5-canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: url('../images/cursor.png'), auto;
+}
 div.entry-text p {
 	font-family: 'Open Sans',sans-serif;
 	font-size: 22px;

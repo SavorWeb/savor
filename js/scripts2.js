@@ -9,10 +9,10 @@ function initHeader() {
         // height = window.innerHeight;
  if (window_width > 1025){
         target = {x: width/2, y: height/2};
-        largeHeader = document.getElementById('line2-container');
+        largeHeader = document.getElementById('line3-container');
         //largeHeader.style.height = height+'px';
 
-        canvas = document.getElementById('line2-canvas');
+        canvas = document.getElementById('line3-canvas');
         canvas.width = width;
         canvas.height = height;
         ctx = canvas.getContext('2d');
@@ -84,7 +84,7 @@ function initHeader() {
             posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
             posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
         }
-        var this_offset = $('#line2-canvas').offset();
+        var this_offset = $('#line3-canvas').offset();
         target.x = posx;
         target.y = posy - this_offset.top;
     }
@@ -182,8 +182,8 @@ function initHeader() {
         return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
     }
  $(window).load(function() {
-        width = $('#line2-container').width();
-        height = $('#line2-container').height();
+        width = $('#line3-container').width();
+        height = $('#line3-container').height();
    var window_width = $(window).width();
     if(window_width > 960){
 
