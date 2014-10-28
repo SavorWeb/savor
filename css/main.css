@@ -52,31 +52,35 @@ canvas#heading-canvas {
 	top: 0;
 	left: 0;
 	cursor: url('../images/cursor.png'), auto;
-	z-index: 99;
+	z-index: 9990;
 }
 canvas#line2-canvas {
 	position: absolute;
 	top: 0;
 	left: 0;
 	cursor: url('../images/cursor.png'), auto;
+	z-index: 9990;
 }
 canvas#line3-canvas {
 	position: absolute;
 	top: 0;
 	left: 0;
 	cursor: url('../images/cursor.png'), auto;
+	z-index: 9990;
 }
 canvas#line4-canvas {
 	position: absolute;
 	top: 0;
 	left: 0;
 	cursor: url('../images/cursor.png'), auto;
+	z-index: 9990;
 }
 canvas#line5-canvas {
 	position: absolute;
 	top: 0;
 	left: 0;
 	cursor: url('../images/cursor.png'), auto;
+	z-index: 9990;
 }
 div.entry-text p {
 	font-family: 'Open Sans',sans-serif;
