@@ -1427,7 +1427,8 @@ textarea {
 .soc2 {
   width: 52px;
   height: 52px;
-  float: right; }
+  float: right;
+  border-radius: 50px; }
   .soc2 a {
     display: inline-block;
     height: 17px;
@@ -1436,12 +1437,14 @@ textarea {
     margin-top: 15px;
     margin-left: 2px; }
   .soc2:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    background: #D12215; }
 
 .soc3 {
   width: 52px;
   height: 52px;
-  float: right; }
+  float: right;
+  border-radius: 50px; }
   .soc3 a {
     display: inline-block;
     height: 19px;
@@ -1450,7 +1453,8 @@ textarea {
     margin-top: 15px;
     margin-left: 0px; }
   .soc3:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    background: #D12215; }
 
 .soc4 {
   width: 52px;
