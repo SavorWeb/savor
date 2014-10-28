@@ -69,7 +69,11 @@ $(window).load(function() {
         $('body').removeAttr('style');
         $('#swpreloader').css('visibility','hidden');
         $('#swpreloader').css('display','none');
-        swpreload.stop();
+        var url = window.location.href;
+        if (url == 'http://www.savorweb.com/savor/' || url == 'http://savorweb.com/savor/'){
+	        console.log('working');
+	        swpreload.stop();
+        }
 
         $('#preload-container').css('visibility','visible');
         
@@ -166,6 +170,7 @@ function scrolling_navbar(){
             $('.gallery').css('margin-top',menu_height);
     		$('#menuF .logo').css('margin-top',20);
     		$('#menu').css('margin-top',30);
+    		$('ul.soc').css('top',15);
     				
     		setTimeout(function(){
                 TweenLite.to('#menuF', 0.5, {top:'0px'});
@@ -186,6 +191,7 @@ function scrolling_navbar(){
     		setTimeout(function(){
     			$('#menuF .logo').css('margin-top',60);
         		$('#menu').css('margin-top',72);
+	    		$('ul.soc').css('top',58);
                 
                 $('#menuF').removeClass('fixed-nav');
                 $('.gallery').css('margin-top','0px');
