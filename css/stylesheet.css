@@ -62,6 +62,7 @@ body {
     text-decoration: none; }
 
 #menu {
+  margin-right: 110px;
   /*margin-top: 33px;*/
   margin-top: 74px;
   float: right; }
@@ -1384,9 +1385,13 @@ textarea {
   box-shadow: 0px 2px 0px 0px #000; }
 
 .soc {
-  margin-top: 42px;
+  position: absolute;
+  right: 0;
+  list-style-type: none;
+  top: 58px;
   text-align: center; }
   .soc ul {
+    list-style-type: none;
     margin-left: 24px;
     padding-left: 0;
     display: inline-block; }
@@ -1396,7 +1401,7 @@ textarea {
       float: left;
       text-align: center;
       text-decoration: none;
-      list-style: none; }
+      list-style-type: none; }
 
 .soc1 {
   width: 52px;
@@ -1422,8 +1427,7 @@ textarea {
 .soc2 {
   width: 52px;
   height: 52px;
-  border: 2px solid #fdfdfc;
-  border-radius: 50px; }
+  float: right; }
   .soc2 a {
     display: inline-block;
     height: 17px;
@@ -1431,20 +1435,13 @@ textarea {
     background: url(../images/socIcons.png) -74px 0 no-repeat;
     margin-top: 15px;
     margin-left: 2px; }
-    .soc2 a:hover {
-      border: 0;
-      background: url(../images/socIcons.png) -74px 0 no-repeat;
-      box-shadow: none; }
   .soc2:hover {
-    cursor: pointer;
-    border: 2px solid #1c1c1c;
-    background: #1c1c1c; }
+    cursor: pointer; }
 
 .soc3 {
   width: 52px;
   height: 52px;
-  border: 2px solid #fdfdfc;
-  border-radius: 50px; }
+  float: right; }
   .soc3 a {
     display: inline-block;
     height: 19px;
@@ -1452,14 +1449,8 @@ textarea {
     background: url(../images/socIcons.png) -147px 0 no-repeat;
     margin-top: 15px;
     margin-left: 0px; }
-    .soc3 a:hover {
-      border: 0;
-      background: url(../images/socIcons.png) -147px 0 no-repeat;
-      box-shadow: none; }
   .soc3:hover {
-    cursor: pointer;
-    border: 2px solid #1c1c1c;
-    background: #1c1c1c; }
+    cursor: pointer; }
 
 .soc4 {
   width: 52px;
