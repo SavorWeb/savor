@@ -71,7 +71,6 @@ $(window).load(function() {
         $('#swpreloader').css('display','none');
         var url = window.location.href;
         if (url == 'http://www.savorweb.com/savor/' || url == 'http://savorweb.com/savor/'){
-	        console.log('working');
 	        swpreload.stop();
         }
 
