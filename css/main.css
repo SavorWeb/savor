@@ -1,11 +1,7 @@
 body {
 	overflow-x:hidden;
 }
-.line2 {
-	z-index: 80;
-	position: relative;
-	background: url(../images/bgTop.jpg) center center no-repeat;
-}
+
 /*Nav*/
 div#menuF.fixed-nav {
 	position: fixed;
@@ -83,9 +79,9 @@ canvas#line5-canvas {
 	z-index: 9990;
 }
 div.entry-text p {
-	font-family: 'Open Sans',sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 22px;
-	font-weight: 700;
+	font-weight: 300;
 	letter-spacing: -2px;
 	color: #fff;
 	width: auto;
@@ -128,6 +124,7 @@ p.savor-title-slide {
 	left: 15px;
 	right: 15px;
 	display: none;
+	font-family: 'Kaushan Script', cursive;
 	
 }
 
@@ -135,7 +132,8 @@ p.portfolio-title {
 	color: #fff;
 	width: 100%;
 	text-align: center;
-	font-size: 24px;
+	font-size: 28px;
+	font-family: 'Kaushan Script', cursive;
 }
 
 /*************************************************************** 
@@ -178,9 +176,9 @@ div.centPic {
 @media (min-width: 520px) {
 
 div.entry-text p {
-	font-family: 'Open Sans',sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 32px;
-	font-weight: 700;
+	font-weight: 300;
 	letter-spacing: -2px;
 	color: #fff;
 	width: auto;
@@ -211,9 +209,9 @@ p.savor-title-slide {
 @media (min-width: 960px) {
 
 div.entry-text p {
-	font-family: 'Open Sans',sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 45px;
-	font-weight: 700;
+	font-weight: 300;
 	letter-spacing: -2px;
 	color: #fff;
 	width: auto;
@@ -241,4 +239,12 @@ p.savor-title-slide {
 	border-bottom: 5px solid red;
 	padding-left: 1100px;
 }
+}
+@media (max-width:500px){
+	.iphone img {
+		max-width: 70%;
+	}
+	.ipad img {
+		max-width: 70%;
+	}
 }

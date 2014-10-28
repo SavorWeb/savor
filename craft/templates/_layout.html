@@ -14,14 +14,16 @@
 		<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+		<link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/slicknav.css">
 		<link rel="stylesheet" href="{{ siteUrl }}css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" />
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/stylesheet.min.css">
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/main.css">
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700' rel='stylesheet' type='text/css'>
+		
 		<script type="text/javascript" src="{{ siteUrl }}js/jquery-1.8.3.min.js"></script>
 		<script src="{{ siteUrl }}js/sorting.js" type="text/javascript"></script>
 		<!--script type="text/javascript" src="{{ siteUrl }}js/jquery.nav.js"></script-->
@@ -143,7 +145,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div style="position: relative;">
 		{% set tphoto1 = entry.tphoto1.first() %}
 		{% set tphoto2 = entry.tphoto2.first() %}
