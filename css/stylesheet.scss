@@ -3,6 +3,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 $primary: #D12215;
+$header-font: 'Montserrat';
+$body-font: 'Open Sans';
 
 html {
   background: #fff;
@@ -10,7 +12,7 @@ html {
 }
 
 body {
-  font-family: 'Roboto', 'sans-serif';
+  font-family: $body-font, 'sans-serif';
 }
 
 .headerLine {
@@ -50,7 +52,7 @@ body {
 
 .logo {
   margin-top: 60px;
-  font-family: 'Roboto', 'sans-serif';
+  font-family: $body-font, 'sans-serif';
   font-size: 30px;
   font-weight: 700;
   text-transform: uppercase;
@@ -61,7 +63,7 @@ body {
   p {
     letter-spacing: 0.5px;
     margin-top: -10px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-size: 12px;
     font-weight: 300;
     text-transform: lowercase;
@@ -95,7 +97,7 @@ body {
     padding-left: 17px;
     padding-right: 16px;
     float: left;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-size: 14px;
     color: #fff;
     list-style: none;
@@ -256,20 +258,20 @@ body {
   text-align: center;
   h3 {
     letter-spacing: 1px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-size: 37px;
     font-weight: 400;
     color: #2f2f2f;
   }
   h4 {
     margin-left: -5px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-size: 20px;
     font-weight: 300;
     color: #2f2f2f;
   }
   p {
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-size: 13px;
     font-weight: 300;
     margin-top: 16px;
@@ -286,7 +288,7 @@ body {
   margin-top: 25px;
   h3 {
     text-align: left;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-size: 28px;
     font-weight: 400;
     color: $primary;
@@ -294,7 +296,7 @@ body {
   h4 {
     margin-top: 16px;
     text-align: left;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-size: 16px;
     font-weight: 300;
   }
@@ -341,7 +343,7 @@ body {
   h3 {
     font-size: 28px;
     color: #2f2f2f;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-weight: 400;
 
   }
@@ -436,12 +438,12 @@ body {
   h4 {
     /*margin-left: -15px;*/
     margin-top: 17px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-size: 20px;
     font-weight: 300;
   }
   p {
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-size: 13px;
     font-weight: 300;
     margin-top: 12px;
@@ -456,6 +458,10 @@ body {
     height: 200px;
     margin-top: -80px;
     display: block;
+  }
+  img {
+    margin: 0 auto;
+    max-width: 200px;
   }
 }
 
@@ -498,14 +504,14 @@ body {
   h3 {
     font-size: 28px;
     color: #2f2f2f;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-weight: 400;
   }
   h4 {
     margin-top: 15px;
     font-size: 16px;
     color: #2f2f2f;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-weight: 300;
   }
 }
@@ -527,21 +533,21 @@ body {
     margin-top: 24px;
     font-size: 20px;
     color: #2f2f2f;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-weight: 300;
   }
   h5 {
     margin-top: -3px;
     font-size: 13px;
     color: #a9a9a9;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-weight: 300;
   }
   p {
     margin-top: 12px;
     font-size: 13px;
     color: #666;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-weight: 300;
     line-height: 24px;
   }
@@ -584,7 +590,7 @@ body {
   h2 {
     font-size: 32px;
     color: #2f2f2f;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-weight: 400;
 
   }
@@ -625,7 +631,7 @@ body {
   margin-top: -19px;
   font-size: 18px;
   color: #2f2f2f;
-  font-family: 'Roboto', 'sans-serif';
+  font-family: $body-font, 'sans-serif';
   font-weight: 700;
 }
 
@@ -635,14 +641,14 @@ body {
   font-size: .8em;
   font-size: 18px;
   color: #2f2f2f;
-  font-family: 'Roboto', 'sans-serif';
+  font-family: $body-font, 'sans-serif';
   font-weight: 700;
 }
 
 .chart sup {
   font-size: 18px;
   color: #2f2f2f;
-  font-family: 'Roboto', 'sans-serif';
+  font-family: $body-font, 'sans-serif';
   font-weight: 700;
   top: 0px !important;
   left: 0px !important;
@@ -655,7 +661,7 @@ body {
     text-align: center;
     font-size: 20px;
     color: #2f2f2f;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-weight: 300;
   }
   p {
@@ -664,7 +670,7 @@ body {
     text-align: center;
     font-size: 13px;
     color: #2f2f2f;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-weight: 300;
   }
 }
@@ -686,7 +692,7 @@ body {
   h3 {
     font-size: 28px;
     color: #2f2f2f;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-weight: 400;
   }
 }
@@ -696,14 +702,14 @@ body {
     margin-top: 51px;
     font-size: 16px;
     color: #2f2f2f;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-weight: 300;
   }
   p {
     font-size: 13px;
     line-height: 22px;
     color: #666666;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-weight: 300;
     margin-top: 12px;
     margin-bottom: 0;
@@ -818,7 +824,7 @@ body {
     font-size: 42px;
     text-align: center;
     color: #fff;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-weight: 400;
     margin-top: 17px;
   }
@@ -826,7 +832,7 @@ body {
     font-size: 16px;
     text-align: center;
     color: #fff;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-weight: 300;
   }
 }
@@ -874,7 +880,7 @@ body {
       color: #fff;
       font-size: 13px;
       text-align: center;
-      font-family: 'Roboto', 'sans-serif';
+      font-family: $body-font, 'sans-serif';
       font-weight: 700;
     }
     &:hover {
@@ -912,7 +918,7 @@ body {
       color: #fff;
       font-size: 13px;
       text-align: center;
-      font-family: 'Roboto', 'sans-serif';
+      font-family: $body-font, 'sans-serif';
       font-weight: 700;
       /*margin-bottom: 15px;*/
       /*margin-right: 10px;*/
@@ -985,7 +991,7 @@ body {
     color: #2f2f2f;
     font-size: 16px;
     text-align: center;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-weight: 300;
   }
   li {
@@ -996,7 +1002,7 @@ body {
     color: #a9a9a9;
     font-size: 13px;
     text-align: center;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-weight: 300;
   }
   a:hover {
@@ -1049,7 +1055,7 @@ body {
   display: inline-block;
   color: #a9a9a9;
   font-size: 13px;
-  font-family: 'Roboto', 'sans-serif';
+  font-family: $body-font, 'sans-serif';
   font-weight: 300;
 }
 
@@ -1070,13 +1076,13 @@ body {
   }
   .dowbload a {
     font-size: 14px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-weight: 700;
   }
   .buy {
     a {
       font-size: 14px;
-      font-family: 'Roboto', 'sans-serif';
+      font-family: $body-font, 'sans-serif';
       font-weight: 700;
     }
     box-shadow: 0px 2px 0px 0px darken($primary, 10%);
@@ -1159,14 +1165,14 @@ body {
     text-align: center;
     color: #2f2f2f;
     font-size: 16px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-weight: 300;
   }
   p {
     line-height: 23px;
     color: #666666;
     font-size: 13px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-weight: 300;
   }
 }
@@ -1189,7 +1195,7 @@ body {
     text-align: center;
     color: #2f2f2f;
     font-size: 16px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-weight: 300;
     text-decoration: none;
     &:hover {
@@ -1205,7 +1211,7 @@ body {
       display: inline-block;
       list-style: none;
       a {
-        font-family: 'Roboto', 'sans-serif';
+        font-family: $body-font, 'sans-serif';
         font-weight: 300;
         color: #a9a9a9;
         font-size: 13px;
@@ -1215,7 +1221,7 @@ body {
           padding-right: 5px;
         }
       }
-      font-family: 'Roboto', 'sans-serif';
+      font-family: $body-font, 'sans-serif';
       font-weight: 300;
       color: #a9a9a9;
       font-size: 13px;
@@ -1311,7 +1317,7 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     border: 0px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-weight: 300;
     font-size: 13px;
     color: #555555;
@@ -1345,7 +1351,7 @@ textarea {
   padding-top: 10px;
   padding-bottom: 10px;
   border: 0px;
-  font-family: 'Roboto', 'sans-serif';
+  font-family: $body-font, 'sans-serif';
   font-weight: 300;
   font-size: 13px;
   color: #555555;
@@ -1363,7 +1369,7 @@ textarea {
   }
   .cBtn {
     a {
-      font-family: 'Roboto', 'sans-serif';
+      font-family: $body-font, 'sans-serif';
       font-weight: 700;
       font-size: 13px;
       color: #fff;
@@ -1396,7 +1402,7 @@ textarea {
 }
 
 .forma .cBtn .clear a, .cBtn .send a {
-  font-family: 'Roboto', 'sans-serif';
+  font-family: $body-font, 'sans-serif';
   font-weight: 700;
 }
 
@@ -1412,7 +1418,7 @@ textarea {
 .cont {
   margin-top: 44px;
   margin-left: -33px;
-  font-family: 'Roboto', 'sans-serif';
+  font-family: $body-font, 'sans-serif';
   font-weight: 300;
   font-size: 13px;
   color: #666666;
@@ -1496,14 +1502,14 @@ textarea {
       font-size: 42px;
       text-align: center;
       color: #fff;
-      font-family: 'Roboto', 'sans-serif';
+      font-family: $header-font, 'sans-serif';
       font-weight: 400;
     }
     p {
       font-size: 16px;
       text-align: center;
       color: #fff;
-      font-family: 'Roboto', 'sans-serif';
+      font-family: $body-font, 'sans-serif';
       font-weight: 300;
     }
   }
@@ -1524,14 +1530,14 @@ textarea {
   h3 {
     font-size: 28px;
     color: #2f2f2f;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-weight: 400;
     margin-top: 37px;
   }
   p {
     font-size: 16px;
     color: #2f2f2f;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-weight: 300;
     margin-top: 13px;
     line-height: 24px;
@@ -1593,7 +1599,7 @@ textarea {
   h3 {
     margin-top: 159px;
     font-size: 28px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $header-font, 'sans-serif';
     font-weight: 400;
     color: #fff;
     text-align: center;
@@ -1601,7 +1607,7 @@ textarea {
   }
   p {
     font-size: 16px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-weight: 300;
     color: #fff;
     text-align: center;
@@ -1609,7 +1615,7 @@ textarea {
   .fEmail {
     float: left;
     font-size: 13px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-weight: 300;
     border: 0;
     background: #1c1c1c;
@@ -1625,7 +1631,7 @@ textarea {
   .subS {
     text-transform: uppercase;
     font-size: 13px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-weight: 700;
     float: left;
     color: #fff;
@@ -1882,7 +1888,7 @@ textarea {
   //margin-top: 37px;
   p {
     font-size: 13px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: $body-font, 'sans-serif';
     font-weight: 300;
     color: #fff;
   }
@@ -1924,7 +1930,7 @@ textarea {
       padding: 15px;
       text-decoration: none;
       font-size: 13px;
-      font-family: 'Roboto', 'sans-serif';
+      font-family: $body-font, 'sans-serif';
       font-weight: 300;
       color: #fff;
       margin-top: 10px;
@@ -1944,7 +1950,7 @@ textarea {
   border: 0;
   background: #101010;
   font-size: 13px;
-  font-family: 'Roboto', 'sans-serif';
+  font-family: $body-font, 'sans-serif';
   font-weight: 300;
   color: #6d6d6d;
 }
