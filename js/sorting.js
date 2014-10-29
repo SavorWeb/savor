@@ -2,10 +2,10 @@ $(window).load(function(){
 	
 	var $container = $('.portfolio_block, .shop_block');
 
-	$container.isotope({
-		itemSelector : '.element',
-		masonry: {columnWidth: 1}
-	});
+	// $container.isotope({
+	// 	itemSelector : '.element',
+	// 	masonry: {columnWidth: 1}
+	// });
     
 	var $optionSets = $('#options .option-set'),
 		$optionLinks = $optionSets.find('a');
