@@ -1,16 +1,16 @@
 {#
- # Layout template
- # ---------------
- #
- # This template defines your site’s global layout. It can be
- # “extended” by other templates to fill in the gaps.
- #
- # See Twig’s Template Inheritance documentation for more details:
- # http://twig.sensiolabs.org/doc/templates.html#template-inheritance
- #}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+	# Layout template
+	# ---------------
+	#
+	# This template defines your site’s global layout. It can be
+	# “extended” by other templates to fill in the gaps.
+	#
+	# See Twig’s Template Inheritance documentation for more details:
+	# http://twig.sensiolabs.org/doc/templates.html#template-inheritance
+	#}
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
 		<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,185 +18,126 @@
 		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/font-awesome.css">
+		<!-- 	<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/font-awesome.css"> -->
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/slicknav.css">
-		<link rel="stylesheet" href="{{ siteUrl }}css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" />
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/stylesheet.min.css">
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/main.css">
-		
-		<script type="text/javascript" src="{{ siteUrl }}js/jquery-1.8.3.min.js"></script>
-		<script src="{{ siteUrl }}js/sorting.js" type="text/javascript"></script>
-		<!--script type="text/javascript" src="{{ siteUrl }}js/jquery.nav.js"></script-->
-		
-		
 	</head>
 	<body>
-    
-    <!--home start-->
-    <div id="swpreloader"></div>
-   <div id="preload-container">
-    <div id="home">
-    	<div class="headerLine" id="main-heading">
-    	
-	<div id="menuF" class="default">
-		<div class="container" id="navbar-fix">
-			<div class="row">
-				<div class="logo col-md-4">
-					<div>
-						<a href="{{ siteUrl }}">
-							<img src="{{ siteUrl }}images/logo.png" alt="SavorWeb Logo">
-						</a>
-					</div>
-				</div>
-				<div class="col-md-8">
-					<div class="navmenu" style="text-align:center;">
-						<ul id="menu">
-							<li class="active"><a href="#home">Home</a></li>
-							<li><a href="#project">Projects</a></li>
-							<li><a href="#about">About</a></li>
-							<li><a href="#news">News</a></li>
-							<li class="last"><a href="#contact">Contact</a></li>
-							<!--li><a href="#features">Features</a></li-->
-						</ul>
-					</div>
-					<ul class="soc">
-						<li class="soc2"><a href="http://www.facebook.com/savorweb"></a></li>
-						<li class="soc3"><a href="http://www.twitter.com/savorweb"></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-		
 
-		<div class="container">
-			<div class="row wrap">
-				<div class="col-md-12 gallery"> 
-						<div id="gallery_wrapper">
-								<div id="slide1" class="entry-text">
-									{{ entry.rotatorLine1 }}
+		<!--home start-->
+		<div id="swpreloader"></div>
+		<div id="preload-container">
+			<div id="home">
+				<div class="headerLine" id="main-heading">
+
+					<div id="menuF" class="default">
+						<div class="container" id="navbar-fix">
+							<div class="row">
+								<div class="logo col-md-4">
+									<div>
+										<a href="{{ siteUrl }}">
+											<img src="{{ siteUrl }}images/logo.png" alt="SavorWeb Logo">
+										</a>
+									</div>
 								</div>
-							
-								<div id="slide2" class="entry-text">
-									{{ entry.rotatorLine2 }}
+								<div class="col-md-8">
+									<div class="navmenu" style="text-align:center;">
+										<ul id="menu">
+											<li class="active"><a href="#home">Home</a></li>
+											<li><a href="#project">Projects</a></li>
+											<li><a href="#about">About</a></li>
+											<li><a href="#news">News</a></li>
+											<li class="last"><a href="#contact">Contact</a></li>
+										</ul>
+									</div>
+									<ul class="soc">
+										<li class="soc2"><a href="http://www.facebook.com/savorweb"></a></li>
+										<li class="soc3"><a href="http://www.twitter.com/savorweb"></a></li>
+									</ul>
 								</div>
-								
-								<!--<div id="slide3" class="entry-text">
-									{{ entry.rotatorLine3 }}
-								</div>-->
-						</div><!-- #gallery_wrapper -->
-				</div>
-			</div>
-			<canvas id="heading-canvas"></canvas>
-		</div>
-
-	</div><!-- end of headerline -->
+							</div>
+						</div>
+					</div>
 
 
-			{% block content %}
+					<div class="container">
+						<div class="row wrap">
+							<div class="col-md-12 gallery"> 
+								<div id="gallery_wrapper">
+									<div id="slide1" class="entry-text">
+										{{ entry.rotatorLine1 }}
+									</div>
+
+									<div id="slide2" class="entry-text">
+										{{ entry.rotatorLine2 }}
+									</div>
+								</div><!-- #gallery_wrapper -->
+							</div>
+						</div>
+						<canvas id="heading-canvas"></canvas>
+					</div>
+
+				</div><!-- end of headerline -->
+
+
+				{% block content %}
 				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
 				<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
-			{% endblock %}
-    
-    
+				{% endblock %}
 
-		<div class="line6">	
+
+
+				<div class="line6">	
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2686.4748206041945!2d-116.78076200000002!3d47.6751979999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5361c66193f1a45b%3A0xd2dfcf383da1adbc!2sSavorWeb!5e0!3m2!1sen!2sus!4v1411576697482" width="100%" height="750" frameborder="0" style="border:0"></iframe>
-		</div>
-<!-- 		<div class="container">
-			<div class="row ftext">
-				<div class="col-md-12">
-				<a id="features"></a>
-				<h3>We Care About Our Clients and Can Make Their Life Easier!</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, nostrum tenetur deserunt temporibus qui esse ratione rem, eius distinctio sunt veniam et nulla! Non ducimus cum tempora fugiat blanditiis, hic?</p>
 				</div>
-				<div class="cBtn">
-					<ul style="margin-top: 23px; margin-bottom: 0px; padding-left: 26px;">
-						<li class="dowbload"><a href="#"><i class="fa fa-star"></i>View All Features</a></li>
-						<li class="buy"><a href="#"><i class="fa fa-download"></i>Get a Quote</a></li>
-					</ul>
-			</div>
-			</div>
-		</div>
-		<div class="line7">
-			<div class="container">
-				<div class="row footer">
-					<div class="col-md-12">
-						<h3>{{ entry.letterHeader }}</h3>
-						<p>{{ entry.letterHeaderBody }}</p>
-						<div class="fr">
-						<div style="display: inline-block;">
-							<input class="col-md-6 fEmail" name='Email' placeholder='Enter Your Email'/>
-							<a href="#" class="subS">Subscribe!</a>
-						</div>
+				<div class="lineBlack">
+					<div class="container">
+						<div class="row downLine">
+							<div class="col-md-6 text-left copy">
+								<p>Copyright &copy; 2014 SavorWeb. All Rights Reserved.</p>
+							</div>
+							<div class="col-md-6 text-right dm">
+								<ul id="downMenu">
+									<li class="active"><a href="#home">Home</a></li>
+									<li><a href="#project1">Projects</a></li>
+									<li><a href="#about">About</a></li>
+									<li><a href="#news">News</a></li>
+									<li class="last"><a href="#contact">Contact</a></li>
+									<!--li><a href="#features">Features</a></li-->
+								</ul>
+							</div>
 						</div>
 					</div>
-					<div class="soc col-md-12">
-						<ul>
-							<li class="soc1"><a href="#"></a></li>
-							<li class="soc2"><a href="#"></a></li>
-							<li class="soc3"><a href="#"></a></li>
-							<li class="soc4"><a href="#"></a></li>
-							<li class="soc5"><a href="#"></a></li>
-							<li class="soc6"><a href="#"></a></li>
-							<li class="soc7"><a href="#"></a></li>
-							<li class="soc8"><a href="#"></a></li>
-						</ul>
-					</div>
 				</div>
-			</div>
-		</div> -->
-		<div class="lineBlack">
-			<div class="container">
-				<div class="row downLine">
-					<div class="col-md-12 text-right">
-						<!--input  id="searchPattern" type="search" name="pattern" value="Search the Site" onblur="if(this.value=='') {this.value='Search the Site'; }" onfocus="if(this.value =='Search the Site' ) this.value='';this.style.fontStyle='normal';" style="font-style: normal;"/-->
-						<!-- <input  id="searchPattern" type="search" placeholder="Search the Site"/><i class="glyphicon glyphicon-search" style="font-size: 13px; color:#a5a5a5;" id="iS"></i> -->
-					</div>
-					<div class="col-md-6 text-left copy">
-						<p>Copyright &copy; 2014 SavorWeb. All Rights Reserved.</p>
-					</div>
-					<div class="col-md-6 text-right dm">
-						<ul id="downMenu">
-							<li class="active"><a href="#home">Home</a></li>
-							<li><a href="#project1">Projects</a></li>
-							<li><a href="#about">About</a></li>
-							<li><a href="#news">News</a></li>
-							<li class="last"><a href="#contact">Contact</a></li>
-							<!--li><a href="#features">Features</a></li-->
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-    </div>		
-</div>		
-		
-		
-	<script src="{{ siteUrl }}js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
-	<script src="{{ siteUrl }}js/bootstrap.min.js"></script>
-	<script src="{{ siteUrl }}js/jquery.slicknav.js"></script>
-	<script>
-			$(document).ready(function(){
-			$(".bhide").click(function(){
-				$(".hideObj").slideDown();
-				$(this).hide(); //.attr()
-				return false;
-			});
-			$(".bhide2").click(function(){
-				$(".container.hideObj2").slideDown();
-				$(this).hide(); // .attr()
-				return false;
-			});
-				
-			$('.heart').mouseover(function(){
-					$(this).find('i').removeClass('fa-heart-o').addClass('fa-heart');
-				}).mouseout(function(){
-					$(this).find('i').removeClass('fa-heart').addClass('fa-heart-o');
-				});
-				
-				function sdf_FTS(_number,_decimal,_separator)
-				{
+			</div>		
+		</div>		
+
+		<script type="text/javascript" src="{{ siteUrl }}js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="{{ siteUrl }}js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="{{ siteUrl }}js/jquery.mobile.customized.min.js"></script>
+		<script type="text/javascript" src="{{ siteUrl }}js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="{{ siteUrl }}js/myscript.js"></script>	
+		<script type="text/javascript" src="{{ siteUrl }}js/jquery.slicknav.js"></script>
+		<script type="text/javascript" src="{{ siteUrl }}js/plugins.js"></script>
+		<script type="text/javascript" src="{{ siteUrl }}js/jquery.finalTilesGallery.js"></script>
+
+		<!-- animations -->
+		<script type="text/javascript" src="{{ siteUrl }}js/viewport.mini.js"></script>
+		<script type="text/javascript" src="{{ siteUrl }}js/rAF.js"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenMax.min.js"></script>
+		<script type="text/javascript" src="{{ siteUrl }}js/EasePack.min.js"></script>
+		<script type="text/javascript" src="{{ siteUrl }}js/scripts.js"></script>
+		<script type="text/javascript" src="{{ siteUrl }}js/scripts1.js"></script>
+		<script type="text/javascript" src="{{ siteUrl }}js/scripts2.js"></script>
+		<script type="text/javascript" src="{{ siteUrl }}js/scripts3.js"></script>
+		<script type="text/javascript" src="{{ siteUrl }}js/scripts4.js"></script>
+
+		<script>
+		$(document).ready(function(){
+
+			function sdf_FTS(_number,_decimal,_separator)
+			{
 				var decimal=(typeof(_decimal)!='undefined')?_decimal:2;
 				var separator=(typeof(_separator)!='undefined')?_separator:'';
 				var r=parseFloat(_number)
@@ -207,132 +148,89 @@
 				r=(rr[1]?b+'.'+rr[1]:b);
 
 				return r;
-}
+			}
 
 			setTimeout(function(){
-					$('#counter').text('0');
-					$('#counter1').text('0');
-					$('#counter2').text('0');
-					
-					setInterval(function(){
-						
-						var curval=parseInt($('#counter').text());
-						var curval1=parseInt($('#counter1').text().replace(' ',''));
-						var curval2=parseInt($('#counter2').text());
-						
-						if(curval<{{ entry.metric1 }}){
-							$('#counter').text(curval+2);
-						}
-						if(curval1<{{ entry.metric2 }}){
-							$('#counter1').text(sdf_FTS((curval1+2),0,''));
-						}
-						if(curval2<{{ entry.metric3 }}){
-							$('#counter2').text(curval2+2);
-						}
-						
-					}, 2);
-					
-				}, 500);
-			});
-	</script>
+				$('#counter').text('0');
+				$('#counter1').text('0');
+				$('#counter2').text('0');
 
-	
-	<script type="text/javascript">
-	jQuery(document).ready(function(){
-		jQuery('#menu').slicknav();
-		
-	});
+				setInterval(function(){
 
-	</script>
-	
-	
+					var curval=parseInt($('#counter').text());
+					var curval1=parseInt($('#counter1').text().replace(' ',''));
+					var curval2=parseInt($('#counter2').text());
 
-	<script>
-		/*menu*/
-		function calculateScroll() {
-			var contentTop      =   [];
-			var contentBottom   =   [];
-			var winTop      =   $(window).scrollTop();
-			var rangeTop    =   200;
-			var rangeBottom =   500;
-			$('.navmenu').find('a').each(function(){
-				contentTop.push( $( $(this).attr('href') ).offset().top );
-				contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
-			})
-			$.each( contentTop, function(i){
-				if ( winTop > contentTop[i] - rangeTop && winTop < contentBottom[i] - rangeBottom ){
-					$('.navmenu li')
-					.removeClass('active')
-					.eq(i).addClass('active');				
-				}
-			})
-		};
-		
-		$(document).ready(function(){
+					if(curval<{{ entry.metric1 }}){
+						$('#counter').text(curval+2);
+					}
+					if(curval1<{{ entry.metric2 }}){
+						$('#counter1').text(sdf_FTS((curval1+2),0,''));
+					}
+					if(curval2<{{ entry.metric3 }}){
+						$('#counter2').text(curval2+2);
+					}
+
+				}, 2);
+
+			}, 500);
+
+			jQuery('#menu').slicknav();
+
 			calculateScroll();
 			$(window).scroll(function(event) {
 				calculateScroll();
 			});
+
 			$('.navmenu ul li a').click(function() {  
 				$('html, body').animate({scrollTop: $(this.hash).offset().top - 80}, 800);
 				return false;
 			});
-		});		
-	</script>	
-	<script type="text/javascript" charset="utf-8">
 
-		jQuery(document).ready(function(){
-			jQuery(".pretty a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'light_square',slideshow:10000, autoplay_slideshow: true, social_tools: ''});
-			
-		});
-	</script>
-	<script src="{{ siteUrl }}js/viewport.mini.js" type="text/javascript"></script>
-	
 
-	<script type="text/javascript" src="{{ siteUrl }}js/jquery.mobile.customized.min.js"></script>
-	<script type="text/javascript" src="{{ siteUrl }}js/jquery.easing.1.3.js"></script>
-	<script type="text/javascript" src="{{ siteUrl }}js/jquery.easing.1.3.js"></script> 
-	<script type="text/javascript" src="{{ siteUrl }}js/myscript.js"></script>
-	<script type="text/javascript" src="{{ siteUrl }}js/plugins.js"></script>
-	<script type="text/javascript" src="{{ siteUrl }}js/jquery.finalTilesGallery.js"></script>
-	
-<script>
-$(document).ready( function() {
-	if ($(window).width() > 960) {
-		$('#gallery').finalTilesGallery({
-		    gridCellSize: 5,
-		    minTileWidth: 100,
-		    imageSizeFactor: .5,
-		    hoverEffect: 'slide-left',
-		    scrollEffect: 'slide'
+			/*menu*/
+			function calculateScroll() {
+				var contentTop      =   [];
+				var contentBottom   =   [];
+				var winTop      =   $(window).scrollTop();
+				var rangeTop    =   200;
+				var rangeBottom =   500;
+				$('.navmenu').find('a').each(function(){
+					contentTop.push( $( $(this).attr('href') ).offset().top );
+					contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
+				})
+				$.each( contentTop, function(i){
+					if ( winTop > contentTop[i] - rangeTop && winTop < contentBottom[i] - rangeBottom ){
+						$('.navmenu li')
+						.removeClass('active')
+						.eq(i).addClass('active');				
+					}
+				})
+			};
+
+			if ($(window).width() > 960) {
+				$('#gallery').finalTilesGallery({
+					gridCellSize: 5,
+					minTileWidth: 100,
+					imageSizeFactor: .5,
+					hoverEffect: 'slide-left',
+					scrollEffect: 'slide'
+				});
+			} else {
+				$('#gallery').finalTilesGallery({
+					gridCellSize: 5,
+					minTileWidth: 100,
+					imageSizeFactor: .2,
+					hoverEffect: 'slide-left',
+					scrollEffect: 'slide'
+				});
+			}
+			$(".tile a").magnificPopup({
+				type: 'image'
+			});
 		});
-		} else {
-			$('#gallery').finalTilesGallery({
-			    gridCellSize: 5,
-			    minTileWidth: 100,
-	            imageSizeFactor: .2,
-			    hoverEffect: 'slide-left',
-			    scrollEffect: 'slide'
-		    });
-		}
-	    $(".tile a").magnificPopup({
-		    type: 'image'
-		});
-	}
-});
 </script>
 
-	<script src="{{ siteUrl }}js/jquery.isotope.js" type="text/javascript"></script>
-	
-	<script type="text/javascript" src="{{ siteUrl }}js/rAF.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenMax.min.js"></script>
-	<script type="text/javascript" src="{{ siteUrl }}js/EasePack.min.js"></script>
-	<script type="text/javascript" src="{{ siteUrl }}js/scripts.js"></script>
-	<script type="text/javascript" src="{{ siteUrl }}js/scripts1.js"></script>
-	<script type="text/javascript" src="{{ siteUrl }}js/scripts2.js"></script>
-	<script type="text/javascript" src="{{ siteUrl }}js/scripts3.js"></script>
-	<script type="text/javascript" src="{{ siteUrl }}js/scripts4.js"></script>
+</body>
 
-	</body>
-	
 </html>

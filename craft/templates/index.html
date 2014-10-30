@@ -21,19 +21,6 @@
 
 	{% block content %}
 
-
-<!-- 	<h1>{{ entry.heading }}</h1>
-
-	{{ entry.body }}
-
-	<h2>Recent News</h2>
-	<ul>
-		{% for entry in craft.entries.section('news').limit(5).find() %}
-			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-		{% endfor %}
-	</ul> -->
-
-
 	<div class="container">
 		<div class="row intro-row">
 			<div class="col-md-5 cBusiness">
@@ -44,20 +31,20 @@
 				{% set iphone = entry.topFeatureImage.first() %}
 				{% if iphone %}
 				<div class="iphone">
-				   <img class="img-responsive"  src="{{ iphone.url }}"/>
-				  </div>
+					<img class="img-responsive"  src="{{ iphone.url }}"/>
+				</div>
 				{% endif %}
 				{% set ipad = entry.middleFeatureImage.first() %}
 				{% if ipad %}
 				<div class="ipad">
-				   <img class="img-responsive"  src="{{ ipad.url }}"/>
-				  </div>
+					<img class="img-responsive"  src="{{ ipad.url }}"/>
+				</div>
 				{% endif %}
 				{% set imac = entry.featureImage.first() %}
 				{% if imac %}
 				<div class="imac">
-				   <img class="img-responsive"  src="{{ imac.url }}"/>
-				  </div>
+					<img class="img-responsive"  src="{{ imac.url }}"/>
+				</div>
 				{% endif %}
 			</div>
 		</div>
@@ -99,24 +86,24 @@
 	</div>
 
 	<div class="container">
-		<div class="row">
-			<div id="options" class="col-md-12" style="text-align: center;">	
-				<ul id="filter" class="option-set" data-option-key="filter">
-					<li><a class="selected" href="#filter" data-option-value="*" class="current">All Works</a></li>
-					<li><a href="#filter" data-option-value=".branding">Branding</a></li>
-					<li><a href="#filter" data-option-value=".web">Websites</a></li>
-				</ul>
+		<div id="gallery" class="row clearfix">
+			<div id="options" class="ftg-filters col-md-12" style="text-align: center;">
+				<a href="#">All</a>
+				<a href="#web-design">Web Design</a>
+				<a href="#branding">Branding</a>
 			</div>
-			<div class="portfolio_block columns3 pretty" data-animated="fadeIn">	
-				{% for image in craft.assets.sourceId('1').limit(12) %}
-				<div class="element col-sm-4 gall {% for tag in image.tags %} {{ tag.name }} {% endfor %}">
-					<a class="plS" href="{{ image.getUrl() }}" rel="prettyPhoto[gallery2]">
-						<img class="img-responsive picsGall" src="{{ image.getUrl() }}" alt="{{ image.title }}"/>
-						<div class="portfolio-magic"></div>
-					</a>
-				</div>	
-				{% endfor %}
-			</div>			
+			<div class="ftg-items">
+				<ul id="gallery-items" class="ftg-items">
+					{% for image in craft.assets.sourceId('1').limit(12) %}
+					<li class="tile {% for tag in image.tags %} {{ tag.name }} {% endfor %}">
+						<a class="tile-inner" href="{{ image.getUrl() }}" rel="prettyPhoto[gallery2]">
+							<img class="item" src="{{ image.getUrl() }}" alt="{{ image.title }}"/>
+							<div class="portfolio-magic"></div>
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>		
 		</div>
 	</div>
 </div>    
@@ -150,7 +137,7 @@
 	<div class="container our-process">
 		<div class="row">
 			<div class="col-md-12 hr1">
-					<h2>Our Creative Offerings</h2>
+				<h2>Our Creative Offerings</h2>
 			</div>
 		</div>
 		<div class="row">
@@ -212,7 +199,7 @@
 	<div class="container services">
 		<div class="row">
 			<div class="col-md-12 hr1">
-					<hr style="margin-bottom: 50px; margin-top: -50px;">
+				<hr style="margin-bottom: 50px; margin-top: -50px;">
 			</div>
 		</div>
 		<div class="row">
@@ -269,81 +256,71 @@
 	<div class="container">
 		<div class="row news">
 
-{% for entry in craft.entries.section('news').limit(4) %}
-{% set image = entry.featuredImage.first() %}
+			{% for entry in craft.entries.section('news').limit(4) %}
+			{% set image = entry.featuredImage.first() %}
 			<div class="col-md-6  text-left">
 				{% if image %}
-					<a href="{{ entry.url }}"><img class="img-responsive picsGall" src="{{ image.url }}"/></a>
+				<a href="{{ entry.url }}"><img class="img-responsive picsGall" src="{{ image.url }}"/></a>
 				{% endif %}
 				<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
 				<ul>
 					<li><i class="fa fa-calendar"></i>{{ entry.postDate.format('F d, Y') }}</li>
 					{% if entry.tags %}
-						{% for tag in entry.tags %}<li><a href="#"><i class="fa fa-tag"></i> {{ tag.name }}</a></li>{% endfor %}
+					{% for tag in entry.tags %}<li><a href="#"><i class="fa fa-tag"></i> {{ tag.name }}</a></li>{% endfor %}
 					{% endif %}
 					<!-- <li><a href="#"><i class="fa fa-comments"></i>17 comments</a></li> -->
 				</ul>
 				<p>{{ entry.summary }} <a class="readMore" href="{{ entry.url }}">Read More <i class="fa fa-angle-right"></i></a></p>
 				<hr class="hrNews">
 			</div>
-{% endfor %}
+			{% endfor %}
 
 
 		</div>
 	</div>
-<!-- 			<div class="container">
-				<div class="row cBtn">
-					<div class="col-md-12" style="text-align: center; margin-bottom: -90px; z-index: 10;">
-						<ul class="mNews">
-							<li class="dowbload bhide2"><a href="#"><i class="fa fa-arrow-down"></i>Load More news</a></li>
-						</ul>
-					</div>
-				</div>
-			</div> -->
-		</div>
+</div>
 
-  
-    <!--contact start-->
-    
-    <div id="contact">
-    	<div class="line5" id="line5-container">
-    		<canvas id="line5-canvas"></canvas>				
-			<div class="container">
-				<div class="row Ama">
-					<div class="col-md-12">
+
+<!--contact start-->
+
+<div id="contact">
+	<div class="line5" id="line5-container">
+		<canvas id="line5-canvas"></canvas>				
+		<div class="container">
+			<div class="row Ama">
+				<div class="col-md-12">
 					<h3>{{ entry.questionHeader }}</h3>
 					<p>{{ entry.questionHeaderBody }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-xs-12 forma">
+				<form>
+					<input type="text" class="col-md-6 col-xs-12 name" name='name' placeholder='Name *'/>
+					<input type="text" class="col-md-6 col-xs-12 Email" name='Email' placeholder='Email *'/>
+					<input type="text" class="col-md-12 col-xs-12 Subject" name='Subject' placeholder='Subject'/>
+					<textarea type="text" class="col-md-12 col-xs-12 Message" name='Message' placeholder='Message *'></textarea>
+					<div class="cBtn col-xs-12">
+						<ul>
+							<li class="send"><a href="#"><i class="fa fa-share"></i>Send Message</a></li>
+						</ul>
 					</div>
-				</div>
+				</form>
+			</div>
+			<div class="col-md-3 col-xs-12 cont">
+				<ul>
+					<li><strong>SavorWeb</strong> <br>409 E. Coeur d'Alene Avenue, <br>Coeur d'Alene, ID 83814</li>
+					<li><i class="fa fa-phone"></i>(208) 640-3074</li>
+					<li><a href="mailto:Info@savorweb.com"><i class="fa fa-envelope"></i>Info@SavorWeb.com</li></a>
+					<li><a href="http://www.twitter.com/savorweb"><i class="fa fa-twitter"></i>Twitter</li></a>
+					<li><a href="http://www.facebook.com/savorweb"><i class="fa fa-facebook-square"></i>Facebook</li></a>
+				</ul>
 			</div>
 		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-9 col-xs-12 forma">
-					<form>
-						<input type="text" class="col-md-6 col-xs-12 name" name='name' placeholder='Name *'/>
-						<input type="text" class="col-md-6 col-xs-12 Email" name='Email' placeholder='Email *'/>
-						<input type="text" class="col-md-12 col-xs-12 Subject" name='Subject' placeholder='Subject'/>
-						<textarea type="text" class="col-md-12 col-xs-12 Message" name='Message' placeholder='Message *'></textarea>
-						<div class="cBtn col-xs-12">
-							<ul>
-								<!-- <li class="clear"><a href="#"><i class="fa fa-times"></i>clear form</a></li> -->
-								<li class="send"><a href="#"><i class="fa fa-share"></i>Send Message</a></li>
-							</ul>
-						</div>
-					</form>
-				</div>
-				<div class="col-md-3 col-xs-12 cont">
-					<ul>
-						<li><!-- <i class="fa fa-home"></i> --><strong>SavorWeb</strong> <br>409 E. Coeur d'Alene Avenue, <br>Coeur d'Alene, ID 83814</li>
-						<li><i class="fa fa-phone"></i>(208) 640-3074</li>
-						<li><a href="mailto:Info@savorweb.com"><i class="fa fa-envelope"></i>Info@SavorWeb.com</li></a>
-						<li><a href="http://www.twitter.com/savorweb"><i class="fa fa-twitter"></i>Twitter</li></a>
-						<li><a href="http://www.facebook.com/savorweb"><i class="fa fa-facebook-square"></i>Facebook</li></a>
-					</ul>
-				</div>
-			</div>
-		</div>
+	</div>
 	<div class="container">
 		<div class="row aboutUs">
 			<div class="col-md-12 ">
@@ -362,7 +339,7 @@
 				<div class="col-md-6">
 					<div class="about1">
 						{% if tphoto1 %}
-							<img class="pic1Ab" src="{{ tphoto1.url }}">
+						<img class="pic1Ab" src="{{ tphoto1.url }}">
 						{% endif %}
 						<h3>{{ entry.ttitle1 }}</h3>
 						<p>{{ entry.tbody1 }}</p>
@@ -387,7 +364,7 @@
 				<div class="col-md-6">
 					<div class="about1">
 						{% if tphoto3 %}
-							<img class="pic1Ab" src="{{ tphoto3.url }}">
+						<img class="pic1Ab" src="{{ tphoto3.url }}">
 						{% endif %}
 						<h3>{{ entry.ttitle3 }}</h3>
 						<p>{{ entry.tbody3 }}</p>
@@ -396,7 +373,7 @@
 				<div class="col-md-6">
 					<div class="about2">
 						{% if tphoto4 %}
-							<img class="pic2Ab" src="{{ tphoto4.url }}">
+						<img class="pic2Ab" src="{{ tphoto4.url }}">
 						{% endif %}
 						<h3>{{ entry.ttitle4 }}</h3>
 						<p>{{ entry.tbody4 }}</p>
@@ -407,4 +384,4 @@
 		
 	</div>
 
-		{% endblock %}
+	{% endblock %}

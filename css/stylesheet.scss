@@ -2220,6 +2220,10 @@ margin-bottom: 35px !important;
 
 // gallery and lightbox 
 
+ul#gallery-items.ftg-items {
+  list-style-type: none;
+}
+
 #gallery .caption {
   //background: rgb(0,0,0); 
   //background: rgba(0,0,0,.6); 
