@@ -1845,6 +1845,9 @@ margin-bottom: 35px !important;
   width: 100%;
   background-color: #101010 !important; }
 
+#gallery {
+  margin-top: 50px; }
+
 ul#gallery-items.ftg-items {
   list-style-type: none; }
 
@@ -1885,13 +1888,6 @@ ul#gallery-items.ftg-items {
   -webkit-transition: -webkit-transform .5s,  opacity .5s;
   transition: transform .5s,  opacity .5s; }
 
-#gallery .tile:hover img {
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2); }
-
 /* Effect Slide */
 #gallery .effect-slide {
   -moz-transform: translateY(50px);
@@ -1920,32 +1916,12 @@ ul#gallery-items.ftg-items {
   to {
     transform: translateY(0); } }
 /* Effect Zoom */
-#gallery .effect-zoom {
-  -moz-transform: scale(0.3);
-  -ms-transform: scale(0.3);
-  -o-transform: scale(0.3);
-  -webkit-transform: scale(0.3);
-  transform: scale(0.3);
-  -moz-animation: effect-zoom 0.8s ease forwards;
-  -o-animation: effect-zoom 0.8s ease forwards;
-  -webkit-animation: effect-zoom 0.8s ease forwards;
-  animation: effect-zoom 0.8s ease forwards; }
-
 #gallery .effect-zoom:nth-child(odd) {
   -moz-animation-duration: 0.6s;
   -o-animation-duration: 0.6s;
   -webkit-animation-duration: 0.6s;
   animation-duration: 0.6s; }
 
-@-webkit-keyframes effect-zoom {
-  to {
-    -webkit-transform: scale(1); } }
-@-moz-keyframes effect-zoom {
-  to {
-    -moz-transform: scale(1); } }
-@keyframes effect-zoom {
-  to {
-    transform: scale(1); } }
 #gallery .already-visible {
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);

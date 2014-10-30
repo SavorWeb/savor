@@ -2220,6 +2220,10 @@ margin-bottom: 35px !important;
 
 // gallery and lightbox 
 
+#gallery {
+  margin-top: 50px;
+}
+
 ul#gallery-items.ftg-items {
   list-style-type: none;
 }
@@ -2264,11 +2268,11 @@ ul#gallery-items.ftg-items {
   transition: transform .5s,  opacity .5s;
 }
 #gallery .tile:hover img {
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+  // -moz-transform: scale(1.2);
+  // -ms-transform: scale(1.2);
+  // -o-transform: scale(1.2);
+  // -webkit-transform: scale(1.2);
+  // transform: scale(1.2);
 }
 
 /* Effect Slide */
@@ -2303,15 +2307,15 @@ ul#gallery-items.ftg-items {
 
 /* Effect Zoom */
 #gallery .effect-zoom {
-  -moz-transform: scale(.3);
-  -ms-transform: scale(.3);
-  -o-transform: scale(.3);
-  -webkit-transform: scale(.3);
-  transform: scale(.3);
-  -moz-animation: effect-zoom 0.8s ease forwards;
-  -o-animation: effect-zoom 0.8s ease forwards;
-  -webkit-animation: effect-zoom 0.8s ease forwards;
-  animation: effect-zoom 0.8s ease forwards;
+  // -moz-transform: scale(.3);
+  // -ms-transform: scale(.3);
+  // -o-transform: scale(.3);
+  // -webkit-transform: scale(.3);
+  // transform: scale(.3);
+  // -moz-animation: effect-zoom 0.8s ease forwards;
+  // -o-animation: effect-zoom 0.8s ease forwards;
+  // -webkit-animation: effect-zoom 0.8s ease forwards;
+  // animation: effect-zoom 0.8s ease forwards;
 }
 #gallery .effect-zoom:nth-child(odd) {
   -moz-animation-duration: 0.6s;
@@ -2320,15 +2324,15 @@ ul#gallery-items.ftg-items {
   animation-duration: 0.6s;
 }
 
-@-webkit-keyframes effect-zoom {
-  to { -webkit-transform: scale(1); }
-}
-@-moz-keyframes effect-zoom {
-  to { -moz-transform: scale(1); }
-}
-@keyframes effect-zoom {
-  to { transform: scale(1); }
-}
+// @-webkit-keyframes effect-zoom {
+//   to { -webkit-transform: scale(1); }
+// }
+// @-moz-keyframes effect-zoom {
+//   to { -moz-transform: scale(1); }
+// }
+// @keyframes effect-zoom {
+//   to { transform: scale(1); }
+// }
 
 #gallery .already-visible {
   -moz-transform: translateY(0);
