@@ -34,7 +34,7 @@ if(centPic_width > 960){
         centPic_trigger = 1;
     }
     if(centPic_ratio > 3.1){
-    //console.log('play');
+    
         centPic.play();
         centPic_trigger = 1;
     }
@@ -44,6 +44,8 @@ if(centPic_width > 960){
 
     
 $( document ).ready(function() {
+    var myImage = new Image();
+    myImage.src = 'http://www.savorweb.com/savor/images/bgTop.jpg';
     window_height = $(window).height();
     window_width = $(window).width();
     
@@ -55,11 +57,19 @@ $( document ).ready(function() {
     $('body').css('overflow','hidden');
     $('#preload-container').css('height',window_height);
     $('#preload-container').css('overflow','hidden');
-    $('#swpreloader').css('visibility','visible');
+    var preload_height = $('#swpreloader img').height();
+    var preload_top = window_height / 2 - preload_height / 2;
+    var preload_width = $('#swpreloader img').width();
+    var preload_left = window_width / 2 - preload_width / 2;
+    $('#swpreloader').css('padding-top',preload_top);
+    $('#swpreloader').css('padding-left',preload_left);
+    $('#swpreloader img').css('width',preload_width - 40);
     
-    swpreload = new TimelineMax({repeat:-1, delay:-1});
-    swpreload.to('#swpreloader', 1, {rotationY:180, transformOrigin:"50% 50%"});
-    swpreload.to('#swpreloader', 1, {rotationX:180, transformOrigin:"50% 50%"});
+
+    $('#swpreloader').css('background-image','url("http://www.savorweb.com/savor/images/bgTop.jpg")');
+
+    $('#swpreloader').css('visibility','visible');
+
 });
 
     
@@ -69,11 +79,7 @@ $(window).load(function() {
         $('body').removeAttr('style');
         $('#swpreloader').css('visibility','hidden');
         $('#swpreloader').css('display','none');
-        var url = window.location.href;
-        if (url == 'http://www.savorweb.com/savor/' || url == 'http://savorweb.com/savor/'){
-	        swpreload.stop();
-        }
-
+    
         $('#preload-container').css('visibility','visible');
         
         var container_width = $('div.container').width();
@@ -81,8 +87,7 @@ $(window).load(function() {
             var gallery_height = $('#main-heading').height();
             menu_height = $('#menuF').height();
             menu_has_class = $('#menuF').hasClass('fixed-nav');
-            if(menu_has_class){
-                //alert('hi');
+            if(menu_has_class){                
               gallery_height=gallery_height+menu_height;
                 
                 if(window_width < 960){

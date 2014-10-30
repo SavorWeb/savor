@@ -24,9 +24,11 @@
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/main.css">
 	</head>
 	<body>
-
+{% if craft.request.getUrl() == 'http://savorweb.com/savor/' %}
+{{siteUrl}}
+{% endif %}
 		<!--home start-->
-		<div id="swpreloader"></div>
+		<div id="swpreloader"><img src="{{ siteUrl }}images/logo-animation.gif" alt="SavorWeb Logo"></div>
 		<div id="preload-container">
 			<div id="home">
 				<div class="headerLine" id="main-heading">
