@@ -21,6 +21,59 @@
 
 	{% block content %}
 
+<div id="home">
+				<div class="headerLine" id="main-heading">
+
+					<div id="menuF" class="default">
+						<div class="container" id="navbar-fix">
+							<div class="row">
+								<div class="logo col-md-4">
+									<div>
+										<a href="{{ siteUrl }}">
+											<img src="{{ siteUrl }}images/logo.png" alt="SavorWeb Logo">
+										</a>
+									</div>
+								</div>
+								<div class="col-md-8">
+									<div class="navmenu" style="text-align:center;">
+										<ul id="menu">
+											<li class="active"><a href="#home">Home</a></li>
+											<li><a href="#project">Projects</a></li>
+											<li><a href="#about">About</a></li>
+											<li><a href="#news">News</a></li>
+											<li class="last"><a href="#contact">Contact</a></li>
+										</ul>
+									</div>
+									<ul class="soc">
+										<li class="soc2"><a href="http://www.facebook.com/savorweb"></a></li>
+										<li class="soc3"><a href="http://www.twitter.com/savorweb"></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="container">
+						<div class="row wrap">
+							<div class="col-md-12 gallery"> 
+								<div id="gallery_wrapper">
+									<div id="slide1" class="entry-text">
+										{{ entry.rotatorLine1 }}
+									</div>
+
+									<div id="slide2" class="entry-text">
+										{{ entry.rotatorLine2 }}
+									</div>
+								</div><!-- #gallery_wrapper -->
+							</div>
+						</div>
+						<canvas id="heading-canvas"></canvas>
+					</div>
+
+				</div><!-- end of headerline -->
+
+
 	<div class="container">
 		<div class="row intro-row">
 			<div class="col-md-5 cBusiness">
