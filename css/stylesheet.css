@@ -963,6 +963,33 @@ body {
 .news {
   margin-top: 50px; }
 
+.news-container a {
+  color: #D12215; }
+  .news-container a:hover {
+    color: #8b170e; }
+.news-container article p {
+  font-family: "Open Sans"; }
+.news-container article h1 {
+  font-family: "Montserrat";
+  color: #D12215; }
+.news-container img {
+  max-width: 50%;
+  float: right;
+  margin: 0 0 25px 20px; }
+
+aside.other-articles small {
+  display: block;
+  clear: both; }
+aside.other-articles ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  aside.other-articles ul li {
+    float: left;
+    margin-right: 15px;
+    padding: 15px 20px;
+    background-color: #f2f2f2; }
+
 .news2 {
   margin-top: 25px; }
 
@@ -1204,6 +1231,7 @@ textarea {
       color: #666666; }
 
 .line6 {
+  display: block;
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -1575,6 +1603,10 @@ textarea {
   overflow: hidden;
   height: 100%;
   background: #000; }
+  .lineBlack a {
+    color: #D12215; }
+    .lineBlack a:hover {
+      color: #a31a10; }
 
 .downLine {
   margin-bottom: 35px; }
@@ -1854,6 +1886,9 @@ margin-bottom: 35px !important;
 ul#gallery-items.ftg-items {
   list-style-type: none; }
 
+.ftg-items {
+  margin-top: 40px; }
+
 #gallery .caption {
   text-align: center;
   display: none; }
@@ -1954,7 +1989,7 @@ ul#gallery-items.ftg-items {
 #gallery .ftg-filters a:hover,
 #gallery .ftg-filters a.selected {
   color: #000;
-  border-bottom: 3px solid #000;
+  border-bottom: 3px solid #D12215;
   text-decoration: none; }
 
 #gallery .tile .ftg-social {

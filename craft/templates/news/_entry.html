@@ -59,19 +59,26 @@
 	<article>
 		{% set image = entry.featuredImage.first() %}
 			{% if image %}
-				<img class="img-responsive picsGall" src="{{ siteUrl }}{{ image.url }}"/>
+				<img class="img-responsive" src="{{ siteUrl }}{{ image.url }}"/>
 			{% endif %}
-		<h1>{{ entry.title }}</h1>
-		<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-		{{ entry.body }}
+			
+				<h1>{{ entry.title }}</h1>
+				<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
+				<p>{{ entry.body }}</p>
+			
 	</article>
-	<ul>
-	{% for entry in craft.entries.section('news').limit(10) %}
-	<li>
-		<small>{{ entry.postDate.format('F d, Y') }}</small>
-		<a href="{{ entry.url }}">{{ entry.title }}</a>
-	</li>
-	{% endfor %}
-	</ul>
+	<aside class="other-articles">
+		<hr>
+		<h3>Other Articles</h3>
+		<hr>
+		<ul class="clearfix">
+			{% for entry in craft.entries.section('news').limit(10) %}
+			<li>
+				<small>{{ entry.postDate.format('F d, Y') }}</small>
+				<a href="{{ entry.url }}">{{ entry.title }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</aside>
 </div>
 {% endblock %}

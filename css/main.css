@@ -27,6 +27,9 @@ div#menuF .row {
 	z-index: 9999;
 }
 
+.disable-scroll {
+  pointer-events: none;
+}
  
 /*************************************************************** 
 				Header / Slideshow
