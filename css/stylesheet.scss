@@ -7,6 +7,8 @@ $secondary: #D12215;
 $grey: lighten(#ccc, 15%);
 $header-font: 'Montserrat';
 $body-font: 'Open Sans';
+$script: 'Kaushan Script';
+
 
 html {
   background: #fff;
@@ -2298,12 +2300,12 @@ ul#gallery-items.ftg-items {
   color: #fff;
   text-align: center;
   padding: 6px 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Kaushan Script', cursive;
   position: absolute;
   bottom: 10px;
   left: 10px;
   background-color: transparentize($secondary, 0.3);
-  font-size: 14px;
+  font-size: 20px;
 }
 #gallery .tile .zoom {
   font-size: 22px;

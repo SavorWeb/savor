@@ -151,7 +151,9 @@
 					<li class="tile {% for tag in image.tags %} {{ tag.name }} {% endfor %}">
 						<a class="tile-inner" href="{{ image.getUrl() }}" rel="prettyPhoto[gallery2]">
 							<img class="item" src="{{ image.getUrl() }}" alt="{{ image.title }}"/>
-							<div class="portfolio-magic"></div>
+							<div class="caption">
+								<p>{{ image.title }}</p>
+							</div>
 						</a>
 					</li>
 					{% endfor %}

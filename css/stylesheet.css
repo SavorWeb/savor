@@ -1897,12 +1897,12 @@ ul#gallery-items.ftg-items {
   color: #fff;
   text-align: center;
   padding: 6px 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Kaushan Script', cursive;
   position: absolute;
   bottom: 10px;
   left: 10px;
   background-color: rgba(209, 34, 21, 0.7);
-  font-size: 14px; }
+  font-size: 20px; }
 
 #gallery .tile .zoom {
   font-size: 22px;
