@@ -168,42 +168,54 @@ function scrolling_navbar(){
         if(scroll_nav == 0 && scroll_trigger == 0){
     		scroll_trigger = 1;
     		
-            $('#menuF').addClass('fixed-nav');
-            $('#menuF').removeClass('nav-hover');
-            $('#menuF').css('top',-menu_height);
-            $('.gallery').css('margin-top',menu_height);
-    		$('#menuF .logo').css('margin-top',20);
-    		$('#menu').css('margin-top',30);
-    		$('ul.soc').css('top',15);
-    				
-    		setTimeout(function(){
+            TweenLite.to('#menuF', 0.1, {top:'-300px'});
+            
+            setTimeout(function(){
+                $('.gallery').css('margin-top',menu_height);
+            }, 100);
+
+            setTimeout(function(){
+                $('#menuF').addClass('fixed-nav');
+                $('#menuF').removeClass('nav-hover');
+                //$('#menuF').css('top',-menu_height);
+                
+                $('#menuF .logo').css('margin-top',20);
+                $('#menu').css('margin-top',30);
+                $('ul.soc').css('top',15);
+            }, 300);
+            
+            
+    		
+            setTimeout(function(){
                 TweenLite.to('#menuF', 0.5, {top:'0px'});
-    		}, 500);
+    		}, 1000);
     	} 
 
     	if(scroll_nav == 2 && scroll_trigger == 1){
 
     		scroll_trigger = 0;
     		scroll_nav = 0;
-            TweenLite.to('#menuF', 0.2, {top:'-300px'});
-            $('#menuF').css('background', 'none');
-            $('#menuF').addClass('nav-hover');
+            TweenLite.to('#menuF', 0.1, {top:'-300px'});
 
             setTimeout(function(){
-                    TweenLite.to('#menuF', 0.3, {top:'0px'});
-            }, 500);
-    		setTimeout(function(){
-    			$('#menuF .logo').css('margin-top',60);
-        		$('#menu').css('margin-top',72);
-	    		$('ul.soc').css('top',58);
+                $('#menuF').css('background', 'none');
+                $('#menuF').addClass('nav-hover');
+            }, 300);
+
+            setTimeout(function(){
+                $('#menuF .logo').css('margin-top',60);
+                $('#menu').css('margin-top',72);
+                $('ul.soc').css('top',58);
                 
                 $('#menuF').removeClass('fixed-nav');
-                $('.gallery').css('margin-top','0px');
+                $('.gallery').css('margin-top','0px');    
+            }, 500);
+    		
+            setTimeout(function(){
+    			TweenLite.to('#menuF', 0.3, {top:'0px'});
               setTimeout(function(){
-                    $('#menuF').removeAttr('style');
-                }, 700);
-                
-    			
+                $('#menuF').removeAttr('style');
+                }, 1000);
     		}, 1000);
 
     	}
@@ -249,32 +261,32 @@ $(gallery_objects).each(function(){
 });
 
  
- $( "a.plS" ).hover(
-  function() {
-  	var index = $(this);
-    var title = index.children('img.img-responsive').attr('alt');
+//  $( "a.plS" ).hover(
+//   function() {
+//   	var index = $(this);
+//     var title = index.children('img.img-responsive').attr('alt');
     
-  	var width = index.width();
-  	var height = index.height();  	
+//   	var width = index.width();
+//   	var height = index.height();  	
 
-    var overlay = $(this).children('.portfolio-magic');
-    $(overlay).css('height', height);
-    $(overlay).css('width', width);
-    $(overlay).append('<p class="portfolio-title">'+title+'</p>');
-    var title_position = $(this).children('.portfolio-magic').find('.portfolio-title');
-    //$(title_position).css('margin-top',height/2-20);
-    $(title_position).css('opacity','0');
+//     var overlay = $(this).children('.portfolio-magic');
+//     $(overlay).css('height', height);
+//     $(overlay).css('width', width);
+//     $(overlay).append('<p class="portfolio-title">'+title+'</p>');
+//     var title_position = $(this).children('.portfolio-magic').find('.portfolio-title');
+//     //$(title_position).css('margin-top',height/2-20);
+//     $(title_position).css('opacity','0');
     
-	//Show stuff 
- 	$(overlay).fadeIn(200); 
-    $(title_position).animate({marginTop:height/2-20,opacity:1},200);
-  }, function() {
-    var overlay = $(this).children('.portfolio-magic');
-	var remove_title = $(this).children('.portfolio-magic').find('.portfolio-title');  
-    remove_title.remove();
- 	$(overlay).fadeOut(200); 
-  }
-);
+// 	//Show stuff 
+//  	$(overlay).fadeIn(200); 
+//     $(title_position).animate({marginTop:height/2-20,opacity:1},200);
+//   }, function() {
+//     var overlay = $(this).children('.portfolio-magic');
+// 	var remove_title = $(this).children('.portfolio-magic').find('.portfolio-title');  
+//     remove_title.remove();
+//  	$(overlay).fadeOut(200); 
+//   }
+// );
 
 
 
