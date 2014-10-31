@@ -5,7 +5,7 @@ body {
 /*Nav*/
 div#menuF.fixed-nav {
 	position: fixed;
-	top: 0px;
+	top: -300px;
 	background-image: url('../images/polynav.png');
 	background-repeat: no-repeat;
 	background-position-x: center;
@@ -13,6 +13,16 @@ div#menuF.fixed-nav {
 	overflow: visible;
 	max-height: 160px;
 	z-index: 9999;
+	visibility: hidden;
+}
+div#menuF.fixed-nav .logo {
+	margin-top: 20px !important;
+}
+div#menuF.fixed-nav #menu {
+	margin-top: 30px;	
+}
+div#menuF.fixed-nav ul.soc {
+	top: 15px;
 }
 div#menuF {
 	overflow: visible !important;
@@ -99,6 +109,7 @@ div.entry-text p {
 }
 #slide1 p, #slide2 p {
 	padding-left: 1025px;
+	visibility: hidden;
 }
 
 p.slide-underline {
@@ -240,9 +251,49 @@ p.savor-title-slide {
 }
 @media (max-width:500px){
 	.iphone img {
-		max-width: 70%;
+		width: 130px;
 	}
 	.ipad img {
-		max-width: 70%;
+		width: 280px;
 	}
+	.featurePic .iphone {
+		right: 210px;
+	}
+
+}
+@media (max-width:450px){
+	.iphone img {
+		width: 90px;
+	}
+	.ipad img {
+		width: 250px;
+	}
+	.featurePic .iphone {
+		right: 180px;
+	}
+
+}
+@media (max-width:400px){
+	.iphone img {
+		width: 70px;
+	}
+	.ipad img {
+		width: 220px;
+	}
+	.featurePic .iphone {
+		right: 160px;
+	}
+
+}
+@media (max-width:350px){
+	.iphone img {
+		width: 60px;
+	}
+	.ipad img {
+		width: 200px;
+	}
+	.featurePic .iphone {
+		right: 150px;
+	}
+
 }

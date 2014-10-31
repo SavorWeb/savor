@@ -44,6 +44,11 @@ if(centPic_width > 960){
 
     
 $( document ).ready(function() {
+
+    $('#menuF').clone().insertAfter('#menuF');
+    $('#menuF:first-child').addClass('nav-hover');
+    $('.default:nth-child(2)').addClass('fixed-nav');
+    //$('#menuF:nth-child(1)').attr("id","newId");
     var myImage = new Image();
     myImage.src = 'http://www.savorweb.com/savor/images/bgTop.jpg';
     window_height = $(window).height();
@@ -74,7 +79,9 @@ $( document ).ready(function() {
 
     
 $(window).load(function() {
-    $('#menuF').addClass('nav-hover');
+
+
+    
         $('#preload-container').removeAttr('style');
         $('body').removeAttr('style');
         $('#swpreloader').css('visibility','hidden');
@@ -132,23 +139,25 @@ master.add( slide2() );
 function slide1() {
     var tl = new TimelineLite(),
     text = $('#slide1 p');
-    
+    tl.set(text, {visibility:"visible"});
     tl.staggerFrom(text, 1.5,
-       {left: -1000, opacity:0, delay:1}
+       {left: -1000, opacity:0, delay:1, visibility:"visible"}
 ,1);
-    tl.to(text, 2, {top: 0});
-    tl.staggerTo(text, 1, {left: '-1000px', opacity: 0},0.25);
+    tl.to(text, 2, {top: 0, visibility:"visible"});
+    tl.staggerTo(text, 1, {left: '-1000px', opacity: 0, visibility:"visible"},0.25);
     return tl;
 }
 
 function slide2() {
 var tl = new TimelineLite(),
     text = $('#slide2 p');
+    tl.set(text, {visibility:"visible"});
     tl.staggerFrom(text, 0.5,
-       {left: -1000, opacity:0}
+       {left: -1000, opacity:0, visibility:"visible"}
 ,'-=1');
-    tl.to(text, 2, {top: 0});
-    tl.staggerTo(text, 1, {left: '-1000px', opacity: 0},0.25);
+    //tl.set(text, {visibility:"visible"});
+    tl.to(text, 2, {top: 0, visibility:"visible"});
+    tl.staggerTo(text, 1, {left: '-1000px', opacity: 0, visibility:"visible"},0.25);
     return tl;
 
 }
@@ -168,55 +177,23 @@ function scrolling_navbar(){
         if(scroll_nav == 0 && scroll_trigger == 0){
     		scroll_trigger = 1;
     		
-            TweenLite.to('#menuF', 0.1, {top:'-300px'});
-            
+            TweenLite.to('.fixed-nav', 0.1, {top:'-300px'});
+            TweenLite.to('.nav-hover', 0.3, {opacity: 0});
             setTimeout(function(){
-                $('.gallery').css('margin-top',menu_height);
-            }, 100);
-
-            setTimeout(function(){
-                $('#menuF').addClass('fixed-nav');
-                $('#menuF').removeClass('nav-hover');
-                //$('#menuF').css('top',-menu_height);
-                
-                $('#menuF .logo').css('margin-top',20);
-                $('#menu').css('margin-top',30);
-                $('ul.soc').css('top',15);
-            }, 300);
-            
-            
-    		
-            setTimeout(function(){
-                TweenLite.to('#menuF', 0.5, {top:'0px'});
-    		}, 1000);
+            $('.fixed-nav').css('visibility','visible');
+            TweenLite.to('.fixed-nav', 0.5, {top:'0px'});
+            }, 110);
+         
     	} 
 
     	if(scroll_nav == 2 && scroll_trigger == 1){
 
-    		scroll_trigger = 0;
-    		scroll_nav = 0;
-            TweenLite.to('#menuF', 0.1, {top:'-300px'});
-
-            setTimeout(function(){
-                $('#menuF').css('background', 'none');
-                $('#menuF').addClass('nav-hover');
-            }, 300);
-
-            setTimeout(function(){
-                $('#menuF .logo').css('margin-top',60);
-                $('#menu').css('margin-top',72);
-                $('ul.soc').css('top',58);
-                
-                $('#menuF').removeClass('fixed-nav');
-                $('.gallery').css('margin-top','0px');    
-            }, 500);
     		
-            setTimeout(function(){
-    			TweenLite.to('#menuF', 0.3, {top:'0px'});
-              setTimeout(function(){
-                $('#menuF').removeAttr('style');
-                }, 1000);
-    		}, 1000);
+            TweenLite.to('.fixed-nav', 0.1, {top:'-300px', visibility:'hidden'});
+            TweenLite.to('.nav-hover', 0.5, { delay:0.1, opacity: 1});
+            //$('.fixed-nav').css('visibility','hidden');
+            scroll_trigger = 0;
+            scroll_nav = 0;
 
     	}
     }
@@ -236,8 +213,9 @@ function scrolling_navbar(){
             if ( $(this).scrollTop() > menu_height) {
             	scroll_nav = 0;
             	scrolling_navbar();
+
                 
-            } else if($(this).scrollTop() <= menu_height) {
+            } else if($(this).scrollTop() <= menu_height+20) {
 
                 scroll_nav = 2;
                 scrolling_navbar();
