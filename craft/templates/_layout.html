@@ -13,7 +13,8 @@
 	<head>
 		<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+		<meta name="viewport" content="initial-scale=1, user-scalable=no">
 		<link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
@@ -76,6 +77,26 @@
 		<script type="text/javascript" src="{{ siteUrl }}js/scripts2.js"></script>
 		<script type="text/javascript" src="{{ siteUrl }}js/scripts3.js"></script>
 		<script type="text/javascript" src="{{ siteUrl }}js/scripts4.js"></script>
+
+		<!-- form stuff -->
+		<script src="{{ siteUrl }}js/jquery.validate.min.js"></script>
+		<script src="{{ siteUrl }}js/jquery.placeholder.min.js"></script>
+		<script src="{{ siteUrl }}js/jquery.form.min.js"></script>
+		<script>
+			$(function(){
+				$('#contact').validate({
+					submitHandler: function(form) {
+						$(form).ajaxSubmit({
+							url: 'contact-submit.php',
+							success: function() {
+								$('#contact').hide();
+								$('#contact-form').append("<p class='thanks'>Thanks! Your request has been sent.</p>")
+							}
+						});
+					}
+				});
+			});
+		</script>
 
 		<script>
 		$(document).ready(function(){

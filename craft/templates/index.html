@@ -353,16 +353,18 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 col-xs-12 forma">
-				<form>
-					<input type="text" class="col-md-6 col-xs-12 name" name='name' placeholder='Name *'/>
-					<input type="text" class="col-md-6 col-xs-12 Email" name='Email' placeholder='Email *'/>
-					<input type="text" class="col-md-12 col-xs-12 Subject" name='Subject' placeholder='Subject'/>
-					<textarea type="text" class="col-md-12 col-xs-12 Message" name='Message' placeholder='Message *'></textarea>
+				<form action="contact-submit.php" method="post">
+					<fieldset>	
+					<input class="input-box required col-md-6 col-xs-12 name" required type="text" name="name" placeholder="Full Name" title="Enter your name"/>
+					<input class="input-box phone-num col-md-6 col-xs-12" type="tel" name="phone" placeholder="ex. (555) 555-5555"/>
+					<input class="input-box col-md-12 col-xs-12 email required Subject" required type="email" name="email" placeholder="yourname@domain.com" title="Enter your e-mail address"/>
+					<textarea class="input-box col-md-12 col-xs-12 Message" required name="message" placeholder="Your message"></textarea>
 					<div class="cBtn col-xs-12">
 						<ul>
-							<li class="send"><a href="#"><i class="fa fa-share"></i>Send Message</a></li>
+							<li class="send"><input type="submit" name="submit" class="button btn" id="submit" value="Send Message" /></li>
 						</ul>
 					</div>
+					</fieldset>
 				</form>
 			</div>
 			<div class="col-md-3 col-xs-12 cont">

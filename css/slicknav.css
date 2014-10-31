@@ -61,7 +61,8 @@
 }
 .slicknav_menu {
 	background:#101010;
-	padding:5px;
+	/*background-image: url("../images/bgTop.jpg");*/
+	padding:15px;
 	
 }
 .slicknav_nav {

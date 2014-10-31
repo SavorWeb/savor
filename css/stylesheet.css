@@ -14,11 +14,14 @@ body {
   overflow: hidden;
   height: 100%;
   background: url(../images/bgTop.jpg) center center no-repeat;
-  background-attachment: fixed;
+  background-attachment: static;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+  @media screen and (min-width: 960px) {
+    .headerLine {
+      background-attachment: fixed; } }
   .headerLine:after {
     content: "";
     position: absolute;
@@ -36,7 +39,10 @@ body {
     border-left: 3000px solid transparent; }
 
 .entry-headerline {
-  min-height: 240px; }
+  height: 0; }
+  @media screen and (min-width: 992px) {
+    .entry-headerline {
+      min-height: 240px; } }
 
 /*.container{
 	outline:1px solid #fc0;
@@ -303,12 +309,15 @@ body {
   overflow: hidden;
   height: 100%;
   background: url(../images/bgTop.jpg) center center no-repeat;
-  background-attachment: fixed;
+  background-attachment: static;
   /*background:url(../images/line2.png) center center no-repeat;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+  @media screen and (min-width: 960px) {
+    .line2 {
+      background-attachment: fixed; } }
   .line2:after {
     content: "";
     position: absolute;
@@ -638,13 +647,16 @@ body {
   overflow: hidden;
   height: 100%;
   background: url(../images/bgTop.jpg) center center no-repeat;
-  background-attachment: fixed;
+  background-attachment: static;
   /*background: url(../images/line3Bg.jpg) center center no-repeat;*/
   /*background:#3f2d28;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+  @media screen and (min-width: 960px) {
+    .line3 {
+      background-attachment: fixed; } }
   .line3:after {
     content: "";
     position: absolute;
@@ -914,13 +926,16 @@ body {
   overflow: hidden;
   height: 100%;
   background: url(../images/bgTop.jpg) center center no-repeat;
-  background-attachment: fixed;
+  background-attachment: static;
   /*background: url(../images/line4.png) center center no-repeat;*/
   /*background:#3f2d28;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+  @media screen and (min-width: 960px) {
+    .line4 {
+      background-attachment: fixed; } }
   .line4:after {
     content: "";
     position: absolute;
@@ -973,9 +988,12 @@ body {
   font-family: "Montserrat";
   color: #D12215; }
 .news-container img {
-  max-width: 50%;
-  float: right;
-  margin: 0 0 25px 20px; }
+  margin-top: 35px; }
+  @media screen and (min-width: 960px) {
+    .news-container img {
+      float: right;
+      max-width: 50%;
+      margin: 0 0 25px 20px; } }
 
 aside.other-articles small {
   display: block;
@@ -987,6 +1005,7 @@ aside.other-articles ul {
   aside.other-articles ul li {
     float: left;
     margin-right: 15px;
+    margin-bottom: 10px;
     padding: 15px 20px;
     background-color: #f2f2f2; }
 
@@ -1074,7 +1093,7 @@ aside.other-articles ul {
   overflow: hidden;
   height: 100%;
   background: url(../images/bgTop.jpg) center center no-repeat;
-  background-attachment: fixed;
+  background-attachment: static;
   /*background: url(../images/line5Bg.jpg) center center no-repeat;	*/
   /*background:#3f2d28;*/
   -webkit-background-size: cover;
@@ -1084,6 +1103,9 @@ aside.other-articles ul {
   .line5 .Ama {
     /*margin-top: 127px;
     margin-bottom: 94px;*/ }
+  @media screen and (min-width: 960px) {
+    .line5 {
+      background-attachment: fixed; } }
   .line5:after {
     content: "";
     position: absolute;
@@ -1124,7 +1146,7 @@ aside.other-articles ul {
   margin-bottom: -80px;
   z-index: 10;
   margin-top: 48px; }
-  .forma input {
+  .forma .input-box {
     border-radius: 4px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -1135,7 +1157,7 @@ aside.other-articles ul {
     color: #555555;
     background: #ededed; }
 
-input:focus, textarea:focus {
+input.input-box:focus, textarea.input-box:focus {
   /*border:0;*/
   outline: none; }
 
@@ -1167,7 +1189,7 @@ textarea {
   height: 153px;
   resize: none; }
 
-.forma input:focus, .forma textarea:focus {
+.forma input.input-box:focus, .forma textarea.input-box:focus {
   background: #dfdfdf;
   border: 0; }
 .forma .cBtn a {
@@ -1206,6 +1228,15 @@ textarea {
   .forma .cBtn .send:hover {
     background: #2f2f2f;
     box-shadow: 0px 2px 0px 0px #000; }
+
+form #submit {
+  background: none;
+  color: white;
+  padding: 0px; }
+
+@media screen and (min-width: 640px) {
+  .phone-num {
+    width: 45.6%; } }
 
 .cont {
   margin-top: 44px;
@@ -1881,7 +1912,11 @@ margin-bottom: 35px !important;
   background-color: #101010 !important; }
 
 #gallery {
-  margin-top: 50px; }
+  margin-top: 50px;
+  padding: 0 10px; }
+  @media screen and (min-width: 640px) {
+    #gallery {
+      padding: 0; } }
 
 ul#gallery-items.ftg-items {
   list-style-type: none; }
