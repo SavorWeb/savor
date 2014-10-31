@@ -248,48 +248,6 @@ function scrolling_navbar(){
  
 
 
- /*********************************************************
-               Portfolio Hover
- **********************************************************/
-var gallery_objects = $('.plS');
-
-$(gallery_objects).each(function(){
-	
-    var overlay = $(this).children('img');
-    var image = overlay.attr('src');   
-    
-});
-
- 
-//  $( "a.plS" ).hover(
-//   function() {
-//   	var index = $(this);
-//     var title = index.children('img.img-responsive').attr('alt');
-    
-//   	var width = index.width();
-//   	var height = index.height();  	
-
-//     var overlay = $(this).children('.portfolio-magic');
-//     $(overlay).css('height', height);
-//     $(overlay).css('width', width);
-//     $(overlay).append('<p class="portfolio-title">'+title+'</p>');
-//     var title_position = $(this).children('.portfolio-magic').find('.portfolio-title');
-//     //$(title_position).css('margin-top',height/2-20);
-//     $(title_position).css('opacity','0');
-    
-// 	//Show stuff 
-//  	$(overlay).fadeIn(200); 
-//     $(title_position).animate({marginTop:height/2-20,opacity:1},200);
-//   }, function() {
-//     var overlay = $(this).children('.portfolio-magic');
-// 	var remove_title = $(this).children('.portfolio-magic').find('.portfolio-title');  
-//     remove_title.remove();
-//  	$(overlay).fadeOut(200); 
-//   }
-// );
-
-
-
 /************************************************************************
                     centPic Animation
 ***************************************************************************/
