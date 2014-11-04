@@ -85,7 +85,7 @@ canvas#line2-canvas {
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 5000;
+	z-index: 1000;
 }
 canvas#line3-canvas {
 	position: absolute;
@@ -137,6 +137,9 @@ p.savor-title-slide {
 	padding-left: 1050px;
 }
 .line3:after {
+	z-index: 1040;
+}
+.line2:before {
 	z-index: 1040;
 }
 /*************************************************************** 
