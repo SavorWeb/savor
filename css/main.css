@@ -1,7 +1,16 @@
 body {
 	overflow-x:hidden;
 }
-
+#swpreloader {
+	background-image: url('http://www.savorweb.com/savor/images/bgTop.jpg');
+	background-size: cover;
+}
+.phone-num {
+	margin-bottom: 10px;
+}
+#myMap {
+	margin-bottom: -80px;
+}
 /*Nav*/
 div#menuF.fixed-nav {
 	position: fixed;

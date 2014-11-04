@@ -57,6 +57,7 @@ $( document ).ready(function() {
     if (window_width <= 960){
         centPic.play();
     }
+
     $('body').css('height',window_height);
     $('body').css('width',window_width);
     $('body').css('overflow','hidden');
@@ -71,7 +72,7 @@ $( document ).ready(function() {
     $('#swpreloader img').css('width',preload_width - 40);
     
 
-    $('#swpreloader').css('background-image','url("http://www.savorweb.com/savor/images/bgTop.jpg")');
+    //$('#swpreloader').css('background-image','url("http://www.savorweb.com/savor/images/bgTop.jpg")');
 
     $('#swpreloader').css('visibility','visible');
 
@@ -81,13 +82,19 @@ $( document ).ready(function() {
 $(window).load(function() {
 
 
+//Delaying showing of page to see preload
+setTimeout(function(){
+    $('#preload-container').removeAttr('style');
+    $('body').removeAttr('style');
+    $('#swpreloader').css('visibility','hidden');
+    $('#swpreloader').css('display','none');
+    $('#preload-container').css('visibility','visible');
+$('html, body').animate({ scrollTop: 0 }, 0);
+ }, 1000);
     
-        $('#preload-container').removeAttr('style');
-        $('body').removeAttr('style');
-        $('#swpreloader').css('visibility','hidden');
-        $('#swpreloader').css('display','none');
+       
     
-        $('#preload-container').css('visibility','visible');
+        
         
         var container_width = $('div.container').width();
         setTimeout(function(){
@@ -118,9 +125,16 @@ $(window).load(function() {
         $('.headerline').css('width', container_width);
         
         
+/*********************************************************
+               Map Scoll Enable
+ **********************************************************/
+$('.line6').click(function(){
+    $( "#myMap" ).removeClass('disable-scroll');
+});
 
-
-
+$( ".line6" ).mouseleave(function() {
+  $('#myMap').addClass('disable-scroll'); // set the pointer events to none when mouse leaves the map area
+});
 /*********************************************************
                 Heading Slideshow
  **********************************************************/
