@@ -44,6 +44,7 @@ if(centPic_width > 960){
 
     
 $( document ).ready(function() {
+if($())
 
     $('#menuF').clone().insertAfter('#menuF');
     $('#menuF:first-child').addClass('nav-hover');
@@ -56,10 +57,6 @@ $( document ).ready(function() {
         centPic.play();
     }
 
-    //$('body').css('height',window_height);
-    //$('body').css('width',window_width);
-    //$('body').css('overflow','hidden');
-    //$('#preload-container').css('height',window_height);
     $('#preload-container').css('overflow','hidden');
     var preload_height = $('#swpreloader img').height();
     var preload_top = window_height / 2 - preload_height / 2;
@@ -68,9 +65,6 @@ $( document ).ready(function() {
     $('#swpreloader').css('padding-top',preload_top);
     $('#swpreloader').css('padding-left',preload_left);
     $('#swpreloader img').css('width',preload_width - 40);
-    
-
-    //$('#swpreloader').css('background-image','url("http://www.savorweb.com/savor/images/bgTop.jpg")');
 
     $('#swpreloader').css('visibility','visible');
 
@@ -78,7 +72,6 @@ $( document ).ready(function() {
 
     
 $(window).load(function() {
-
 
 //Delaying showing of page to see preload
 setTimeout(function(){

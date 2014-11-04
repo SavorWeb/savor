@@ -22,7 +22,7 @@
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/stylesheet.min.css">
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/main.css">
 	</head>
-	<body onload="loadScroll()" onunload="saveScroll()">
+	<body>
 {% if craft.request.getUrl() == 'http://savorweb.com/savor/' %}
 	{{ siteUrl }}
 {% endif %}
@@ -76,9 +76,6 @@
 		<script type="text/javascript" src="{{ siteUrl }}js/scripts3.js"></script>
 		<script type="text/javascript" src="{{ siteUrl }}js/scripts4.js"></script>
 
-		<!-- Scroll on load -->
-		<script type="text/javascript" src="{{ siteUrl }}js/scroll.js"></script>
-
 
 		<!-- form stuff -->
 		<script src="{{ siteUrl }}js/jquery.validate.min.js"></script>
@@ -101,6 +98,12 @@
 		</script>
 
 		<script>
+		$(window).load(function(){
+			var hash = document.URL.substr(document.URL.indexOf('#')+1);
+			if (hash) {
+				calculateScroll();
+			}
+		});
 		$(document).ready(function(){
 		
 
