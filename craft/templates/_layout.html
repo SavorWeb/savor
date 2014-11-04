@@ -22,7 +22,7 @@
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/stylesheet.min.css">
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/main.css">
 	</head>
-	<body>
+	<body onload="loadScroll()" onunload="saveScroll()">
 {% if craft.request.getUrl() == 'http://savorweb.com/savor/' %}
 	{{ siteUrl }}
 {% endif %}
@@ -75,6 +75,9 @@
 		<script type="text/javascript" src="{{ siteUrl }}js/scripts2.js"></script>
 		<script type="text/javascript" src="{{ siteUrl }}js/scripts3.js"></script>
 		<script type="text/javascript" src="{{ siteUrl }}js/scripts4.js"></script>
+
+		<!-- Scroll on load -->
+		<script type="text/javascript" src="{{ siteUrl }}js/scroll.js"></script>
 
 
 		<!-- form stuff -->
@@ -199,7 +202,22 @@
 				});
 			}
 			$(".tile a").magnificPopup({
-				type: 'image'
+				type: 'image',
+
+				callbacks: {
+				    open: function() {
+				      var source_el = $('.mfp-figure figure img');
+				      var source = $('.mfp-figure figure img').attr('src');
+				      var find_src = $('a[href$="'+source+'"]');
+				      var find_disclaimer = $(find_src).find('p.disclaimer');
+				      var source_parents = $(source_el).parents('figure');
+				      //console.log(source_parents);
+				      $(find_disclaimer).clone().appendTo(source_parents);
+				      $('figure p.disclaimer').fadeIn(100);
+				    },
+				}
+
+
 			});
 
 		});

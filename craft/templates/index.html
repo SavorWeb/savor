@@ -150,7 +150,7 @@
 					{% for image in craft.assets.sourceId('1').limit(12) %}
 					<li class="tile {% for tag in image.tags %} {{ tag.name }} {% endfor %}">
 						<a class="tile-inner" href="{{ image.getUrl() }}" rel="prettyPhoto[gallery2]">
-							<img class="item" src="{{ image.getUrl() }}" alt="{{ image.title }}"/>
+							<img class="item" src="{{ image.getUrl() }}" alt="{{ image.title }}" data-disclaimer="{{ image.disclaimer }}"/>
 							<div class="caption">
 								<p>{{ image.title }}</p>
 							</div>

@@ -49,8 +49,6 @@ $( document ).ready(function() {
     $('#menuF:first-child').addClass('nav-hover');
     $('.default:nth-child(2)').addClass('fixed-nav');
     //$('#menuF:nth-child(1)').attr("id","newId");
-    var myImage = new Image();
-    myImage.src = 'http://www.savorweb.com/savor/images/bgTop.jpg';
     window_height = $(window).height();
     window_width = $(window).width();
     
@@ -58,10 +56,10 @@ $( document ).ready(function() {
         centPic.play();
     }
 
-    $('body').css('height',window_height);
-    $('body').css('width',window_width);
-    $('body').css('overflow','hidden');
-    $('#preload-container').css('height',window_height);
+    //$('body').css('height',window_height);
+    //$('body').css('width',window_width);
+    //$('body').css('overflow','hidden');
+    //$('#preload-container').css('height',window_height);
     $('#preload-container').css('overflow','hidden');
     var preload_height = $('#swpreloader img').height();
     var preload_top = window_height / 2 - preload_height / 2;
@@ -89,7 +87,7 @@ setTimeout(function(){
     $('#swpreloader').css('visibility','hidden');
     $('#swpreloader').css('display','none');
     $('#preload-container').css('visibility','visible');
-$('html, body').animate({ scrollTop: 0 }, 0);
+
  }, 1000);
     
        
@@ -276,6 +274,25 @@ addListeners();
 
 }
 
+
+
+
+
+ /*********************************************************
+               Disclaimer
+ **********************************************************/
+var disclaimer_message = '<p class="disclaimer">Site produced in conjunction with Range NW and used with permission.</p>';
+var disclaimer_message1 = '<p class="disclaimer">Site produced in conjunction with Everwell Creative and used with permission.</p>';
+
+var disclaimer = $('[data-disclaimer="1"]');
+var disclaimer_parents = disclaimer.parents('a.tile-inner');
+
+$(disclaimer_message).appendTo(disclaimer_parents);
+
+
+var disclaimer1 = $('[data-disclaimer="2"]');
+var disclaimer_parents1 = disclaimer1.parents('a.tile-inner');
+$(disclaimer_message1).appendTo(disclaimer_parents1);
 }); // End load function
 
 
