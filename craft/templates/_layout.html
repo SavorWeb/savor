@@ -14,6 +14,7 @@
 		<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 		<meta charset="utf-8" />
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+		<link rel="shortcut icon" type="image/x-icon" href="{{ siteUrl }}/images/favicon.ico">
 		<meta name="viewport" content="initial-scale=1, user-scalable=no">
 		<link href='http://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,300|Kaushan+Script' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/bootstrap.css">
@@ -98,12 +99,7 @@
 		</script>
 
 		<script>
-		$(window).load(function(){
-			var hash = document.URL.substr(document.URL.indexOf('#')+1);
-			if (hash) {
-				calculateScroll();
-			}
-		});
+		
 		$(document).ready(function(){
 		
 
@@ -223,7 +219,14 @@
 
 			});
 
+			var hash = document.URL.substr(document.URL.indexOf('#')+1);
+			if (hash) {
+				calculateScroll();
+			}
+
 		});
+
+
 </script>
 
 </body>
