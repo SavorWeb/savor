@@ -71,10 +71,6 @@ div#menuF .row {
 }
 
 
-.headerline:hover, .gallery:hover, .nav-hover:hover {
-	cursor: url('../images/cursor.png'), auto;
-}
-
 canvas#heading-canvas {
 	position: absolute;
 	top: 0;
