@@ -350,6 +350,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 col-xs-12 forma">
@@ -359,6 +360,8 @@
 					<input class="input-box phone-num col-md-6 col-xs-12" type="tel" name="phone" placeholder="ex. (555) 555-5555"/>
 					<input class="input-box col-md-12 col-xs-12 email required Subject" required type="email" name="email" placeholder="yourname@domain.com" title="Enter your e-mail address"/>
 					<textarea class="input-box col-md-12 col-xs-12 Message" required name="message" placeholder="Your message"></textarea>
+					<input class="input-box col-md-12 col-xs-12 captcha required captcha" required type="captcha" name="captcha" title="Captcha" placeholder="Captcha"/>
+					<img class="captcha-img"  src="{{siteUrl}}images/captcha.jpg" alt="Captcha">
 					<div class="cBtn col-xs-12">
 						<ul>
 							<li class="send"><input type="submit" name="submit" class="button btn" id="submit" value="Send Message" /></li>
